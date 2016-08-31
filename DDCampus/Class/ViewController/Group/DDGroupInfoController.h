@@ -8,6 +8,9 @@
 
 #import "DDBaseViewController.h"
 
+typedef void(^ExitGroupSuccessBlock)();
+
 @interface DDGroupInfoController : DDBaseViewController
+@property (nonatomic, copy) ExitGroupSuccessBlock exitBlock;
 @property (nonatomic, copy) NSDictionary *groupDic;
 @end

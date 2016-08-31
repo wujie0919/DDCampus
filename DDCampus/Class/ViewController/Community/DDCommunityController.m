@@ -144,6 +144,10 @@
     DDGroupInfoController *infoVc = [[DDGroupInfoController alloc]initWithNibName:@"DDGroupInfoController" bundle:nil];
     if (_communityView.dataArray.count >= _index) {
         infoVc.groupDic = _communityView.dataArray[_index];
+        @WeakObj(self);
+        infoVc.exitBlock = ^(){
+            [selfWeak getData];
+        };
         [self.navigationController pushViewController:infoVc animated:YES];
     }
 }

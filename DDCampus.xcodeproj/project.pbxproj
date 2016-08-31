@@ -295,6 +295,10 @@
 		37EC84F01D77018800AD223C /* DDGroupInfoFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37EC84EF1D77018800AD223C /* DDGroupInfoFooterView.xib */; };
 		37EC84F31D7702AC00AD223C /* new_message@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 37EC84F11D7702AC00AD223C /* new_message@2x.png */; };
 		37EC84F41D7702AC00AD223C /* new_message@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 37EC84F21D7702AC00AD223C /* new_message@3x.png */; };
+		37EC84F81D770A5100AD223C /* DDTransferGroupController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37EC84F61D770A5100AD223C /* DDTransferGroupController.m */; };
+		37EC84F91D770A5100AD223C /* DDTransferGroupController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37EC84F71D770A5100AD223C /* DDTransferGroupController.xib */; };
+		37EC84FD1D770A8700AD223C /* DDNewMemberController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37EC84FB1D770A8700AD223C /* DDNewMemberController.m */; };
+		37EC84FE1D770A8700AD223C /* DDNewMemberController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37EC84FC1D770A8700AD223C /* DDNewMemberController.xib */; };
 		37ECCD4C1D71178A00B91B3D /* DDHomeworkDetailsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 37ECCD4B1D71178A00B91B3D /* DDHomeworkDetailsModel.m */; };
 		37ECCD501D7135F400B91B3D /* DDNoSubmitInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 37ECCD4E1D7135F400B91B3D /* DDNoSubmitInfoCell.m */; };
 		37ECCD511D7135F400B91B3D /* DDNoSubmitInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37ECCD4F1D7135F400B91B3D /* DDNoSubmitInfoCell.xib */; };
@@ -846,6 +850,12 @@
 		37EC84EF1D77018800AD223C /* DDGroupInfoFooterView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DDGroupInfoFooterView.xib; sourceTree = "<group>"; };
 		37EC84F11D7702AC00AD223C /* new_message@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "new_message@2x.png"; sourceTree = "<group>"; };
 		37EC84F21D7702AC00AD223C /* new_message@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "new_message@3x.png"; sourceTree = "<group>"; };
+		37EC84F51D770A5100AD223C /* DDTransferGroupController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDTransferGroupController.h; sourceTree = "<group>"; };
+		37EC84F61D770A5100AD223C /* DDTransferGroupController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDTransferGroupController.m; sourceTree = "<group>"; };
+		37EC84F71D770A5100AD223C /* DDTransferGroupController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DDTransferGroupController.xib; sourceTree = "<group>"; };
+		37EC84FA1D770A8700AD223C /* DDNewMemberController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDNewMemberController.h; sourceTree = "<group>"; };
+		37EC84FB1D770A8700AD223C /* DDNewMemberController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDNewMemberController.m; sourceTree = "<group>"; };
+		37EC84FC1D770A8700AD223C /* DDNewMemberController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DDNewMemberController.xib; sourceTree = "<group>"; };
 		37ECCD4A1D71178A00B91B3D /* DDHomeworkDetailsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDHomeworkDetailsModel.h; sourceTree = "<group>"; };
 		37ECCD4B1D71178A00B91B3D /* DDHomeworkDetailsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDHomeworkDetailsModel.m; sourceTree = "<group>"; };
 		37ECCD4D1D7135F400B91B3D /* DDNoSubmitInfoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDNoSubmitInfoCell.h; sourceTree = "<group>"; };
@@ -1314,6 +1324,12 @@
 				37EC84D71D76E47800AD223C /* DDGroupMemberController.h */,
 				37EC84D81D76E47800AD223C /* DDGroupMemberController.m */,
 				37EC84D91D76E47800AD223C /* DDGroupMemberController.xib */,
+				37EC84F51D770A5100AD223C /* DDTransferGroupController.h */,
+				37EC84F61D770A5100AD223C /* DDTransferGroupController.m */,
+				37EC84F71D770A5100AD223C /* DDTransferGroupController.xib */,
+				37EC84FA1D770A8700AD223C /* DDNewMemberController.h */,
+				37EC84FB1D770A8700AD223C /* DDNewMemberController.m */,
+				37EC84FC1D770A8700AD223C /* DDNewMemberController.xib */,
 			);
 			path = Group;
 			sourceTree = "<group>";
@@ -2444,6 +2460,7 @@
 				373EF59B1D6AAF1F0031400C /* zhou@3x.png in Resources */,
 				37FF99CA1D5DADB200B0B8DE /* DDHomeworkBtnView.xib in Resources */,
 				371050371D586DC10079FC85 /* agreement@2x.png in Resources */,
+				37EC84FE1D770A8700AD223C /* DDNewMemberController.xib in Resources */,
 				934BD8361D5397C200BB238A /* DDHomeController.xib in Resources */,
 				379B97591D75DD0A00BADBFA /* DDGroupJoinCell.xib in Resources */,
 				37E1B1671D7447CC00D012F0 /* usericon@2x.png in Resources */,
@@ -2494,6 +2511,7 @@
 				37CDB47C1D71B01000C4EE77 /* ADD@2x.png in Resources */,
 				3725BCD91D7598DF0034C36C /* DDAllowJoinGroupController.xib in Resources */,
 				374595D01D6C27D9006D5C99 /* DDHomeCollectionViewCell.xib in Resources */,
+				37EC84F91D770A5100AD223C /* DDTransferGroupController.xib in Resources */,
 				37ECCD561D71361C00B91B3D /* DDNoSubmitInfoView.xib in Resources */,
 				371050401D586DC10079FC85 /* setup@3x.png in Resources */,
 				37CDB4941D71E5C700C4EE77 /* DDPublishHomeworkController.xib in Resources */,
@@ -2579,6 +2597,7 @@
 				9389F3311D50E93A00055E3B /* Dao.m in Sources */,
 				374595CA1D6C266B006D5C99 /* DDHomeImageCell.m in Sources */,
 				934BD8441D53980700BB238A /* DDRoutineController.m in Sources */,
+				37EC84FD1D770A8700AD223C /* DDNewMemberController.m in Sources */,
 				3796AB361D72FC4F0066266F /* DDCommunityCell.m in Sources */,
 				934BD8561D539A2900BB238A /* DDTabBarController.m in Sources */,
 				37B7DFA31D5B1B990072CCE7 /* DDSetValueController.m in Sources */,
@@ -2711,6 +2730,7 @@
 				37E1B1581D73DD5200D012F0 /* LZMomentsOriginalView.m in Sources */,
 				3725BCC91D75961F0034C36C /* DDCreateGroupController.m in Sources */,
 				379B973D1D75C09900BADBFA /* DNImagePickerController.m in Sources */,
+				37EC84F81D770A5100AD223C /* DDTransferGroupController.m in Sources */,
 				375D9E071D65A27400BA2804 /* DDRoutineCell.m in Sources */,
 				379B97481D75C09900BADBFA /* DNBadgeLabel.m in Sources */,
 				37E1B15C1D73DD5200D012F0 /* LZMomentsViewModel.m in Sources */,

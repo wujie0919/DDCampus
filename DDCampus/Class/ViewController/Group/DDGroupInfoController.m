@@ -239,11 +239,25 @@ static NSString * const usercell = @"userCell";
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
     if (buttonIndex == 1) {
+        [self showLoadHUD:@"退出中..."];
+        @WeakObj(self);
         [self Network_Post:@"do_grouplogout" tag:Do_grouplogout_Tag
                      param:@{@"groupid":_groupDic[@"groupid"]} success:^(id result) {
-                         
+                         [selfWeak hideHUD];
+                         if ([result[@"code"]integerValue]==200) {
+                             [selfWeak showSuccessHUD:@"退出成功"];
+                             if (selfWeak.exitBlock) {
+                                 selfWeak.exitBlock();
+                             }
+                             [selfWeak.navigationController popViewControllerAnimated:YES];
+                             
+                         }else
+                         {
+                             [selfWeak showErrorHUD:result[@"message"]];
+                         }
                      } failure:^(NSError *error) {
-                         
+                         [selfWeak hideHUD];
+                         [selfWeak showErrorHUD:@"网络异常"];
                      }];
     }
 }
