@@ -48,6 +48,9 @@ AppDelegate* appDelegate = nil;
 }
 
 - (void)showLogin{
+    if (![[USER_DEFAULT valueForKey:USER_LOGIN] isValidString]) {
+        return;
+    }
     [NSTools setObject:@"" forKey:USER_LOGIN];
     [NSTools setObject:nil forKey:UserInfo];
     DDLoginController *loginControoler = [[DDLoginController alloc]initWithNibName:@"DDLoginController" bundle:nil];
