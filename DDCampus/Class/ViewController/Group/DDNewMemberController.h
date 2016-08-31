@@ -9,5 +9,5 @@
 #import "DDBaseViewController.h"
 
 @interface DDNewMemberController : DDBaseViewController
-
+@property (nonatomic, copy) NSDictionary *groupDic;
 @end

@@ -15,6 +15,7 @@
 #import "DDGroupInfoNormalCell.h"
 #import "DDSetGroupManagerController.h"
 #import "DDGroupInfoFooterView.h"
+#import "DDNewMemberController.h"
 
 @interface DDGroupInfoController ()<UITableViewDelegate,UITableViewDataSource,UIAlertViewDelegate>
 @property (weak, nonatomic) IBOutlet DDTableView *dataTable;
@@ -58,11 +59,15 @@ static NSString * const usercell = @"userCell";
     _dataTable.sectionFooterHeight = 100;
     if (!_footerView) {
         _footerView = [[[NSBundle mainBundle] loadNibNamed:@"DDGroupInfoFooterView" owner:nil options:nil] lastObject];
-        _footerView.frame = CGRectMake(0, 0, SCREEN_WIDTH, 100);
-        _footerView.mBlock = ^(){
-            
-        };
         [_footerView.exitButton addTarget:self action:@selector(exitGroup) forControlEvents:UIControlEventTouchUpInside];
+        _footerView.frame = CGRectMake(0, 0, SCREEN_WIDTH, 100);
+        @WeakObj(self);
+        _footerView.mBlock = ^(){
+            DDNewMemberController *newVC = [[DDNewMemberController alloc]initWithNibName:@"DDNewMemberController" bundle:nil];
+            newVC.groupDic = selfWeak.groupDic;
+            [selfWeak.navigationController pushViewController:newVC animated:YES];
+        };
+        
     }
     
     self.title = @"群组资料";
@@ -223,6 +228,11 @@ static NSString * const usercell = @"userCell";
                            selfWeak.tsection = 2;
                        }
                        [selfWeak.dataTable reloadData];
+                       
+                       if ([result[DataKey][@"identity"]integerValue]!=1) {
+                           selfWeak.footerView.statusView.hidden = YES;
+                           selfWeak.footerView.valueLabel.hidden = YES;
+                       }
                        selfWeak.dataTable.tableFooterView = selfWeak.footerView;
                    }
                } failure:^(NSError *error) {
@@ -232,7 +242,7 @@ static NSString * const usercell = @"userCell";
 
 - (void)exitGroup
 {
-    UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"提示" message:@"您确定退出该群组？" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
+    UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"退出群组" message:@"您确定退出该群组？" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
     [alert show];
 }
 

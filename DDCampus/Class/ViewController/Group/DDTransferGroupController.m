@@ -9,6 +9,7 @@
 #import "DDTransferGroupController.h"
 
 @interface DDTransferGroupController ()
+@property (weak, nonatomic) IBOutlet DDTableView *dataTable;
 
 @end
 
@@ -17,6 +18,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    [self setBackBarButtonItem];
+    self.title = @"转让群主";
+    
 }
 
 - (void)didReceiveMemoryWarning {

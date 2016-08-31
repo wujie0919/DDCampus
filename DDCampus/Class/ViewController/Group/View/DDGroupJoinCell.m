@@ -65,6 +65,21 @@
     // Configure the view for the selected state
 }
 
-- (IBAction)jujueButton:(id)sender {
+- (void)setValue:(DDJoinModel *)joinModel
+{
+    [_headerView getImageWithURL:[NSString stringWithFormat:@"%@%@",PicUrl,joinModel.pic] placeholder:nil];
+    _nickNameLabel.text = joinModel.nickname;
+    if ([joinModel.status integerValue]==1 || [joinModel.status integerValue]==2) {
+        _refuseButton.hidden = YES;
+        _agreeButton.hidden = YES;
+        _infoLabel.hidden = NO;
+        _infoLabel.text = [joinModel.status integerValue]==1?@"已拒绝":@"已同意";
+    }
+    else
+    {
+        _refuseButton.hidden = NO;
+        _agreeButton.hidden = NO;
+        _infoLabel.hidden = YES;
+    }
 }
 @end

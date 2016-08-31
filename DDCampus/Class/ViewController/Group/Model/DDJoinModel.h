@@ -15,5 +15,5 @@
 @property (nonatomic, copy) NSString *sqdateline;
 @property (nonatomic, copy) NSString *nickname;
 @property (nonatomic, copy) NSString *pic;
-@property (nonatomic, copy) NSString *status;
+@property (nonatomic, copy) NSString *status; 
 @end
