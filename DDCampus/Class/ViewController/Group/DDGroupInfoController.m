@@ -16,7 +16,7 @@
 #import "DDSetGroupManagerController.h"
 #import "DDGroupInfoFooterView.h"
 
-@interface DDGroupInfoController ()<UITableViewDelegate,UITableViewDataSource>
+@interface DDGroupInfoController ()<UITableViewDelegate,UITableViewDataSource,UIAlertViewDelegate>
 @property (weak, nonatomic) IBOutlet DDTableView *dataTable;
 @property (nonatomic, strong) UIButton *rightButton;
 @property (nonatomic, assign) NSInteger tsection;
@@ -59,6 +59,10 @@ static NSString * const usercell = @"userCell";
     if (!_footerView) {
         _footerView = [[[NSBundle mainBundle] loadNibNamed:@"DDGroupInfoFooterView" owner:nil options:nil] lastObject];
         _footerView.frame = CGRectMake(0, 0, SCREEN_WIDTH, 100);
+        _footerView.mBlock = ^(){
+            
+        };
+        [_footerView.exitButton addTarget:self action:@selector(exitGroup) forControlEvents:UIControlEventTouchUpInside];
     }
     
     self.title = @"群组资料";
@@ -224,6 +228,24 @@ static NSString * const usercell = @"userCell";
                } failure:^(NSError *error) {
                    
                }];
+}
+
+- (void)exitGroup
+{
+    UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"提示" message:@"您确定退出该群组？" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
+    [alert show];
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (buttonIndex == 1) {
+        [self Network_Post:@"do_grouplogout" tag:Do_grouplogout_Tag
+                     param:@{@"groupid":_groupDic[@"groupid"]} success:^(id result) {
+                         
+                     } failure:^(NSError *error) {
+                         
+                     }];
+    }
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

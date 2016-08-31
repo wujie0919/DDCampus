@@ -44,5 +44,6 @@ static NSInteger const Getgroupdata_Tag = 6009;
 static NSInteger const Do_delgroupuser_Tag = 6010;
 static NSInteger const Getgroupuserlist_Tag = 6011;
 static NSInteger const Do_admingroup_Tag = 6012;
+static NSInteger const Do_grouplogout_Tag = 6013;
 
 #endif /* DDTag_h */
