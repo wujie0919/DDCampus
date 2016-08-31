@@ -204,7 +204,7 @@ static NSString * const imageCell = @"imageCell";
     @WeakObj(self);
     [self showLoadHUD:@"发布中..."];
     NSMutableDictionary *dic = [NSMutableDictionary dictionaryWithCapacity:0];
-    for (int i =0;i<_imageArray.count;i++) {
+    for (int i =0;i<_imageArray.count-1;i++) {
         UIImage *img = _imageArray[i];
         NSString *key = [NSString stringWithFormat:@"pic%d",i+1];
         [dic setValue:UIImageJPEGRepresentation(img, 0.5) forKey:key];

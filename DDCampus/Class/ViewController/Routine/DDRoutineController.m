@@ -70,6 +70,19 @@
     [self setRightButtonName:appDelegate.classArray];
 }
 
+- (void)setSelectIndex:(NSInteger)selectIndex
+{
+    _selectIndex = selectIndex;
+    if (_rVC) {
+        [_rVC setIndex:0];
+        _rVC.view.frame = CGRectMake(_index*SCREEN_WIDTH, 0, SCREEN_WIDTH, _scrollview.frame.size.height);
+    }
+    if (_routineView) {
+        [_routineView setColorFrame:_index+1001];
+    }
+    [self showTitle];
+}
+
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];

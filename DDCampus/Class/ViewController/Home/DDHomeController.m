@@ -23,6 +23,9 @@
 #import "DDScoreInfoController.h"
 #import "ChatKeyBoard.h"
 #import "IQKeyboardManager.h"
+#import "DDTabBarController.h"
+#import "DDNavigationController.h"
+#import "DDRoutineController.h"
 
 static NSString * const imageCell = @"imageCell";
 static NSString * const buttonCell = @"buttonCell";
@@ -208,6 +211,34 @@ static NSString * const homeCell = @"homeCell";
         {
             DDPublishNoticeController *noticeVC = [[DDPublishNoticeController alloc]initWithNibName:@"DDPublishNoticeController" bundle:nil];
             [self.navigationController pushViewController:noticeVC animated:YES];
+        }
+    }
+    if (type == 1) {
+        if (tag == 0) {
+            DDTabBarController *tabController = (DDTabBarController *) appDelegate.window.rootViewController;
+            tabController.selectedIndex = 1;
+        }
+        else if (tag == 1) {
+            
+        }
+        else if (tag == 2)
+        {
+            DDTabBarController *tabController = (DDTabBarController *) appDelegate.window.rootViewController;
+            tabController.selectedIndex = 2;
+            if ([NSStringFromClass([tabController.selectedViewController classForCoder]) isEqualToString:@"DDNavigationController"]) {
+                DDNavigationController *navController = (DDNavigationController *)tabController.selectedViewController;
+                UIViewController *rootController = [navController.viewControllers lastObject];
+                Class class = class_getSuperclass([rootController class]);
+                if (class == [DDRoutineController class]) {
+                    DDRoutineController *routineVC = (DDRoutineController *)rootController;
+                    routineVC.selectIndex = 1;
+                }
+            }
+            
+        }
+        else if (tag == 3)
+        {
+            
         }
     }
 }
