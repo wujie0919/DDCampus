@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DDLoginController">
+            <connections>
+                <outlet property="loginBtn" destination="nWg-Hf-IYM" id="xsu-3G-IJW"/>
+                <outlet property="pass_textfield" destination="74u-Yx-phU" id="h4b-z1-dgM"/>
+                <outlet property="userName_TextField" destination="Z4B-mm-gbe" id="QKe-jS-e69"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="输入手机号" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Z4B-mm-gbe" customClass="DDTextField">
+                    <rect key="frame" x="10" y="10" width="300" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="lQS-oO-aTT"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
+                </textField>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="输入密码" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="74u-Yx-phU" customClass="DDTextField">
+                    <rect key="frame" x="10" y="60" width="300" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="DRk-RO-BPg"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                </textField>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nWg-Hf-IYM" customClass="DDButton">
+                    <rect key="frame" x="10" y="110" width="300" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="t15-8f-6zV"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <state key="normal" title="登录"/>
+                    <connections>
+                        <action selector="loginBtnClick:" destination="-1" eventType="touchUpInside" id="Gh4-tE-WdZ"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="nWg-Hf-IYM" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="6HV-R5-JWz"/>
+                <constraint firstItem="Z4B-mm-gbe" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="10" id="Fwr-Ng-KGt"/>
+                <constraint firstAttribute="trailing" secondItem="74u-Yx-phU" secondAttribute="trailing" constant="10" id="fB5-vp-Z4F"/>
+                <constraint firstAttribute="trailing" secondItem="Z4B-mm-gbe" secondAttribute="trailing" constant="10" id="mck-nI-qK7"/>
+                <constraint firstItem="74u-Yx-phU" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="sD4-cz-XKf"/>
+                <constraint firstItem="Z4B-mm-gbe" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="teb-br-Cgt"/>
+                <constraint firstItem="nWg-Hf-IYM" firstAttribute="top" secondItem="74u-Yx-phU" secondAttribute="bottom" constant="10" id="tjf-cm-kPc"/>
+                <constraint firstAttribute="trailing" secondItem="nWg-Hf-IYM" secondAttribute="trailing" constant="10" id="wAY-Xo-vRN"/>
+                <constraint firstItem="74u-Yx-phU" firstAttribute="top" secondItem="Z4B-mm-gbe" secondAttribute="bottom" constant="10" id="y6R-X0-Xfw"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <point key="canvasLocation" x="305" y="367"/>
+        </view>
+    </objects>
+</document>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DDAdviseViewController">
+            <connections>
+                <outlet property="infoTextView" destination="H6r-Tm-pXK" id="36k-u4-HhY"/>
+                <outlet property="placeholder" destination="UOW-wm-4oM" id="xy3-hP-eHu"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="H6r-Tm-pXK" customClass="DDTextView">
+                    <rect key="frame" x="10" y="10" width="300" height="130"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="130" id="Lji-V8-zWH"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                    <connections>
+                        <outlet property="delegate" destination="-1" id="KJP-eO-JFd"/>
+                    </connections>
+                </textView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s7h-cH-Epm" customClass="DDButton">
+                    <rect key="frame" x="10" y="160" width="300" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="XQY-wZ-Fm9"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <state key="normal" title="提交"/>
+                    <connections>
+                        <action selector="sendAdvise:" destination="-1" eventType="touchUpInside" id="rMi-bf-dSF"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="我们懂得聆听，知错就改，您的意见是：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UOW-wm-4oM">
+                    <rect key="frame" x="15" y="15" width="290" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="21" id="YKq-R9-jmF"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="UOW-wm-4oM" secondAttribute="trailing" constant="15" id="4OZ-7X-Zge"/>
+                <constraint firstAttribute="trailing" secondItem="H6r-Tm-pXK" secondAttribute="trailing" constant="10" id="4rI-AP-RX8"/>
+                <constraint firstItem="UOW-wm-4oM" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="15" id="7k1-RE-mFQ"/>
+                <constraint firstItem="s7h-cH-Epm" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="MsT-gR-EFO"/>
+                <constraint firstItem="UOW-wm-4oM" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="15" id="bEK-sL-pI1"/>
+                <constraint firstAttribute="trailing" secondItem="s7h-cH-Epm" secondAttribute="trailing" constant="10" id="ckl-Kf-9HU"/>
+                <constraint firstItem="H6r-Tm-pXK" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="10" id="g4m-LE-iha"/>
+                <constraint firstItem="s7h-cH-Epm" firstAttribute="top" secondItem="H6r-Tm-pXK" secondAttribute="bottom" constant="20" id="hFB-TU-XvS"/>
+                <constraint firstItem="H6r-Tm-pXK" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="mCw-gW-qsJ"/>
+            </constraints>
+            <point key="canvasLocation" x="305" y="295"/>
+        </view>
+    </objects>
+</document>

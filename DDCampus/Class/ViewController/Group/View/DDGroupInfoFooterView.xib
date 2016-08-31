@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="DDGroupInfoFooterView">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hCW-lz-BSj">
+                    <rect key="frame" x="0.0" y="5" width="320" height="40"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="new_message.png" translatesAutoresizingMaskIntoConstraints="NO" id="8Cc-FE-Eku">
+                            <rect key="frame" x="85" y="10" width="8" height="8"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="8" id="1N1-Xa-C8l"/>
+                                <constraint firstAttribute="height" constant="8" id="OFP-Bx-azz"/>
+                            </constraints>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="有新的申请" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jCN-h2-cs6">
+                            <rect key="frame" x="15" y="5" width="74" height="30"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="74" id="6SM-j5-ZKP"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="2xL-9p-MNL"/>
+                        <constraint firstAttribute="bottom" secondItem="jCN-h2-cs6" secondAttribute="bottom" constant="5" id="4qI-it-Suj"/>
+                        <constraint firstItem="8Cc-FE-Eku" firstAttribute="leading" secondItem="hCW-lz-BSj" secondAttribute="leading" constant="85" id="PDa-Ad-Laf"/>
+                        <constraint firstItem="jCN-h2-cs6" firstAttribute="top" secondItem="hCW-lz-BSj" secondAttribute="top" constant="5" id="byY-Vb-9D7"/>
+                        <constraint firstItem="jCN-h2-cs6" firstAttribute="leading" secondItem="hCW-lz-BSj" secondAttribute="leading" constant="15" id="hpe-5M-HtC"/>
+                        <constraint firstItem="8Cc-FE-Eku" firstAttribute="top" secondItem="hCW-lz-BSj" secondAttribute="top" constant="10" id="kbz-du-ca6"/>
+                    </constraints>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Va4-Jz-cMq" customClass="DDButton">
+                    <rect key="frame" x="10" y="50" width="300" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="79n-GM-90r"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <state key="normal" title="退出"/>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="hCW-lz-BSj" secondAttribute="trailing" id="KCq-wM-3CW"/>
+                <constraint firstItem="Va4-Jz-cMq" firstAttribute="top" secondItem="hCW-lz-BSj" secondAttribute="bottom" constant="5" id="SF4-3U-A8p"/>
+                <constraint firstItem="Va4-Jz-cMq" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="10" id="TvV-0u-1gP"/>
+                <constraint firstItem="hCW-lz-BSj" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="WhC-8N-8bL"/>
+                <constraint firstAttribute="trailing" secondItem="Va4-Jz-cMq" secondAttribute="trailing" constant="10" id="YPU-5f-sGo"/>
+                <constraint firstItem="hCW-lz-BSj" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="5" id="rq4-fv-wqb"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="bgView" destination="hCW-lz-BSj" id="s4w-d1-Z7F"/>
+                <outlet property="exitButton" destination="Va4-Jz-cMq" id="Ge8-dZ-ahJ"/>
+                <outlet property="statusView" destination="8Cc-FE-Eku" id="Icl-4j-eBx"/>
+                <outlet property="valueLabel" destination="jCN-h2-cs6" id="51u-G2-wlL"/>
+            </connections>
+            <point key="canvasLocation" x="274" y="238"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="new_message.png" width="6" height="6"/>
+    </resources>
+</document>
