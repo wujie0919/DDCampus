@@ -9,5 +9,5 @@
 #import "DDBaseViewController.h"
 
 @interface DDTransferGroupController : DDBaseViewController
-
+@property (nonatomic, copy) NSDictionary *groupDic;
 @end

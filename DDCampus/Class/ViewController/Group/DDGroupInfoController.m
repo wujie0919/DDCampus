@@ -16,6 +16,7 @@
 #import "DDSetGroupManagerController.h"
 #import "DDGroupInfoFooterView.h"
 #import "DDNewMemberController.h"
+#import "DDTransferGroupController.h"
 
 @interface DDGroupInfoController ()<UITableViewDelegate,UITableViewDataSource,UIAlertViewDelegate>
 @property (weak, nonatomic) IBOutlet DDTableView *dataTable;
@@ -207,6 +208,11 @@ static NSString * const usercell = @"userCell";
             DDSetGroupManagerController *managerVC=[[DDSetGroupManagerController alloc]initWithNibName:@"DDSetGroupManagerController" bundle:nil];
             [managerVC setData:_dic group:_groupDic];
             [self.navigationController pushViewController:managerVC animated:YES];
+        }
+        if (section == 2 && row == 0) {
+            DDTransferGroupController *transferVc = [[DDTransferGroupController alloc]initWithNibName:@"DDTransferGroupController" bundle:nil];
+            transferVc.groupDic = _groupDic;
+            [self.navigationController pushViewController:transferVc animated:YES];
         }
     }
 }

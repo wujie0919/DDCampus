@@ -20,8 +20,8 @@
                     <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <connections>
-                        <outlet property="dataSource" destination="-1" id="sCy-9i-wRF"/>
-                        <outlet property="delegate" destination="-1" id="U0P-3m-g0w"/>
+                        <outlet property="dataSource" destination="-1" id="sqR-qg-dTw"/>
+                        <outlet property="delegate" destination="-1" id="joW-8O-hMi"/>
                     </connections>
                 </tableView>
             </subviews>

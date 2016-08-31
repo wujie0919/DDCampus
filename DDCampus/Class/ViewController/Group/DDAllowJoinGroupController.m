@@ -47,8 +47,9 @@ static NSString * const appleyCell = @"appleyCell";
 {
     DDGroupJoinCell *cell = [tableView dequeueReusableCellWithIdentifier:appleyCell];
     [cell setValue:_dataArray[indexPath.row]];
+    @WeakObj(self);
     cell.handler = ^(NSInteger flg){
-        
+        [selfWeak option:flg row:indexPath.row];
     };
     return cell;
 }

@@ -299,6 +299,8 @@
 		37EC84F91D770A5100AD223C /* DDTransferGroupController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37EC84F71D770A5100AD223C /* DDTransferGroupController.xib */; };
 		37EC84FD1D770A8700AD223C /* DDNewMemberController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37EC84FB1D770A8700AD223C /* DDNewMemberController.m */; };
 		37EC84FE1D770A8700AD223C /* DDNewMemberController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37EC84FC1D770A8700AD223C /* DDNewMemberController.xib */; };
+		37EC85021D77173D00AD223C /* TransferGroupCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 37EC85001D77173D00AD223C /* TransferGroupCell.m */; };
+		37EC85031D77173D00AD223C /* TransferGroupCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37EC85011D77173D00AD223C /* TransferGroupCell.xib */; };
 		37ECCD4C1D71178A00B91B3D /* DDHomeworkDetailsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 37ECCD4B1D71178A00B91B3D /* DDHomeworkDetailsModel.m */; };
 		37ECCD501D7135F400B91B3D /* DDNoSubmitInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 37ECCD4E1D7135F400B91B3D /* DDNoSubmitInfoCell.m */; };
 		37ECCD511D7135F400B91B3D /* DDNoSubmitInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37ECCD4F1D7135F400B91B3D /* DDNoSubmitInfoCell.xib */; };
@@ -856,6 +858,9 @@
 		37EC84FA1D770A8700AD223C /* DDNewMemberController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDNewMemberController.h; sourceTree = "<group>"; };
 		37EC84FB1D770A8700AD223C /* DDNewMemberController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDNewMemberController.m; sourceTree = "<group>"; };
 		37EC84FC1D770A8700AD223C /* DDNewMemberController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DDNewMemberController.xib; sourceTree = "<group>"; };
+		37EC84FF1D77173D00AD223C /* TransferGroupCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TransferGroupCell.h; sourceTree = "<group>"; };
+		37EC85001D77173D00AD223C /* TransferGroupCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TransferGroupCell.m; sourceTree = "<group>"; };
+		37EC85011D77173D00AD223C /* TransferGroupCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TransferGroupCell.xib; sourceTree = "<group>"; };
 		37ECCD4A1D71178A00B91B3D /* DDHomeworkDetailsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDHomeworkDetailsModel.h; sourceTree = "<group>"; };
 		37ECCD4B1D71178A00B91B3D /* DDHomeworkDetailsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDHomeworkDetailsModel.m; sourceTree = "<group>"; };
 		37ECCD4D1D7135F400B91B3D /* DDNoSubmitInfoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDNoSubmitInfoCell.h; sourceTree = "<group>"; };
@@ -1644,6 +1649,9 @@
 				37EC84EC1D77017800AD223C /* DDGroupInfoFooterView.h */,
 				37EC84ED1D77017800AD223C /* DDGroupInfoFooterView.m */,
 				37EC84EF1D77018800AD223C /* DDGroupInfoFooterView.xib */,
+				37EC84FF1D77173D00AD223C /* TransferGroupCell.h */,
+				37EC85001D77173D00AD223C /* TransferGroupCell.m */,
+				37EC85011D77173D00AD223C /* TransferGroupCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -2486,6 +2494,7 @@
 				3725BC841D75860E0034C36C /* DDSendCommunityController.xib in Resources */,
 				37FC0FE11D6D7003001177A0 /* DDHomeLikeCell.xib in Resources */,
 				9389F3851D50EF1400055E3B /* README.txt in Resources */,
+				37EC85031D77173D00AD223C /* TransferGroupCell.xib in Resources */,
 				37D2112D1D5A367E0048A923 /* DDSetMineInfoController.xib in Resources */,
 				378CC4E91D58170400356039 /* icon_she_selected@2x.png in Resources */,
 				379B97461D75C09900BADBFA /* ImagesPicker.xcassets in Resources */,
@@ -2793,6 +2802,7 @@
 				3725BCD31D7598BA0034C36C /* DDSetGroupManagerController.m in Sources */,
 				37E1B1341D73DB9C00D012F0 /* MLTextAttachment.m in Sources */,
 				37767DCB1D5F0746001790CC /* DDHomeworkCell.m in Sources */,
+				37EC85021D77173D00AD223C /* TransferGroupCell.m in Sources */,
 				3710504E1D5877570079FC85 /* DDAdviseViewController.m in Sources */,
 				37EC84C11D7697C000AD223C /* DDFindGroupReusableView.m in Sources */,
 				9389F3391D50E93A00055E3B /* UIColor+Custom.m in Sources */,
