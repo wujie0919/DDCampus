@@ -61,7 +61,7 @@ static NSString * const valueCell = @"valueCell";
 //        _infoView.frame = CGRectMake(20, _height+10, 200, (_array.count%3)*20);
 //        _height = _height+(_array.count%3)*20+(_array.count%3)*5;
 //    }
-    @WeakObj(self);
+//    @WeakObj(self);
 //    [_unSubmitCollectionView mas_updateConstraints:^(MASConstraintMaker *make) {
 //        make.top.equalTo(selfWeak.lineLabel.mas_bottom).offset(10);
 //        make.left.equalTo(selfWeak).offset(10);

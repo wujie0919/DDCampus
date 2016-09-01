@@ -88,7 +88,7 @@
         }
     }
     
-    return tableViewHeight;
+    return tableViewHeight+10;
 }
 
 - (NSMutableAttributedString *)generateAttributedStringWithCommentItemModel:(LZMomentsCellCommentItemModel *)model

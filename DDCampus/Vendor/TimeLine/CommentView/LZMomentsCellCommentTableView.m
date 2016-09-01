@@ -124,7 +124,7 @@ static NSString * const HeaderFooterViewIdentifier = @"LZMomentsSectionHeaderVie
 //    label = nil;
 //    return h + 2;
     
-    return [UILabel heightForExpressionText:self.viewModel.status.likesStr width:[UIScreen mainScreen].bounds.size.width - 70];
+    return [UILabel heightForExpressionText:self.viewModel.status.likesStr width:[UIScreen mainScreen].bounds.size.width - 70]+5;
 }
 
 //- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
