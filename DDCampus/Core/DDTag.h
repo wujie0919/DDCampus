@@ -25,6 +25,7 @@ static NSInteger const Index_Tag = 4001;
 static NSInteger const Do_notice_Tag= 4002;
 static NSInteger const Do_homework_Tag = 4003;
 static NSInteger const Do_forumreply_Tag = 4004;
+static NSInteger const Do_forumpostlike_Tag = 4005;
 
 static NSInteger const Getdutyday_Tag = 5001;
 static NSInteger const Getclassweekpoint_Tag = 5002;
@@ -56,4 +57,8 @@ static NSInteger const Getclassscore_Tag=7004;
 static NSInteger const Getsubjecttrend_Tag = 7005;
 static NSInteger const Getclassscoretrend_tag = 7006;
 
+
+//个人中心
+static NSInteger const Logout_Tag = 8001;
+static NSInteger const Do_saveheadpic_Tag = 8002;
 #endif /* DDTag_h */

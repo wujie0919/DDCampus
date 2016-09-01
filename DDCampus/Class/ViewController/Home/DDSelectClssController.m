@@ -29,6 +29,23 @@ static NSString * const infoCell = @"infoCell";
     _dataTable.separatorStyle = UITableViewCellSeparatorStyleNone;
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(refushTable) name:GetClassNameSuccess object:nil];
+}
+
+-(void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    [[NSNotificationCenter defaultCenter]removeObserver:self name:GetClassNameSuccess object:nil];
+}
+
+- (void)refushTable
+{
+    [_dataTable reloadData];
+}
+
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     return 1;

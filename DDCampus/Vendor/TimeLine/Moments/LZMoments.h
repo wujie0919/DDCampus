@@ -47,7 +47,7 @@
 @interface LZMomentsCellCommentItemModel : NSObject
 
 @property (nonatomic, copy) NSString *commentString;
-
+@property (nonatomic, copy) NSString * rpid;
 @property (nonatomic, copy) NSString *firstUserName;
 @property (nonatomic, copy) NSString *firstUserId;
 

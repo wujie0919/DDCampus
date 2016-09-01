@@ -45,6 +45,7 @@ static NSString * const homeCell = @"homeCell";
 @property (nonatomic, strong) LZMomentsListViewModel *statusListViewModel;
 @property (nonatomic, strong) DDCommentView *chatKeyBoard;
 @property (nonatomic, strong) NSIndexPath *index;
+@property (nonatomic, copy) NSString *rpid;
 // 显示评论弹窗的cell的indexPath
 @property (nonatomic, strong) NSIndexPath *cellIndexPath;
 @end
@@ -115,6 +116,11 @@ static NSString * const homeCell = @"homeCell";
                                              selector:@selector(keyboardHide:)
                                                  name:UIKeyboardWillHideNotification
                                                object:nil];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(commentClick:)
+                                                 name:LZCommentClickedNotification
+                                               object:nil];
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -122,6 +128,7 @@ static NSString * const homeCell = @"homeCell";
     [super viewDidDisappear:animated];
     [IQKeyboardManager sharedManager].enableAutoToolbar = YES;
     [[NSNotificationCenter defaultCenter]removeObserver:self name:UIKeyboardWillHideNotification object:nil];
+    [[NSNotificationCenter defaultCenter]removeObserver:self name:LZCommentClickedNotification object:nil];
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -309,6 +316,7 @@ static NSString * const homeCell = @"homeCell";
                     for (NSDictionary *commentDic in dic[@"replylist"]) {
                         LZMomentsCellCommentItemModel *commentItemModel = [LZMomentsCellCommentItemModel new];
                         commentItemModel.firstUserName = commentDic[@"nickname"];
+                        commentItemModel.rpid = [NSString stringWithFormat:@"%@",commentDic[@"rpid"]];
                         commentItemModel.firstUserId = commentDic[@"id"];
                         commentItemModel.commentString =commentDic[@"comment"];
                         [tempComments addObject:commentItemModel];
@@ -341,8 +349,31 @@ static NSString * const homeCell = @"homeCell";
 #pragma mark - LZMomentsCellDelegate
 - (void)didClickLickButtonInCell:(LZMomentsCell *)cell
 {
-    NSIndexPath *indexPath = [self.homeTable indexPathForCell:cell];
-    [self.homeTable reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationNone];
+    _index = [self.homeTable indexPathForCell:cell];
+    LZMomentsViewModel *model = _dataArray[_index.row-2];
+    [self showLoadHUD:@"提交中..."];
+    @WeakObj(self);
+    [self Network_Post:@"do_forumpostlike" tag:Do_forumpostlike_Tag
+                 param:@{@"pid":model.status.pid}
+               success:^(id result) {
+                   if ([result[@"code"]integerValue]==200) {
+                       NSMutableArray *tempLikeItems = [NSMutableArray new];
+                       [tempLikeItems addObjectsFromArray:model.status.likeItemsArray];
+                       LZMomentsCellLikeItemModel *likeModel = [[LZMomentsCellLikeItemModel alloc] init];
+                       likeModel.userId = appDelegate.userModel.user_id;
+                       likeModel.userName = appDelegate.userModel.nickname;
+                       [tempLikeItems addObject:likeModel];
+                       model.status.likeItemsArray = [tempLikeItems copy];
+                       [selfWeak.dataArray replaceObjectAtIndex:_index.row-2 withObject:model];
+                       [selfWeak.homeTable reloadRowsAtIndexPaths:@[_index] withRowAnimation:UITableViewRowAnimationNone];
+                   }
+                   selfWeak.index = nil;
+                   [selfWeak hideHUD];
+               } failure:^(NSError *error) {
+                   selfWeak.index = nil;
+                   [selfWeak hideHUD];
+               }];
+    [self.homeTable reloadRowsAtIndexPaths:@[_index] withRowAnimation:UITableViewRowAnimationNone];
 }
 
 - (LZMomentsListViewModel *)statusListViewModel {
@@ -385,25 +416,24 @@ static NSString * const homeCell = @"homeCell";
 - (void)chatKeyBoardSendText:(NSString *)text
 {
     if ([text isValidString]) {
-        LZMomentsViewModel *model = _dataArray[_index.row-2];
+        
+        LZMomentsViewModel *model=model = _dataArray[_index.row-2];;
+    
+        if (![_rpid isValidString]) {
+            _rpid = @"0";
+        }
         [self.view endEditing:YES];
         [self showLoadHUD:@"提交中..."];
         @WeakObj(self);
         [self Network_Post:@"do_forumreply" tag:Do_forumreply_Tag
                      param:@{@"pid":model.status.pid,
                              @"comment":text,
-                             @"rpid":@"0"}
+                             @"rpid":_rpid}
                    success:^(id result) {
                        
                        if ([result[@"code"]integerValue]==200) {
                            NSMutableArray *tempComments = [NSMutableArray new];
-                           for (NSDictionary *commentDic in model.status.commentItemsArray) {
-                               LZMomentsCellCommentItemModel *commentItemModel = [LZMomentsCellCommentItemModel new];
-                               commentItemModel.firstUserName = commentDic[@"nickname"];
-                               commentItemModel.firstUserId = commentDic[@"id"];
-                               commentItemModel.commentString =commentDic[@"comment"];
-                               [tempComments addObject:commentItemModel];
-                           }
+                           [tempComments addObjectsFromArray:model.status.commentItemsArray];
                            LZMomentsCellCommentItemModel *commentItemModel = [LZMomentsCellCommentItemModel new];
                            commentItemModel.firstUserName = appDelegate.userModel.nickname;
                            commentItemModel.firstUserId = appDelegate.userModel.user_id;
@@ -412,16 +442,42 @@ static NSString * const homeCell = @"homeCell";
                            model.status.commentItemsArray = [tempComments copy];
                            [selfWeak.dataArray replaceObjectAtIndex:_index.row-2 withObject:model];
                            [selfWeak.homeTable reloadRowsAtIndexPaths:@[_index] withRowAnimation:UITableViewRowAnimationNone];
+                           
                        }
+                       selfWeak.index = nil;
                        [selfWeak hideHUD];
+                       selfWeak.rpid =@"0";
                    } failure:^(NSError *error) {
-                       
+                       [selfWeak hideHUD];
+                       selfWeak.index = nil;
                    }];
     }
     else{
         
     }
 }
+
+- (void)commentClick:(NSNotification *)notification
+{
+    LZMomentsViewModel *momentsViewModel = (LZMomentsViewModel *)notification.userInfo[LZCommentViewNoticationKey];
+    _index = [NSIndexPath indexPathForRow:[_dataArray indexOfObject:momentsViewModel]+2 inSection:0];
+    LZMomentsCellCommentItemModel *model = (LZMomentsCellCommentItemModel *)notification.userInfo[LZCommentClickedNotificationKey];
+    _rpid = model.rpid;
+    if (!_chatKeyBoard) {
+        _chatKeyBoard = [DDCommentView initComment:CGRectMake(0, SCREEN_HEIGHT-160, SCREEN_WIDTH, 50)];
+        _chatKeyBoard.backgroundColor = [UIColor whiteColor];
+        _chatKeyBoard.textView.delegate = self;
+        [_chatKeyBoard.textView becomeFirstResponder];
+        [self.view addSubview:_chatKeyBoard];
+    }
+    if (_chatKeyBoard.hidden) {
+        _chatKeyBoard.hidden = NO;
+        [_chatKeyBoard.textView becomeFirstResponder];
+    }
+    _chatKeyBoard.textView.text=[NSString stringWithFormat:@"回复%@",model.firstUserName];
+}
+
+
 
 
 

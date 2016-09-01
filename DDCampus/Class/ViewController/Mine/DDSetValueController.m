@@ -27,13 +27,29 @@
         [self showErrorHUD:@"请输入新昵称"];
         return;
     }
+    [self showLoadHUD:@"提交中"];
+    @WeakObj(self);
     [self Network_Post:@"do_savenickname"
                    tag:EditNickName_Tag
                  param:@{@"nickname":_valueText.text}
                success:^(id result) {
-                   
+                   [selfWeak hideHUD];
+                   if ([result[@"code"]integerValue]==200) {
+                       [selfWeak showSuccessHUD:@"修改成功"];
+                       appDelegate.userModel.nickname = selfWeak.valueText.text;
+                       NSMutableDictionary *dic = [[USER_DEFAULT objectForKey:UserInfo] mutableCopy];
+                       [dic removeObjectForKey:@"nickname"];
+                       [dic setValue:selfWeak.valueText.text forKey:@"nickname"];
+                       [NSTools setObject:dic forKey:UserInfo];
+                       [selfWeak.navigationController popViewControllerAnimated:YES];
+                   }
+                   else
+                   {
+                       [selfWeak showErrorHUD:result[@"message"]];
+                   }
                } failure:^(NSError *error) {
-                   
+                   [selfWeak hideHUD];
+                   [self showErrorHUD:@"网络异常"];
                }];
 }
 

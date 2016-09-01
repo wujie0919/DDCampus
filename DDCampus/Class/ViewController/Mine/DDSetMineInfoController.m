@@ -14,8 +14,11 @@
 static NSString * const avatarCell = @"avatarCell";
 static NSString * const valueCell = @"valueCell";
 
-@interface DDSetMineInfoController ()<UITableViewDelegate,UITableViewDataSource,UIActionSheetDelegate>
+@interface DDSetMineInfoController ()<UITableViewDelegate,UITableViewDataSource,UIActionSheetDelegate,UINavigationControllerDelegate, UIImagePickerControllerDelegate>
 @property (weak, nonatomic) IBOutlet DDTableView *valueTable;
+@property (nonatomic, copy) NSArray *array;
+@property (nonatomic, copy) NSArray *titleArray;
+@property (nonatomic, strong) UIImage *messageImage;
 @end
 
 @implementation DDSetMineInfoController
@@ -27,6 +30,13 @@ static NSString * const valueCell = @"valueCell";
     [_valueTable registerNib:[UINib nibWithNibName:@"DDSetAnthorCell" bundle:nil] forCellReuseIdentifier:valueCell];
     [self setBackBarButtonItem];
     self.title = @"资料修改";
+    _titleArray = @[@"昵称",@"手机号"];
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    _array = @[appDelegate.userModel.nickname,appDelegate.userModel.mobile];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -74,6 +84,7 @@ static NSString * const valueCell = @"valueCell";
     if (indexPath.section == 0) {
         DDSetAvatarCell *aCell = [tableView dequeueReusableCellWithIdentifier:avatarCell];
         aCell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+        [aCell.headerView getImageWithURL:[NSString stringWithFormat:@"%@%@",PicUrl,appDelegate.userModel.pic] placeholder:nil];
         return aCell;
     }
     else
@@ -82,7 +93,8 @@ static NSString * const valueCell = @"valueCell";
         if (indexPath.row == 0) {
             anCell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
         }
-        
+        anCell.title.text = _titleArray[indexPath.row];
+        anCell.value.text = _array[indexPath.row];
         return anCell;
     }
 }
@@ -100,6 +112,100 @@ static NSString * const valueCell = @"valueCell";
         UIActionSheet *actionSheet = [[UIActionSheet alloc]initWithTitle:nil delegate:self cancelButtonTitle:@"取消" destructiveButtonTitle:nil otherButtonTitles:@"拍照",@"从相册中选择", nil];
         actionSheet.actionSheetStyle = UIActionSheetStyleAutomatic;
         [actionSheet showInView:self.view];
+    }
+}
+
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    
+    UIImagePickerController *imagePickerController = [[UIImagePickerController alloc] init];
+    imagePickerController.delegate = self;
+    if (![NSTools isCameraAvalible]) {
+        
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:nil message:@"请在设置中开启相机权限" delegate:self cancelButtonTitle:nil otherButtonTitles:@"确定", nil];
+        
+        [alertView show];
+        return;
+    }
+    
+    if (![UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
+        
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Warnning" message:@"The camera is not supported on this device" delegate:self cancelButtonTitle:nil otherButtonTitles:@"OK", nil];
+        [alertView show];
+        return;
+    }
+    
+    //拍照
+    if (buttonIndex==0) {
+        imagePickerController.sourceType = UIImagePickerControllerSourceTypeCamera;
+        
+    }
+    if (buttonIndex == 1) {
+        imagePickerController.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+    }
+    imagePickerController.view.frame = self.view.bounds;
+    
+    imagePickerController.allowsEditing = YES;
+    
+    [self presentViewController:imagePickerController animated:YES completion:^{
+        
+    }];
+}
+
+
+#pragma mark - imagePickerControllerDelegate
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
+{
+    UIImage *image = nil;
+    if (picker.sourceType == UIImagePickerControllerSourceTypeCamera) {
+        //获取图片
+        image = [info objectForKey:UIImagePickerControllerOriginalImage];
+        //保存
+        UIImageWriteToSavedPhotosAlbum(image, self, @selector(image:didFinishSavingWithError:contextInfo:), nil);
+    }else
+    {
+        image = [info objectForKey:UIImagePickerControllerEditedImage];
+    }
+    _messageImage = [[image scaledToSize:CGSizeMake(720, 720 * 9.0 / 16.0)] fixOrientation];
+    [self updateAvatar];
+    [self dismissViewControllerAnimated:YES completion:NULL];
+}
+
+- (void)updateAvatar{
+    [self showLoadHUD:@"上传中..."];
+    @WeakObj(self);
+    [self Network_Post:@"do_saveheadpic" tag:Do_saveheadpic_Tag
+                 param:@{@"headerimg":UIImageJPEGRepresentation(_messageImage, 0.5)} success:^(id result) {
+                     [selfWeak hideHUD];
+                     if ([result[@"code"]integerValue]==200) {
+                         appDelegate.userModel.pic = result[DataKey];
+                         NSMutableDictionary *dic = [[USER_DEFAULT objectForKey:UserInfo] mutableCopy];
+                         [dic removeObjectForKey:@"pic"];
+                         [dic setValue:result[DataKey] forKey:@"pic"];
+                         [NSTools setObject:dic forKey:UserInfo];
+                         selfWeak.messageImage = nil;
+                         [selfWeak.valueTable reloadData];
+                     }
+                     else
+                     {
+                         [selfWeak showErrorHUD:result[@"message"]];
+                     }
+                     
+                 } failure:^(NSError *error) {
+                     [selfWeak hideHUD];
+                 }];
+}
+
+- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker
+{
+    [self dismissViewControllerAnimated:YES completion:NULL];
+}
+
+- (void)image:(UIImage *)image didFinishSavingWithError:(NSError *)error contextInfo:(void *)info
+{
+    if (!error) {
+    }else
+    {
     }
 }
 

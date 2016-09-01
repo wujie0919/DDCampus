@@ -20,8 +20,9 @@ NSString * const DataKey = @"data";
 NSString * const LikeStartValue = @"(like2016~!@#";
 NSString * const classname = @"classname";
 NSString * const GetClassNameSuccess = @"GetClassNameSuccess";
-NSString *const LZMoreButtonClickedNotification = @"LZMoreButtonClickedNotification";
-NSString *const LZMoreButtonClickedNotificationKey = @"LZMoreButtonClickedNotificationKey";
+NSString *const LZCommentClickedNotification = @"LZCommentClickedNotification";
+NSString *const LZCommentClickedNotificationKey = @"LZCommentClickedNotificationKey";
+NSString * const LZCommentViewNoticationKey = @"LZCommentViewNoticationKey";
 NSString * const TOKENOVERDUE=@"TOKENOVERDUE";
 @implementation DDExternValue
 

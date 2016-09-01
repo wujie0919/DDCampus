@@ -240,8 +240,15 @@
 		37CC62861D77C82B005D5CCA /* DDCurveViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37CC62841D77C82B005D5CCA /* DDCurveViewController.xib */; };
 		37CC628A1D77DE7D005D5CCA /* DDSubjeCtureCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 37CC62881D77DE7D005D5CCA /* DDSubjeCtureCell.m */; };
 		37CC628B1D77DE7D005D5CCA /* DDSubjeCtureCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37CC62891D77DE7D005D5CCA /* DDSubjeCtureCell.xib */; };
-		37CC628F1D77E6DE005D5CCA /* DDCommentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 37CC628E1D77E6DE005D5CCA /* DDCommentView.m */; };
-		37CC62971D77EB02005D5CCA /* YZInputView.m in Sources */ = {isa = PBXBuildFile; fileRef = 37CC62961D77EB02005D5CCA /* YZInputView.m */; };
+		37CC629B1D7802C6005D5CCA /* DDCreateScoreController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37CC62991D7802C6005D5CCA /* DDCreateScoreController.m */; };
+		37CC629C1D7802C6005D5CCA /* DDCreateScoreController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37CC629A1D7802C6005D5CCA /* DDCreateScoreController.xib */; };
+		37CC62A31D7811A3005D5CCA /* DDCommentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 37CC629F1D7811A3005D5CCA /* DDCommentView.m */; };
+		37CC62A41D7811A3005D5CCA /* YZInputView.m in Sources */ = {isa = PBXBuildFile; fileRef = 37CC62A21D7811A3005D5CCA /* YZInputView.m */; };
+		37CC62A81D78125A005D5CCA /* DDCommonView.m in Sources */ = {isa = PBXBuildFile; fileRef = 37CC62A71D78125A005D5CCA /* DDCommonView.m */; };
+		37CC62AB1D78126D005D5CCA /* DDCommonModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 37CC62AA1D78126D005D5CCA /* DDCommonModel.m */; };
+		37CC62AD1D7812CD005D5CCA /* DDCommonView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37CC62AC1D7812CD005D5CCA /* DDCommonView.xib */; };
+		37CC62B01D7815FA005D5CCA /* logout_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 37CC62AE1D7815FA005D5CCA /* logout_icon@2x.png */; };
+		37CC62B11D7815FA005D5CCA /* logout_icon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 37CC62AF1D7815FA005D5CCA /* logout_icon@3x.png */; };
 		37CDB47C1D71B01000C4EE77 /* ADD@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 37CDB47A1D71B01000C4EE77 /* ADD@2x.png */; };
 		37CDB47D1D71B01000C4EE77 /* ADD@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 37CDB47B1D71B01000C4EE77 /* ADD@3x.png */; };
 		37CDB4801D71B70400C4EE77 /* DDRoutineActionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 37CDB47F1D71B70400C4EE77 /* DDRoutineActionView.m */; };
@@ -780,10 +787,20 @@
 		37CC62871D77DE7D005D5CCA /* DDSubjeCtureCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDSubjeCtureCell.h; sourceTree = "<group>"; };
 		37CC62881D77DE7D005D5CCA /* DDSubjeCtureCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDSubjeCtureCell.m; sourceTree = "<group>"; };
 		37CC62891D77DE7D005D5CCA /* DDSubjeCtureCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DDSubjeCtureCell.xib; sourceTree = "<group>"; };
-		37CC628D1D77E6DE005D5CCA /* DDCommentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDCommentView.h; sourceTree = "<group>"; };
-		37CC628E1D77E6DE005D5CCA /* DDCommentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDCommentView.m; sourceTree = "<group>"; };
-		37CC62951D77EB02005D5CCA /* YZInputView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YZInputView.h; sourceTree = "<group>"; };
-		37CC62961D77EB02005D5CCA /* YZInputView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YZInputView.m; sourceTree = "<group>"; };
+		37CC62981D7802C6005D5CCA /* DDCreateScoreController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDCreateScoreController.h; sourceTree = "<group>"; };
+		37CC62991D7802C6005D5CCA /* DDCreateScoreController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDCreateScoreController.m; sourceTree = "<group>"; };
+		37CC629A1D7802C6005D5CCA /* DDCreateScoreController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DDCreateScoreController.xib; sourceTree = "<group>"; };
+		37CC629E1D7811A3005D5CCA /* DDCommentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDCommentView.h; sourceTree = "<group>"; };
+		37CC629F1D7811A3005D5CCA /* DDCommentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDCommentView.m; sourceTree = "<group>"; };
+		37CC62A11D7811A3005D5CCA /* YZInputView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YZInputView.h; sourceTree = "<group>"; };
+		37CC62A21D7811A3005D5CCA /* YZInputView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YZInputView.m; sourceTree = "<group>"; };
+		37CC62A61D78125A005D5CCA /* DDCommonView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDCommonView.h; sourceTree = "<group>"; };
+		37CC62A71D78125A005D5CCA /* DDCommonView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDCommonView.m; sourceTree = "<group>"; };
+		37CC62A91D78126D005D5CCA /* DDCommonModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDCommonModel.h; sourceTree = "<group>"; };
+		37CC62AA1D78126D005D5CCA /* DDCommonModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDCommonModel.m; sourceTree = "<group>"; };
+		37CC62AC1D7812CD005D5CCA /* DDCommonView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DDCommonView.xib; sourceTree = "<group>"; };
+		37CC62AE1D7815FA005D5CCA /* logout_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logout_icon@2x.png"; sourceTree = "<group>"; };
+		37CC62AF1D7815FA005D5CCA /* logout_icon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logout_icon@3x.png"; sourceTree = "<group>"; };
 		37CDB47A1D71B01000C4EE77 /* ADD@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ADD@2x.png"; sourceTree = "<group>"; };
 		37CDB47B1D71B01000C4EE77 /* ADD@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ADD@3x.png"; sourceTree = "<group>"; };
 		37CDB47E1D71B70400C4EE77 /* DDRoutineActionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDRoutineActionView.h; sourceTree = "<group>"; };
@@ -1193,6 +1210,8 @@
 		3710502C1D586DC10079FC85 /* Mine */ = {
 			isa = PBXGroup;
 			children = (
+				37CC62AE1D7815FA005D5CCA /* logout_icon@2x.png */,
+				37CC62AF1D7815FA005D5CCA /* logout_icon@3x.png */,
 				3797C7BC1D587BB1007C1EBD /* return@2x.png */,
 				3797C7BD1D587BB1007C1EBD /* return@3x.png */,
 				371050491D5875F40079FC85 /* PlaceholderCar.png */,
@@ -1270,6 +1289,9 @@
 				37CC62821D77C82B005D5CCA /* DDCurveViewController.h */,
 				37CC62831D77C82B005D5CCA /* DDCurveViewController.m */,
 				37CC62841D77C82B005D5CCA /* DDCurveViewController.xib */,
+				37CC62981D7802C6005D5CCA /* DDCreateScoreController.h */,
+				37CC62991D7802C6005D5CCA /* DDCreateScoreController.m */,
+				37CC629A1D7802C6005D5CCA /* DDCreateScoreController.xib */,
 			);
 			path = Score;
 			sourceTree = "<group>";
@@ -1807,23 +1829,35 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		37CC628C1D77E6C9005D5CCA /* CommentView */ = {
+		37CC629D1D7811A3005D5CCA /* CommentView */ = {
 			isa = PBXGroup;
 			children = (
-				37CC62941D77EB02005D5CCA /* InputView */,
-				37CC628D1D77E6DE005D5CCA /* DDCommentView.h */,
-				37CC628E1D77E6DE005D5CCA /* DDCommentView.m */,
+				37CC629E1D7811A3005D5CCA /* DDCommentView.h */,
+				37CC629F1D7811A3005D5CCA /* DDCommentView.m */,
+				37CC62A01D7811A3005D5CCA /* InputView */,
 			);
 			path = CommentView;
 			sourceTree = "<group>";
 		};
-		37CC62941D77EB02005D5CCA /* InputView */ = {
+		37CC62A01D7811A3005D5CCA /* InputView */ = {
 			isa = PBXGroup;
 			children = (
-				37CC62951D77EB02005D5CCA /* YZInputView.h */,
-				37CC62961D77EB02005D5CCA /* YZInputView.m */,
+				37CC62A11D7811A3005D5CCA /* YZInputView.h */,
+				37CC62A21D7811A3005D5CCA /* YZInputView.m */,
 			);
 			path = InputView;
+			sourceTree = "<group>";
+		};
+		37CC62A51D7811F9005D5CCA /* CommonView */ = {
+			isa = PBXGroup;
+			children = (
+				37CC62A61D78125A005D5CCA /* DDCommonView.h */,
+				37CC62A71D78125A005D5CCA /* DDCommonView.m */,
+				37CC62AC1D7812CD005D5CCA /* DDCommonView.xib */,
+				37CC62A91D78126D005D5CCA /* DDCommonModel.h */,
+				37CC62AA1D78126D005D5CCA /* DDCommonModel.m */,
+			);
+			path = CommonView;
 			sourceTree = "<group>";
 		};
 		37CDB4791D71B01000C4EE77 /* Routine */ = {
@@ -2344,7 +2378,8 @@
 		9389F34C1D50EF1400055E3B /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
-				37CC628C1D77E6C9005D5CCA /* CommentView */,
+				37CC62A51D7811F9005D5CCA /* CommonView */,
+				37CC629D1D7811A3005D5CCA /* CommentView */,
 				379B970F1D75C09900BADBFA /* DNImagePicker */,
 				3725BC851D758FBE0034C36C /* KeyBoard */,
 				3725BC4D1D7546670034C36C /* XTLoopScroll */,
@@ -2568,6 +2603,7 @@
 				37CC627C1D77BF6C005D5CCA /* DDStudentScoreInfoCell.xib in Resources */,
 				379B973E1D75C09900BADBFA /* DNImagePickerController.strings in Resources */,
 				37EC84F01D77018800AD223C /* DDGroupInfoFooterView.xib in Resources */,
+				37CC62B01D7815FA005D5CCA /* logout_icon@2x.png in Resources */,
 				37FE3EED1D70120A00BFF358 /* zan@3x.png in Resources */,
 				37ECCD6A1D713C4A00B91B3D /* DDUnSubmitValueCell.xib in Resources */,
 				378CC4EF1D58174E00356039 /* icon_wo_normal@2x.png in Resources */,
@@ -2587,6 +2623,7 @@
 				37CC62441D773A8A005D5CCA /* DDScoreTrendCell.xib in Resources */,
 				37FE62231D660182004EA944 /* DDRoutineWeekCell.xib in Resources */,
 				373EF59D1D6AAF1F0031400C /* zuoye@3x.png in Resources */,
+				37CC62B11D7815FA005D5CCA /* logout_icon@3x.png in Resources */,
 				373EF5BE1D6B01AC0031400C /* notice@3x.png in Resources */,
 				373EF5991D6AAF1F0031400C /* zhiri@3x.png in Resources */,
 				37EC84EB1D76F51400AD223C /* member_select2x.png in Resources */,
@@ -2595,6 +2632,7 @@
 				378CC4D21D58159400356039 /* icon_home_selected@3x.png in Resources */,
 				934BD84F1D53982A00BB238A /* DDLoginController.xib in Resources */,
 				37EC84EA1D76F51400AD223C /* member_select@3x.png in Resources */,
+				37CC62AD1D7812CD005D5CCA /* DDCommonView.xib in Resources */,
 				378CC4F11D58174E00356039 /* icon_wo_selected@2x.png in Resources */,
 				378CC4E21D5816B400356039 /* icon_shi_selected@2x.png in Resources */,
 				371050161D582DBF0079FC85 /* icon_lock@2x.png in Resources */,
@@ -2649,6 +2687,7 @@
 				378CC4DF1D5816B400356039 /* icon_shi_normal@2x.png in Resources */,
 				3725BCC31D7595D30034C36C /* community_add@2x.png in Resources */,
 				3725BCDE1D7598FA0034C36C /* DDGroupInfoController.xib in Resources */,
+				37CC629C1D7802C6005D5CCA /* DDCreateScoreController.xib in Resources */,
 				379B97541D75DBD000BADBFA /* DDGroupApplyTableCell.xib in Resources */,
 				3725BCE31D759BB10034C36C /* DDGrounpNoticeController.xib in Resources */,
 				37FE621E1D660061004EA944 /* icon_jiantou@3x.png in Resources */,
@@ -2790,6 +2829,7 @@
 				9389F3371D50E93A00055E3B /* NSString+Custom.m in Sources */,
 				9389F3831D50EF1400055E3B /* ContextFilterLogFormatter.m in Sources */,
 				9389F2E11D50DEFD00055E3B /* AppDelegate.m in Sources */,
+				37CC62A41D7811A3005D5CCA /* YZInputView.m in Sources */,
 				37CC62701D77BA19005D5CCA /* DDStudentScoreView.m in Sources */,
 				3725BC711D756E6F0034C36C /* DDScoreInfoView.m in Sources */,
 				3725BCB71D758FBE0034C36C /* FaceButton.m in Sources */,
@@ -2866,11 +2906,11 @@
 				37ECCD5F1D7136B200B91B3D /* DDSubmitInfoCell.m in Sources */,
 				371050031D581A020079FC85 /* DDBaseViewController.m in Sources */,
 				379B97581D75DD0A00BADBFA /* DDGroupJoinCell.m in Sources */,
+				37CC629B1D7802C6005D5CCA /* DDCreateScoreController.m in Sources */,
 				9389F3321D50E93A00055E3B /* NSArray+Custom.m in Sources */,
 				37FE622F1D661559004EA944 /* DDRoutineRanController.m in Sources */,
 				3710501C1D582FDE0079FC85 /* MBProgressHUD+TCM.m in Sources */,
 				379B97421D75C09900BADBFA /* UIColor+Hex.m in Sources */,
-				37CC628F1D77E6DE005D5CCA /* DDCommentView.m in Sources */,
 				3725BCC01D758FBE0034C36C /* RFTextView.m in Sources */,
 				9389F33A1D50E93A00055E3B /* UIImage+Custom.m in Sources */,
 				379B973F1D75C09900BADBFA /* DNPhotoBrowser.m in Sources */,
@@ -2882,6 +2922,7 @@
 				37E1B1361D73DB9C00D012F0 /* NSString+MLExpression.m in Sources */,
 				37E1B0FC1D73DA4900D012F0 /* UIColor+Extension.m in Sources */,
 				37FC0FE51D6D7018001177A0 /* DDCommentCell.m in Sources */,
+				37CC62A31D7811A3005D5CCA /* DDCommentView.m in Sources */,
 				9389F3381D50E93A00055E3B /* UIButton+Custom.m in Sources */,
 				371050071D581BDF0079FC85 /* DDButton.m in Sources */,
 				9389F37C1D50EF1400055E3B /* ButtWithBlockActions.m in Sources */,
@@ -2905,6 +2946,7 @@
 				3725BCAF1D758FBE0034C36C /* NSString+Emoji.m in Sources */,
 				379B97611D7649D800BADBFA /* DDFindGroupCollectionViewCell.m in Sources */,
 				3796AB1E1D72A93B0066266F /* DDRoutineWeekView.m in Sources */,
+				37CC62A81D78125A005D5CCA /* DDCommonView.m in Sources */,
 				3796AB321D72F9410066266F /* DDCommunityView.m in Sources */,
 				379B974E1D75C09900BADBFA /* JKPromptView.m in Sources */,
 				37E1B1111D73DB1D00D012F0 /* LZBroadcastViewCell.m in Sources */,
@@ -2915,7 +2957,6 @@
 				37CC62501D773AC7005D5CCA /* DDShowKouFenView.m in Sources */,
 				9389F3801D50EF1400055E3B /* DDFileLogger.m in Sources */,
 				934BD8591D539A4B00BB238A /* DDNavigationController.m in Sources */,
-				37CC62971D77EB02005D5CCA /* YZInputView.m in Sources */,
 				37FE3ED71D6FF37400BFF358 /* DDHomeCellView.m in Sources */,
 				37FE622B1D6606BB004EA944 /* DDView.m in Sources */,
 				9389F3791D50EF1400055E3B /* RIButtonItem.m in Sources */,
@@ -2948,6 +2989,7 @@
 				37FC0FE01D6D7003001177A0 /* DDHomeLikeCell.m in Sources */,
 				3725BCBF1D758FBE0034C36C /* RFRecordButton.m in Sources */,
 				934BD84E1D53982A00BB238A /* DDLoginController.m in Sources */,
+				37CC62AB1D78126D005D5CCA /* DDCommonModel.m in Sources */,
 				379B97411D75C09900BADBFA /* NSURL+DNIMagePickerUrlEqual.m in Sources */,
 				379B975D1D76397B00BADBFA /* DDJoinModel.m in Sources */,
 				9389F3811D50EF1400055E3B /* DDLog.m in Sources */,

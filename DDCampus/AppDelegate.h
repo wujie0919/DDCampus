@@ -17,5 +17,6 @@
 @property (strong, nonatomic) DDUserModel *userModel;
 @property (strong, nonatomic) NSMutableArray *classArray;
 - (void)showControllerWithLoginSuccess;
+- (void)showLogin;
 @end
 

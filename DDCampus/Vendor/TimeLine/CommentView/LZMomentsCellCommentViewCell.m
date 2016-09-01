@@ -52,9 +52,9 @@
             SHOW_SIMPLE_TIPS(tips);
         }];
         
-        UITapGestureRecognizer *tapG = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tap)];
-        tapG.delegate = self;
-        [self.contentView addGestureRecognizer:tapG];
+//        UITapGestureRecognizer *tapG = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tap)];
+//        tapG.delegate = self;
+//        [self.contentView addGestureRecognizer:tapG];
         
         [_likeLabel mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.right.top.bottom.equalTo(self.contentView);
@@ -67,6 +67,7 @@
 - (void)tap
 {
     SHOW_SIMPLE_TIPS(@"tapped");
+    
 }
 
 - (void)setStatus:(LZMomentsCellCommentItemModel *)status

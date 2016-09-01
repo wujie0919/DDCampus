@@ -24,8 +24,9 @@ extern NSString * const classname;
 extern NSString * const GetClassNameSuccess;
 
 /** 点击朋友圈全文的通知 */
-extern NSString *const LZMoreButtonClickedNotification;
-extern NSString *const LZMoreButtonClickedNotificationKey;
+extern NSString *const LZCommentClickedNotification;
+extern NSString *const LZCommentClickedNotificationKey;
+extern NSString * const LZCommentViewNoticationKey;
 
 extern NSString * const TOKENOVERDUE;
 @interface DDExternValue : NSObject

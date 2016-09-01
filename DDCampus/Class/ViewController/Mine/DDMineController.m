@@ -16,7 +16,7 @@
 static NSString * const mineCell = @"mineCell";
 static NSString * const headerCell = @"header";
 
-@interface DDMineController ()<UITableViewDelegate,UITableViewDataSource>
+@interface DDMineController ()<UITableViewDelegate,UITableViewDataSource,UIAlertViewDelegate>
 @property (weak, nonatomic) IBOutlet DDTableView *mineTable;
 @property (nonatomic, copy) NSArray *titleArray;
 @property (nonatomic, copy) NSArray *imageArray;
@@ -33,10 +33,14 @@ static NSString * const headerCell = @"header";
     _titleArray = @[@"修改密码",@"服务协议",@"我的帮助"];
     _imageArray = @[[UIImage imageNamed:@"setup"],[UIImage imageNamed:@"agreement"],[UIImage imageNamed:@"help"]];
 }
-
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [_mineTable reloadData];
+}
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 5;
+    return 6;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -45,7 +49,8 @@ static NSString * const headerCell = @"header";
     if (section == 2) {
         row = 3;
     }
-    if (section == 4) {
+    if(section ==5)
+    {
         row = 0;
     }
     return  row;
@@ -85,7 +90,7 @@ static NSString * const headerCell = @"header";
     if (section == 0) {
         DDMineAvatarViewCell *avatarCell = [tableView dequeueReusableCellWithIdentifier:headerCell];
         avatarCell.nicknameLabel.text = appDelegate.userModel.nickname;
-        avatarCell.avatarImageView.image = [UIImage imageNamed:@"PlaceholderCar"];
+        [avatarCell.avatarImageView getImageWithURL:[NSString stringWithFormat:@"%@%@",PicUrl,appDelegate.userModel.pic] placeholder:nil];
         return avatarCell;
     }
     if (section == 1) {
@@ -101,6 +106,10 @@ static NSString * const headerCell = @"header";
     if (section == 3) {
         mCell.iconImage.image = [UIImage imageNamed:@"feedback"];
         mCell.title.text = @"反馈建议";
+    }
+    if (section == 4) {
+        mCell.iconImage.image = [UIImage imageNamed:@"logout_icon"];
+        mCell.title.text = @"退出登录";
     }
     return mCell;
 }
@@ -124,6 +133,23 @@ static NSString * const headerCell = @"header";
             DDEditPassController *editPassController = [[DDEditPassController alloc]initWithNibName:@"DDEditPassController" bundle:nil];
             [self.navigationController pushViewController:editPassController animated:YES];
         }
+    }
+    if (section==4) {
+        UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"提示" message:@"您确定退出吗？" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
+        [alert show];
+    }
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (buttonIndex == 1) {
+        [self Network_Post:@"logout" tag:Logout_Tag param:nil success:^(id result) {
+            if ([result[@"code"]integerValue]==200) {
+                [appDelegate showLogin];
+            }
+        } failure:^(NSError *error) {
+            
+        }];
     }
 }
 

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="DDCommonView">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="300"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="YRk-6D-YQc">
+                    <rect key="frame" x="5" y="10" width="310" height="226"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="HQ9-tx-mk1">
+                        <size key="itemSize" width="50" height="50"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                </collectionView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i99-iD-K56">
+                    <rect key="frame" x="5" y="246" width="310" height="44"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="VS0-gU-PGl"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <state key="normal" title="确定"/>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="i99-iD-K56" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="5" id="7Nv-66-RdG"/>
+                <constraint firstAttribute="trailing" secondItem="YRk-6D-YQc" secondAttribute="trailing" constant="5" id="H8F-Jq-s7U"/>
+                <constraint firstItem="YRk-6D-YQc" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="10" id="OmT-MX-ynv"/>
+                <constraint firstAttribute="bottom" secondItem="i99-iD-K56" secondAttribute="bottom" constant="10" id="bCv-YN-g5Q"/>
+                <constraint firstItem="i99-iD-K56" firstAttribute="top" secondItem="YRk-6D-YQc" secondAttribute="bottom" constant="10" id="gy1-iS-JeW"/>
+                <constraint firstItem="YRk-6D-YQc" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="5" id="kj5-Ex-975"/>
+                <constraint firstAttribute="trailing" secondItem="i99-iD-K56" secondAttribute="trailing" constant="5" id="uAk-I5-rrL"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="274" y="248"/>
+        </view>
+    </objects>
+</document>

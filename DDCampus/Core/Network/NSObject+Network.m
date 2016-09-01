@@ -39,7 +39,7 @@ static NSString * const HOST = @"http://dingding.wangjuyunhe.com/api.php?m=index
     return [self POST:[NSString stringWithFormat:@"%@%@",HOST,module]
                   tag:tag params:^(NSMutableDictionary *params) {
                       for (NSString *key in [param allKeys] ) {
-                          if([key isEqualToString:@"pic1"] || [key isEqualToString:@"pic2"] || [key isEqualToString:@"pic3"]) continue;
+                          if([key isEqualToString:@"pic1"] || [key isEqualToString:@"pic2"] || [key isEqualToString:@"pic3"] || [key isEqualToString:@"headerimg"]) continue;
                           [params setValue:param[key] forKey:key];
                       }
                       if (tag != Login_Tag) {
@@ -47,9 +47,9 @@ static NSString * const HOST = @"http://dingding.wangjuyunhe.com/api.php?m=index
                           [params setValue:[USER_DEFAULT objectForKey:token] forKey:token];
                       }
                   } bodyPart:^(id<AFMultipartFormData> formData) {
-                      if (tag == Do_forumpost_Tag) {
+                      if (tag == Do_forumpost_Tag || tag ==Do_saveheadpic_Tag) {
                           for (NSString *key in [param allKeys] ) {
-                              if([key isEqualToString:@"pic1"] || [key isEqualToString:@"pic2"] || [key isEqualToString:@"pic3"]) {
+                              if([key isEqualToString:@"pic1"] || [key isEqualToString:@"pic2"] || [key isEqualToString:@"pic3"] || [key isEqualToString:@"headerimg"]) {
                                   [formData appendPartWithFileData:param[key] name:key fileName:@"temp.jpg" mimeType:@"image/jpeg"];
                               }
                               else

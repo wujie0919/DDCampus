@@ -10,4 +10,5 @@
 
 @interface DDSetAvatarCell : UITableViewCell
 
+@property (weak, nonatomic) IBOutlet UIImageView *headerView;
 @end

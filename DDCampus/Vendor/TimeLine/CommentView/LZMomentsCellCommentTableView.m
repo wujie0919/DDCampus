@@ -97,6 +97,12 @@ static NSString * const HeaderFooterViewIdentifier = @"LZMomentsSectionHeaderVie
     return header;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    LZMomentsCellCommentViewCell *cell = ( LZMomentsCellCommentViewCell *)[self tableView:tableView cellForRowAtIndexPath:indexPath];
+    [[NSNotificationCenter defaultCenter] postNotificationName:LZCommentClickedNotification object:nil userInfo:@{LZCommentClickedNotificationKey:cell.status,LZCommentViewNoticationKey:_viewModel}];
+}
+
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
     if (self.likeItemsArray.count == 0)return 0;

@@ -11,6 +11,7 @@
 #import "DDRoutineSelectStudentModel.h"
 #import "DDScoreInfoListController.h"
 #import "DDCurveViewController.h"
+#import "DDCreateScoreController.h"
 
 @interface DDScoreInfoController ()<UIScrollViewDelegate>
 @property (nonatomic, strong) DDScoreInfoView *scoreView;
@@ -51,6 +52,27 @@
         _scoreVC.classId = _model.class_id;
     }
     [_scoreVC setIndex:_index];
+    NSInteger type = [appDelegate.userModel.type integerValue];
+    if (type==3) {
+        UIButton *rightButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        [rightButton setTitle:@"创建成绩单" forState:UIControlStateNormal];
+        rightButton.titleLabel.font = [UIFont systemFontOfSize:14];
+        rightButton.backgroundColor = RGB(48, 185, 113);
+        rightButton.frame = CGRectMake(0, 5, 80, 30);
+        rightButton.layer.cornerRadius= 5;
+        rightButton.layer.masksToBounds = YES;
+        rightButton.layer.borderColor = [UIColor whiteColor].CGColor;
+        rightButton.layer.borderWidth = 1;
+        [rightButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        [rightButton addTarget:self action:@selector(createScore) forControlEvents:UIControlEventTouchUpInside];
+        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:rightButton];
+    }
+}
+
+- (void)createScore
+{
+    DDCreateScoreController *createVC = [[DDCreateScoreController alloc]initWithNibName:@"DDCreateScoreController" bundle:nil];
+    [self.navigationController pushViewController:createVC animated:YES];
 }
 
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)sView
