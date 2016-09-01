@@ -44,6 +44,10 @@
         [self showErrorHUD:@"请输入群组介绍"];
         return;
     }
+    if ([_groupName.text characterLength]>10) {
+        [self showErrorHUD:@"群组名称不能多于5个汉字"];
+        return;
+    }
     @WeakObj(self);
     [self showLoadHUD:@"创建中..."];
     [self Network_Post:@"do_savegroup"

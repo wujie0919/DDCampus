@@ -29,6 +29,15 @@
     return YES;
 }
 
+-(NSInteger)characterLength
+{
+    
+    NSStringEncoding enc = CFStringConvertEncodingToNSStringEncoding(kCFStringEncodingGB_18030_2000);
+    
+    long length= [self lengthOfBytesUsingEncoding:enc];// 4
+    return length;
+}
+
 - (BOOL)validatePhone
 {
     NSString *phoneRegex = @"^((13[0-9])|(15[^4,\\D])|(14[57])|(17[0])|(17[7])|(18[0,0-9]))\\d{8}$";

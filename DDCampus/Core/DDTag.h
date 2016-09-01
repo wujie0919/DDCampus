@@ -61,4 +61,6 @@ static NSInteger const Getclassscoretrend_tag = 7006;
 //个人中心
 static NSInteger const Logout_Tag = 8001;
 static NSInteger const Do_saveheadpic_Tag = 8002;
+static NSInteger const Getagreement_Tag = 8003;
+static NSInteger const Gethelplist_Tag = 8004;
 #endif /* DDTag_h */

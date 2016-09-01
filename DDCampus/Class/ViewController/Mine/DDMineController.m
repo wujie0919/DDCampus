@@ -12,6 +12,8 @@
 #import "DDAdviseViewController.h"
 #import "DDEditPassController.h"
 #import "DDSetMineInfoController.h"
+#import "DDAgreementViewController.h"
+#import "DDMineHelpController.h"
 
 static NSString * const mineCell = @"mineCell";
 static NSString * const headerCell = @"header";
@@ -132,6 +134,16 @@ static NSString * const headerCell = @"header";
         if (row == 0) {
             DDEditPassController *editPassController = [[DDEditPassController alloc]initWithNibName:@"DDEditPassController" bundle:nil];
             [self.navigationController pushViewController:editPassController animated:YES];
+        }
+        else if(row == 1)
+        {
+            DDAgreementViewController *agreeVC = [[DDAgreementViewController alloc]initWithNibName:@"DDAgreementViewController" bundle:nil];
+            [self.navigationController pushViewController:agreeVC animated:YES];
+        }
+        else if (row==2)
+        {
+            DDMineHelpController *helpVC= [[DDMineHelpController alloc]initWithNibName:@"DDMineHelpController" bundle:nil];
+            [self.navigationController pushViewController:helpVC animated:YES];
         }
     }
     if (section==4) {

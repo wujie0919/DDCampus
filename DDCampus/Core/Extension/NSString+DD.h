@@ -21,4 +21,6 @@
  *  @return YES：有效  NO：无效
  */
 - (BOOL)isValidString;
+
+-(NSInteger)characterLength;
 @end

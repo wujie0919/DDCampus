@@ -249,6 +249,14 @@
 		37CC62AD1D7812CD005D5CCA /* DDCommonView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37CC62AC1D7812CD005D5CCA /* DDCommonView.xib */; };
 		37CC62B01D7815FA005D5CCA /* logout_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 37CC62AE1D7815FA005D5CCA /* logout_icon@2x.png */; };
 		37CC62B11D7815FA005D5CCA /* logout_icon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 37CC62AF1D7815FA005D5CCA /* logout_icon@3x.png */; };
+		37CC62B51D782020005D5CCA /* DDAgreementViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37CC62B31D782020005D5CCA /* DDAgreementViewController.m */; };
+		37CC62B61D782020005D5CCA /* DDAgreementViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37CC62B41D782020005D5CCA /* DDAgreementViewController.xib */; };
+		37CC62BA1D7822AA005D5CCA /* DDMineHelpController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37CC62B81D7822AA005D5CCA /* DDMineHelpController.m */; };
+		37CC62BB1D7822AA005D5CCA /* DDMineHelpController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37CC62B91D7822AA005D5CCA /* DDMineHelpController.xib */; };
+		37CC62BF1D782450005D5CCA /* DDMineHelpCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 37CC62BD1D782450005D5CCA /* DDMineHelpCell.m */; };
+		37CC62C01D782450005D5CCA /* DDMineHelpCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37CC62BE1D782450005D5CCA /* DDMineHelpCell.xib */; };
+		37CC62C31D782461005D5CCA /* DDHelpView.m in Sources */ = {isa = PBXBuildFile; fileRef = 37CC62C21D782461005D5CCA /* DDHelpView.m */; };
+		37CC62C51D782471005D5CCA /* DDHelpView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37CC62C41D782471005D5CCA /* DDHelpView.xib */; };
 		37CDB47C1D71B01000C4EE77 /* ADD@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 37CDB47A1D71B01000C4EE77 /* ADD@2x.png */; };
 		37CDB47D1D71B01000C4EE77 /* ADD@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 37CDB47B1D71B01000C4EE77 /* ADD@3x.png */; };
 		37CDB4801D71B70400C4EE77 /* DDRoutineActionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 37CDB47F1D71B70400C4EE77 /* DDRoutineActionView.m */; };
@@ -801,6 +809,18 @@
 		37CC62AC1D7812CD005D5CCA /* DDCommonView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DDCommonView.xib; sourceTree = "<group>"; };
 		37CC62AE1D7815FA005D5CCA /* logout_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logout_icon@2x.png"; sourceTree = "<group>"; };
 		37CC62AF1D7815FA005D5CCA /* logout_icon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logout_icon@3x.png"; sourceTree = "<group>"; };
+		37CC62B21D782020005D5CCA /* DDAgreementViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDAgreementViewController.h; sourceTree = "<group>"; };
+		37CC62B31D782020005D5CCA /* DDAgreementViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDAgreementViewController.m; sourceTree = "<group>"; };
+		37CC62B41D782020005D5CCA /* DDAgreementViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DDAgreementViewController.xib; sourceTree = "<group>"; };
+		37CC62B71D7822AA005D5CCA /* DDMineHelpController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDMineHelpController.h; sourceTree = "<group>"; };
+		37CC62B81D7822AA005D5CCA /* DDMineHelpController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDMineHelpController.m; sourceTree = "<group>"; };
+		37CC62B91D7822AA005D5CCA /* DDMineHelpController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DDMineHelpController.xib; sourceTree = "<group>"; };
+		37CC62BC1D782450005D5CCA /* DDMineHelpCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDMineHelpCell.h; sourceTree = "<group>"; };
+		37CC62BD1D782450005D5CCA /* DDMineHelpCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDMineHelpCell.m; sourceTree = "<group>"; };
+		37CC62BE1D782450005D5CCA /* DDMineHelpCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DDMineHelpCell.xib; sourceTree = "<group>"; };
+		37CC62C11D782461005D5CCA /* DDHelpView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDHelpView.h; sourceTree = "<group>"; };
+		37CC62C21D782461005D5CCA /* DDHelpView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDHelpView.m; sourceTree = "<group>"; };
+		37CC62C41D782471005D5CCA /* DDHelpView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DDHelpView.xib; sourceTree = "<group>"; };
 		37CDB47A1D71B01000C4EE77 /* ADD@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ADD@2x.png"; sourceTree = "<group>"; };
 		37CDB47B1D71B01000C4EE77 /* ADD@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ADD@3x.png"; sourceTree = "<group>"; };
 		37CDB47E1D71B70400C4EE77 /* DDRoutineActionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDRoutineActionView.h; sourceTree = "<group>"; };
@@ -1203,6 +1223,12 @@
 				37B9518B1D5B0B2C00CA5E43 /* DDSetAnthorCell.h */,
 				37B9518C1D5B0B2C00CA5E43 /* DDSetAnthorCell.m */,
 				37B9518D1D5B0B2C00CA5E43 /* DDSetAnthorCell.xib */,
+				37CC62BC1D782450005D5CCA /* DDMineHelpCell.h */,
+				37CC62BD1D782450005D5CCA /* DDMineHelpCell.m */,
+				37CC62BE1D782450005D5CCA /* DDMineHelpCell.xib */,
+				37CC62C11D782461005D5CCA /* DDHelpView.h */,
+				37CC62C21D782461005D5CCA /* DDHelpView.m */,
+				37CC62C41D782471005D5CCA /* DDHelpView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -2165,6 +2191,12 @@
 				37B7DFA01D5B1B990072CCE7 /* DDSetValueController.h */,
 				37B7DFA11D5B1B990072CCE7 /* DDSetValueController.m */,
 				37B7DFA21D5B1B990072CCE7 /* DDSetValueController.xib */,
+				37CC62B21D782020005D5CCA /* DDAgreementViewController.h */,
+				37CC62B31D782020005D5CCA /* DDAgreementViewController.m */,
+				37CC62B41D782020005D5CCA /* DDAgreementViewController.xib */,
+				37CC62B71D7822AA005D5CCA /* DDMineHelpController.h */,
+				37CC62B81D7822AA005D5CCA /* DDMineHelpController.m */,
+				37CC62B91D7822AA005D5CCA /* DDMineHelpController.xib */,
 			);
 			path = Mine;
 			sourceTree = "<group>";
@@ -2540,6 +2572,7 @@
 				3796AB0F1D724F020066266F /* er@2x.png in Resources */,
 				37EC84CC1D76D50400AD223C /* DDGroupInfoUserCell.xib in Resources */,
 				9389F2EC1D50DEFD00055E3B /* LaunchScreen.storyboard in Resources */,
+				37CC62C01D782450005D5CCA /* DDMineHelpCell.xib in Resources */,
 				3725BC5D1D754D930034C36C /* DDSelectClassInfoCell.xib in Resources */,
 				37ECCD511D7135F400B91B3D /* DDNoSubmitInfoCell.xib in Resources */,
 				934BD83B1D5397DF00BB238A /* DDHomeWorkController.xib in Resources */,
@@ -2579,6 +2612,7 @@
 				373EF5971D6AAF1F0031400C /* tuo@3x.png in Resources */,
 				376E305C1D64CD1F0078850A /* DDRoutineBtnView.xib in Resources */,
 				9389F2E91D50DEFD00055E3B /* Assets.xcassets in Resources */,
+				37CC62B61D782020005D5CCA /* DDAgreementViewController.xib in Resources */,
 				3710504F1D5877570079FC85 /* DDAdviseViewController.xib in Resources */,
 				3796AB121D724F020066266F /* err@3x.png in Resources */,
 				3725BCE71D75A01E0034C36C /* write@3x.png in Resources */,
@@ -2634,6 +2668,7 @@
 				37EC84EA1D76F51400AD223C /* member_select@3x.png in Resources */,
 				37CC62AD1D7812CD005D5CCA /* DDCommonView.xib in Resources */,
 				378CC4F11D58174E00356039 /* icon_wo_selected@2x.png in Resources */,
+				37CC62C51D782471005D5CCA /* DDHelpView.xib in Resources */,
 				378CC4E21D5816B400356039 /* icon_shi_selected@2x.png in Resources */,
 				371050161D582DBF0079FC85 /* icon_lock@2x.png in Resources */,
 				3796AB251D72DA950066266F /* DDRoutineMoreView.xib in Resources */,
@@ -2663,6 +2698,7 @@
 				373EF5831D6AA9DB0031400C /* DDButtonView.xib in Resources */,
 				37767DCC1D5F0746001790CC /* DDHomeworkCell.xib in Resources */,
 				37CC62811D77C155005D5CCA /* DDStudentScoreCollectionCell.xib in Resources */,
+				37CC62BB1D7822AA005D5CCA /* DDMineHelpController.xib in Resources */,
 				37EC84E01D76E66200AD223C /* DDGroupMemberUserViewCell.xib in Resources */,
 				37CC62681D77A727005D5CCA /* DDTeacherScoreTableViewCell.xib in Resources */,
 				3725BCE61D75A01E0034C36C /* write@2x.png in Resources */,
@@ -2863,6 +2899,7 @@
 				37E1B15A1D73DD5200D012F0 /* LZMomentsListViewModel.m in Sources */,
 				37E1B0FB1D73DA4900D012F0 /* UIButton+Extension.m in Sources */,
 				3725BCE21D759BB10034C36C /* DDGrounpNoticeController.m in Sources */,
+				37CC62B51D782020005D5CCA /* DDAgreementViewController.m in Sources */,
 				9389F33F1D50E93A00055E3B /* UITextView+Custom.m in Sources */,
 				379B974A1D75C09900BADBFA /* DNFullImageButton.m in Sources */,
 				379B97531D75DBD000BADBFA /* DDGroupApplyTableCell.m in Sources */,
@@ -2895,6 +2932,7 @@
 				3725BCBB1D758FBE0034C36C /* PanelBottomView.m in Sources */,
 				373EF5811D6AA9CF0031400C /* DDButtonView.m in Sources */,
 				37FE3EE41D70098F00BFF358 /* SDWaitingView.m in Sources */,
+				37CC62C31D782461005D5CCA /* DDHelpView.m in Sources */,
 				379B97441D75C09900BADBFA /* UIViewController+DNImagePicker.m in Sources */,
 				3725BC571D754C4E0034C36C /* DDSelectClssController.m in Sources */,
 				379B974B1D75C09900BADBFA /* DNSendButton.m in Sources */,
@@ -2907,6 +2945,7 @@
 				371050031D581A020079FC85 /* DDBaseViewController.m in Sources */,
 				379B97581D75DD0A00BADBFA /* DDGroupJoinCell.m in Sources */,
 				37CC629B1D7802C6005D5CCA /* DDCreateScoreController.m in Sources */,
+				37CC62BA1D7822AA005D5CCA /* DDMineHelpController.m in Sources */,
 				9389F3321D50E93A00055E3B /* NSArray+Custom.m in Sources */,
 				37FE622F1D661559004EA944 /* DDRoutineRanController.m in Sources */,
 				3710501C1D582FDE0079FC85 /* MBProgressHUD+TCM.m in Sources */,
@@ -2964,6 +3003,7 @@
 				37E1B1001D73DA4900D012F0 /* UIView+Extension.m in Sources */,
 				37E1B1141D73DB1D00D012F0 /* LZPictureBrowserCell.m in Sources */,
 				371050431D5871B70079FC85 /* DDImageView.m in Sources */,
+				37CC62BF1D782450005D5CCA /* DDMineHelpCell.m in Sources */,
 				9389F3441D50E93A00055E3B /* NSError+HTTP.m in Sources */,
 				9389F3471D50E93A00055E3B /* NSObject+HTTP.m in Sources */,
 				37CC62431D773A8A005D5CCA /* DDScoreTrendCell.m in Sources */,
