@@ -27,3 +27,5 @@ pod 'YYText'
 pod 'ReactiveCocoa'
 
 pod 'UITableView+FDTemplateLayoutCell_Bell', '~> 1.5.0'
+
+pod 'MPPlot'

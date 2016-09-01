@@ -236,6 +236,12 @@
 		37CC627C1D77BF6C005D5CCA /* DDStudentScoreInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37CC627A1D77BF6C005D5CCA /* DDStudentScoreInfoCell.xib */; };
 		37CC62801D77C155005D5CCA /* DDStudentScoreCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 37CC627E1D77C155005D5CCA /* DDStudentScoreCollectionCell.m */; };
 		37CC62811D77C155005D5CCA /* DDStudentScoreCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37CC627F1D77C155005D5CCA /* DDStudentScoreCollectionCell.xib */; };
+		37CC62851D77C82B005D5CCA /* DDCurveViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37CC62831D77C82B005D5CCA /* DDCurveViewController.m */; };
+		37CC62861D77C82B005D5CCA /* DDCurveViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37CC62841D77C82B005D5CCA /* DDCurveViewController.xib */; };
+		37CC628A1D77DE7D005D5CCA /* DDSubjeCtureCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 37CC62881D77DE7D005D5CCA /* DDSubjeCtureCell.m */; };
+		37CC628B1D77DE7D005D5CCA /* DDSubjeCtureCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37CC62891D77DE7D005D5CCA /* DDSubjeCtureCell.xib */; };
+		37CC628F1D77E6DE005D5CCA /* DDCommentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 37CC628E1D77E6DE005D5CCA /* DDCommentView.m */; };
+		37CC62971D77EB02005D5CCA /* YZInputView.m in Sources */ = {isa = PBXBuildFile; fileRef = 37CC62961D77EB02005D5CCA /* YZInputView.m */; };
 		37CDB47C1D71B01000C4EE77 /* ADD@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 37CDB47A1D71B01000C4EE77 /* ADD@2x.png */; };
 		37CDB47D1D71B01000C4EE77 /* ADD@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 37CDB47B1D71B01000C4EE77 /* ADD@3x.png */; };
 		37CDB4801D71B70400C4EE77 /* DDRoutineActionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 37CDB47F1D71B70400C4EE77 /* DDRoutineActionView.m */; };
@@ -768,6 +774,16 @@
 		37CC627D1D77C155005D5CCA /* DDStudentScoreCollectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDStudentScoreCollectionCell.h; sourceTree = "<group>"; };
 		37CC627E1D77C155005D5CCA /* DDStudentScoreCollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDStudentScoreCollectionCell.m; sourceTree = "<group>"; };
 		37CC627F1D77C155005D5CCA /* DDStudentScoreCollectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DDStudentScoreCollectionCell.xib; sourceTree = "<group>"; };
+		37CC62821D77C82B005D5CCA /* DDCurveViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDCurveViewController.h; sourceTree = "<group>"; };
+		37CC62831D77C82B005D5CCA /* DDCurveViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDCurveViewController.m; sourceTree = "<group>"; };
+		37CC62841D77C82B005D5CCA /* DDCurveViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DDCurveViewController.xib; sourceTree = "<group>"; };
+		37CC62871D77DE7D005D5CCA /* DDSubjeCtureCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDSubjeCtureCell.h; sourceTree = "<group>"; };
+		37CC62881D77DE7D005D5CCA /* DDSubjeCtureCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDSubjeCtureCell.m; sourceTree = "<group>"; };
+		37CC62891D77DE7D005D5CCA /* DDSubjeCtureCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DDSubjeCtureCell.xib; sourceTree = "<group>"; };
+		37CC628D1D77E6DE005D5CCA /* DDCommentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDCommentView.h; sourceTree = "<group>"; };
+		37CC628E1D77E6DE005D5CCA /* DDCommentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDCommentView.m; sourceTree = "<group>"; };
+		37CC62951D77EB02005D5CCA /* YZInputView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YZInputView.h; sourceTree = "<group>"; };
+		37CC62961D77EB02005D5CCA /* YZInputView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YZInputView.m; sourceTree = "<group>"; };
 		37CDB47A1D71B01000C4EE77 /* ADD@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ADD@2x.png"; sourceTree = "<group>"; };
 		37CDB47B1D71B01000C4EE77 /* ADD@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ADD@3x.png"; sourceTree = "<group>"; };
 		37CDB47E1D71B70400C4EE77 /* DDRoutineActionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDRoutineActionView.h; sourceTree = "<group>"; };
@@ -1251,6 +1267,9 @@
 				3725BC7B1D7584CD0034C36C /* DDScoreInfoListController.h */,
 				3725BC7C1D7584CD0034C36C /* DDScoreInfoListController.m */,
 				3725BC7D1D7584CD0034C36C /* DDScoreInfoListController.xib */,
+				37CC62821D77C82B005D5CCA /* DDCurveViewController.h */,
+				37CC62831D77C82B005D5CCA /* DDCurveViewController.m */,
+				37CC62841D77C82B005D5CCA /* DDCurveViewController.xib */,
 			);
 			path = Score;
 			sourceTree = "<group>";
@@ -1292,6 +1311,9 @@
 				37CC627D1D77C155005D5CCA /* DDStudentScoreCollectionCell.h */,
 				37CC627E1D77C155005D5CCA /* DDStudentScoreCollectionCell.m */,
 				37CC627F1D77C155005D5CCA /* DDStudentScoreCollectionCell.xib */,
+				37CC62871D77DE7D005D5CCA /* DDSubjeCtureCell.h */,
+				37CC62881D77DE7D005D5CCA /* DDSubjeCtureCell.m */,
+				37CC62891D77DE7D005D5CCA /* DDSubjeCtureCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1783,6 +1805,25 @@
 				37ECCD4B1D71178A00B91B3D /* DDHomeworkDetailsModel.m */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		37CC628C1D77E6C9005D5CCA /* CommentView */ = {
+			isa = PBXGroup;
+			children = (
+				37CC62941D77EB02005D5CCA /* InputView */,
+				37CC628D1D77E6DE005D5CCA /* DDCommentView.h */,
+				37CC628E1D77E6DE005D5CCA /* DDCommentView.m */,
+			);
+			path = CommentView;
+			sourceTree = "<group>";
+		};
+		37CC62941D77EB02005D5CCA /* InputView */ = {
+			isa = PBXGroup;
+			children = (
+				37CC62951D77EB02005D5CCA /* YZInputView.h */,
+				37CC62961D77EB02005D5CCA /* YZInputView.m */,
+			);
+			path = InputView;
 			sourceTree = "<group>";
 		};
 		37CDB4791D71B01000C4EE77 /* Routine */ = {
@@ -2303,6 +2344,7 @@
 		9389F34C1D50EF1400055E3B /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
+				37CC628C1D77E6C9005D5CCA /* CommentView */,
 				379B970F1D75C09900BADBFA /* DNImagePicker */,
 				3725BC851D758FBE0034C36C /* KeyBoard */,
 				3725BC4D1D7546670034C36C /* XTLoopScroll */,
@@ -2519,6 +2561,7 @@
 				3725BCCA1D75961F0034C36C /* DDCreateGroupController.xib in Resources */,
 				3796AB201D72A9490066266F /* DDRoutineWeekView.xib in Resources */,
 				378CC4DA1D58165400356039 /* iocn_xue_selected@2x.png in Resources */,
+				37CC62861D77C82B005D5CCA /* DDCurveViewController.xib in Resources */,
 				37FC0FEA1D6D9364001177A0 /* like@3x.png in Resources */,
 				373EF5881D6AACA50031400C /* DDHomeButtonCell.xib in Resources */,
 				37B7DFA41D5B1B990072CCE7 /* DDSetValueController.xib in Resources */,
@@ -2540,6 +2583,7 @@
 				373EF5BA1D6B00360031400C /* score@3x.png in Resources */,
 				373EF5A11D6AAF740031400C /* tizuoye@3x.png in Resources */,
 				371050481D5873480079FC85 /* DDMineAvatarViewCell.xib in Resources */,
+				37CC628B1D77DE7D005D5CCA /* DDSubjeCtureCell.xib in Resources */,
 				37CC62441D773A8A005D5CCA /* DDScoreTrendCell.xib in Resources */,
 				37FE62231D660182004EA944 /* DDRoutineWeekCell.xib in Resources */,
 				373EF59D1D6AAF1F0031400C /* zuoye@3x.png in Resources */,
@@ -2826,6 +2870,7 @@
 				37FE622F1D661559004EA944 /* DDRoutineRanController.m in Sources */,
 				3710501C1D582FDE0079FC85 /* MBProgressHUD+TCM.m in Sources */,
 				379B97421D75C09900BADBFA /* UIColor+Hex.m in Sources */,
+				37CC628F1D77E6DE005D5CCA /* DDCommentView.m in Sources */,
 				3725BCC01D758FBE0034C36C /* RFTextView.m in Sources */,
 				9389F33A1D50E93A00055E3B /* UIImage+Custom.m in Sources */,
 				379B973F1D75C09900BADBFA /* DNPhotoBrowser.m in Sources */,
@@ -2870,6 +2915,7 @@
 				37CC62501D773AC7005D5CCA /* DDShowKouFenView.m in Sources */,
 				9389F3801D50EF1400055E3B /* DDFileLogger.m in Sources */,
 				934BD8591D539A4B00BB238A /* DDNavigationController.m in Sources */,
+				37CC62971D77EB02005D5CCA /* YZInputView.m in Sources */,
 				37FE3ED71D6FF37400BFF358 /* DDHomeCellView.m in Sources */,
 				37FE622B1D6606BB004EA944 /* DDView.m in Sources */,
 				9389F3791D50EF1400055E3B /* RIButtonItem.m in Sources */,
@@ -2920,6 +2966,7 @@
 				9389F3391D50E93A00055E3B /* UIColor+Custom.m in Sources */,
 				3710500A1D581DAA0079FC85 /* DDLabel.m in Sources */,
 				37FE62271D660282004EA944 /* DDRoutinDayController.m in Sources */,
+				37CC62851D77C82B005D5CCA /* DDCurveViewController.m in Sources */,
 				37E1B1531D73DD5200D012F0 /* LZMomentsCellCommentBgView.m in Sources */,
 				37E1B0FD1D73DA4900D012F0 /* UIImage+Extension.m in Sources */,
 				37EC84EE1D77017800AD223C /* DDGroupInfoFooterView.m in Sources */,
@@ -2927,6 +2974,7 @@
 				9389F3331D50E93A00055E3B /* NSData+Custom.m in Sources */,
 				37E1B1131D73DB1D00D012F0 /* LZPictureBrowser.m in Sources */,
 				37AF9A011D662505006302A3 /* DDRankHeaderView.m in Sources */,
+				37CC628A1D77DE7D005D5CCA /* DDSubjeCtureCell.m in Sources */,
 				37ECCD641D713A1F00B91B3D /* DDSubmitValueCell.m in Sources */,
 				3725BCBC1D758FBE0034C36C /* MorePanel.m in Sources */,
 			);

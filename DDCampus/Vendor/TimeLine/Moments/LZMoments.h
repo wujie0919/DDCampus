@@ -17,6 +17,7 @@
 @property (nonatomic, copy) NSString *msgContent;
 @property (nonatomic, strong) NSArray *picNamesArray;
 @property (nonatomic, copy) NSString *time;
+@property (nonatomic, copy) NSString *pid;
 
 @property (nonatomic, strong) NSArray<LZMomentsCellLikeItemModel *> *likeItemsArray;
 @property (nonatomic, strong) NSArray<LZMomentsCellCommentItemModel *> *commentItemsArray;

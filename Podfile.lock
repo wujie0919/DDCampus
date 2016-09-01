@@ -27,6 +27,7 @@ PODS:
   - Masonry (1.0.1)
   - MBProgressHUD (0.9.2)
   - MJRefresh (3.1.12)
+  - MPPlot (0.1.0)
   - ReactiveCocoa (2.5):
     - ReactiveCocoa/UI (= 2.5)
   - ReactiveCocoa/Core (2.5):
@@ -48,6 +49,7 @@ DEPENDENCIES:
   - Masonry
   - MBProgressHUD (~> 0.9.2)
   - MJRefresh
+  - MPPlot
   - ReactiveCocoa
   - SDWebImage (~> 3.7.3)
   - SVProgressHUD
@@ -61,12 +63,13 @@ SPEC CHECKSUMS:
   Masonry: a1a931a0d08870ed8ae415a2ea5ea68ebcac77df
   MBProgressHUD: 1569cf7ace17a8bac47aabfbb8580a49690386d1
   MJRefresh: b96cdb21c4aa75a7b07654311ab2f315c497e806
+  MPPlot: 722a40bbdfdbc5d929f0afc2c45e3b12b6816f4e
   ReactiveCocoa: e2db045570aa97c695e7aa97c2bcab222ae51f4a
   SDWebImage: c325cf02c30337336b95beff20a13df489ec0ec9
   SVProgressHUD: b0830714205bea1317ea1a2ebc71e5633af334d4
   UITableView+FDTemplateLayoutCell_Bell: ee65b057dbbe937bb6764f33d4ca6910d05a0efd
   YYText: ac09660c9ccd9b817f409a20caa6f5587444d2ae
 
-PODFILE CHECKSUM: 36b1cacee161209da049a831fa2003b718861404
+PODFILE CHECKSUM: 1dade5efa75b397fe56fefb4171c2386918dcc91
 
 COCOAPODS: 1.0.1

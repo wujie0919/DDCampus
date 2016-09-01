@@ -29,6 +29,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>MPPlot.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Masonry.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -67,7 +72,7 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>1BA49A2322119857190C85184BE3EAF0</key>
+		<key>1CE2302B453902851E036B9F6ABF3DB3</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -82,11 +87,6 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>5591E95A7626BBEC8E749C7080A826F5</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>55DBDD8B7D446F1D618F303A9FB53209</key>
 		<dict>
 			<key>primary</key>
@@ -97,12 +97,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>85C3BEDBD1374D39DE0BE6BDFEF561AF</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>9496D99E2D3488E657B9F415255339CD</key>
+		<key>823EC4148F8A02F24130F0A6DE11FC6B</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -112,12 +107,27 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>ED76363998F680D0F74B1DD1CA05EF3A</key>
+		<key>A2FCAFB73DCE33AD238C813C56D5F27C</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>F2F76AEB63E98ACBFDD80AC6442F98C0</key>
+		<key>A844E2A74DC9E8807A65133E32D8ED5F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>C5C426ED9BF17D31A2342C3A4A5669F6</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E53642A4CD76C0F8D9BF8EF73B5DF720</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E8D7CCBD4B071BF78FE62AEF0F09E8D9</key>
 		<dict>
 			<key>primary</key>
 			<true/>

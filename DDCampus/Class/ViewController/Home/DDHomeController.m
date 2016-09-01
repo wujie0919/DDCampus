@@ -21,18 +21,18 @@
 #import "LZMomentsListViewModel.h"
 #import "DDSelectClssController.h"
 #import "DDScoreInfoController.h"
-#import "ChatKeyBoard.h"
 #import "IQKeyboardManager.h"
 #import "DDTabBarController.h"
 #import "DDNavigationController.h"
 #import "DDRoutineController.h"
 #import "DDScoreInfoController.h"
+#import "DDCommentView.h"
 
 static NSString * const imageCell = @"imageCell";
 static NSString * const buttonCell = @"buttonCell";
 static NSString * const homeCell = @"homeCell";
 
-@interface DDHomeController ()<UITableViewDelegate,UITableViewDataSource,LZMomentsCellDelegate,ChatKeyBoardDelegate>
+@interface DDHomeController ()<UITableViewDelegate,UITableViewDataSource,LZMomentsCellDelegate,UITextViewDelegate>
 {
     NSInteger page;
 }
@@ -43,7 +43,8 @@ static NSString * const homeCell = @"homeCell";
 @property (nonatomic, copy) NSArray *buttonImageArray;
 @property (nonatomic, strong) NSMutableArray *dataArray;
 @property (nonatomic, strong) LZMomentsListViewModel *statusListViewModel;
-@property (nonatomic, strong) ChatKeyBoard *chatKeyBoard;
+@property (nonatomic, strong) DDCommentView *chatKeyBoard;
+@property (nonatomic, strong) NSIndexPath *index;
 // 显示评论弹窗的cell的indexPath
 @property (nonatomic, strong) NSIndexPath *cellIndexPath;
 @end
@@ -60,6 +61,7 @@ static NSString * const homeCell = @"homeCell";
     [_homeTable registerNib:[UINib nibWithNibName:@"DDHomeImageCell" bundle:nil] forCellReuseIdentifier:imageCell];
     [_homeTable registerNib:[UINib nibWithNibName:@"DDHomeButtonCell" bundle:nil] forCellReuseIdentifier:buttonCell];
 //    [_homeTable registerNib:[UINib nibWithNibName:@"DDHomeCell" bundle:nil] forCellReuseIdentifier:homeCell];
+    
     [_homeTable registerClass:[LZMomentsCell class] forCellReuseIdentifier:homeCell];
     @WeakObj(self);
     _homeTable.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
@@ -96,17 +98,30 @@ static NSString * const homeCell = @"homeCell";
     
 }
 
+- (void)keyboardHide:(NSNotification *)notif {
+    _chatKeyBoard.hidden = YES;
+    _chatKeyBoard.textView.text = @"";
+    if (_chatKeyBoard.hidden == YES) {
+        return;
+    }
+}
+
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
 //    [[IQKeyboardManager sharedManager]setKeyboardDistanceFromTextField:0];
     [IQKeyboardManager sharedManager].enableAutoToolbar = NO;
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(keyboardHide:)
+                                                 name:UIKeyboardWillHideNotification
+                                               object:nil];
 }
 
 - (void)viewWillDisappear:(BOOL)animated
 {
     [super viewDidDisappear:animated];
     [IQKeyboardManager sharedManager].enableAutoToolbar = YES;
+    [[NSNotificationCenter defaultCenter]removeObserver:self name:UIKeyboardWillHideNotification object:nil];
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -190,12 +205,12 @@ static NSString * const homeCell = @"homeCell";
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    [self.chatKeyBoard keyboardDownForComment];
+    [self.view endEditing:YES];
 }
 
 - (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView
 {
-    [self.chatKeyBoard keyboardDownForComment];
+    [self.view endEditing:YES];
 }
 
 - (void)showController:(NSInteger)tag{
@@ -263,6 +278,7 @@ static NSString * const homeCell = @"homeCell";
             NSMutableArray *array = [NSMutableArray new];
             for (NSDictionary *dic in result[DataKey][@"list"]) {
                 LZMoments *model = [LZMoments new];
+                model.pid = [NSString stringWithFormat:@"%@",dic[@"id"]];
                 model.iconName = [dic[@"pic"] isValidString]?[NSString stringWithFormat:@"%@%@",PicUrl,dic[@"pic"]]:@"";
                 model.name = dic[@"nickname"];
                 model.msgContent = dic[@"message"];
@@ -338,19 +354,29 @@ static NSString * const homeCell = @"homeCell";
 
 - (void)didClickcCommentButtonInCell:(LZMomentsCell *)cell
 {
-    
+    _index = [self.homeTable indexPathForCell:cell];
     if (!_chatKeyBoard) {
-        self.chatKeyBoard = [ChatKeyBoard keyBoardWithNavgationBarTranslucent:YES];
-        self.chatKeyBoard.delegate = self;
-        self.chatKeyBoard.allowVoice = NO;
-        self.chatKeyBoard.allowFace = NO;
-        self.chatKeyBoard.allowMore = NO;
-        self.chatKeyBoard.keyBoardStyle = KeyBoardStyleComment;
-        [self.view addSubview:self.chatKeyBoard];
+        _chatKeyBoard = [DDCommentView initComment:CGRectMake(0, SCREEN_HEIGHT-160, SCREEN_WIDTH, 50)];
+        _chatKeyBoard.backgroundColor = [UIColor whiteColor];
+        _chatKeyBoard.textView.delegate = self;
+        [_chatKeyBoard.textView becomeFirstResponder];
+        [self.view addSubview:_chatKeyBoard];
     }
-    [self.chatKeyBoard keyboardUpforComment];
+    if (_chatKeyBoard.hidden) {
+        _chatKeyBoard.hidden = NO;
+        [_chatKeyBoard.textView becomeFirstResponder];
+    }
+   
 }
-
+- (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text
+{
+    if ([text isEqualToString:@"\n"])
+    {
+        [self chatKeyBoardSendText:textView.text];
+        return NO;
+    }
+    return YES;
+}
 /**
  *  键盘回调，回答问题
  *
@@ -359,12 +385,45 @@ static NSString * const homeCell = @"homeCell";
 - (void)chatKeyBoardSendText:(NSString *)text
 {
     if ([text isValidString]) {
-        
+        LZMomentsViewModel *model = _dataArray[_index.row-2];
+        [self.view endEditing:YES];
+        [self showLoadHUD:@"提交中..."];
+        @WeakObj(self);
+        [self Network_Post:@"do_forumreply" tag:Do_forumreply_Tag
+                     param:@{@"pid":model.status.pid,
+                             @"comment":text,
+                             @"rpid":@"0"}
+                   success:^(id result) {
+                       
+                       if ([result[@"code"]integerValue]==200) {
+                           NSMutableArray *tempComments = [NSMutableArray new];
+                           for (NSDictionary *commentDic in model.status.commentItemsArray) {
+                               LZMomentsCellCommentItemModel *commentItemModel = [LZMomentsCellCommentItemModel new];
+                               commentItemModel.firstUserName = commentDic[@"nickname"];
+                               commentItemModel.firstUserId = commentDic[@"id"];
+                               commentItemModel.commentString =commentDic[@"comment"];
+                               [tempComments addObject:commentItemModel];
+                           }
+                           LZMomentsCellCommentItemModel *commentItemModel = [LZMomentsCellCommentItemModel new];
+                           commentItemModel.firstUserName = appDelegate.userModel.nickname;
+                           commentItemModel.firstUserId = appDelegate.userModel.user_id;
+                           commentItemModel.commentString =text;
+                           [tempComments addObject:commentItemModel];
+                           model.status.commentItemsArray = [tempComments copy];
+                           [selfWeak.dataArray replaceObjectAtIndex:_index.row-2 withObject:model];
+                           [selfWeak.homeTable reloadRowsAtIndexPaths:@[_index] withRowAnimation:UITableViewRowAnimationNone];
+                       }
+                       [selfWeak hideHUD];
+                   } failure:^(NSError *error) {
+                       
+                   }];
     }
     else{
         
     }
 }
+
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

@@ -10,6 +10,7 @@
 #import "DDScoreInfoView.h"
 #import "DDRoutineSelectStudentModel.h"
 #import "DDScoreInfoListController.h"
+#import "DDCurveViewController.h"
 
 @interface DDScoreInfoController ()<UIScrollViewDelegate>
 @property (nonatomic, strong) DDScoreInfoView *scoreView;
@@ -39,6 +40,12 @@
     _scrollview.contentSize = CGSizeMake(SCREEN_WIDTH*_scoreView.titleArray.count,SCREEN_HEIGHT-_scrollview.frame.size.height);
     _scoreVC = [[DDScoreInfoListController alloc]initWithNibName:@"DDScoreInfoListController" bundle:nil];
     [_scrollview addSubview:_scoreVC.view];
+    @WeakObj(self);
+    _scoreVC.block = ^(NSDictionary *dict){
+        DDCurveViewController *curveVC = [[DDCurveViewController alloc]initWithNibName:@"DDCurveViewController" bundle:nil];
+        curveVC.dic = dict;
+        [selfWeak.navigationController pushViewController:curveVC animated:YES];
+    };
     _scoreVC.view.frame = CGRectMake(self.index*SCREEN_WIDTH, 0, SCREEN_WIDTH, self.scrollview.frame.size.height);
     if (_model) {
         _scoreVC.classId = _model.class_id;

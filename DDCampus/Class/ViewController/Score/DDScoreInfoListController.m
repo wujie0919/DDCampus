@@ -108,6 +108,16 @@ static NSString * const studentcell = @"studentcell";
     }
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    if (_index == 1) {
+        if (_block) {
+            _block(_dataArray[indexPath.row]);
+        }
+    }
+}
+
 - (void)loadData
 {
     @WeakObj(self);
