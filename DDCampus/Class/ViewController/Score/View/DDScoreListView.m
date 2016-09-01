@@ -8,7 +8,6 @@
 
 #import "DDScoreListView.h"
 #import "DDTeacherScoreTableViewCell.h"
-#import "DDTeacherScoreView.h"
 
 static NSString * const scell= @"scell";
 
@@ -52,6 +51,8 @@ static NSString * const scell= @"scell";
     _scoreTable.dataSource = self;
     [_scoreTable registerNib:[UINib nibWithNibName:@"DDTeacherScoreTableViewCell" bundle:nil] forCellReuseIdentifier:scell];
     _array = [NSMutableArray new];
+    _scoreTable.userInteractionEnabled = NO;
+    _scoreTable.separatorStyle = UITableViewCellSeparatorStyleNone;
 }
 
 - (void)setData:(NSDictionary *)dic

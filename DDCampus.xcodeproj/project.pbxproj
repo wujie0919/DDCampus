@@ -230,8 +230,12 @@
 		37CC62631D779C94005D5CCA /* DDScoreTeacherCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37CC62611D779C94005D5CCA /* DDScoreTeacherCell.xib */; };
 		37CC62671D77A727005D5CCA /* DDTeacherScoreTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 37CC62651D77A727005D5CCA /* DDTeacherScoreTableViewCell.m */; };
 		37CC62681D77A727005D5CCA /* DDTeacherScoreTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37CC62661D77A727005D5CCA /* DDTeacherScoreTableViewCell.xib */; };
-		37CC626B1D77B39F005D5CCA /* DDTeacherScoreView.m in Sources */ = {isa = PBXBuildFile; fileRef = 37CC626A1D77B39F005D5CCA /* DDTeacherScoreView.m */; };
-		37CC626D1D77B3B1005D5CCA /* DDTeacherScoreView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37CC626C1D77B3B1005D5CCA /* DDTeacherScoreView.xib */; };
+		37CC62701D77BA19005D5CCA /* DDStudentScoreView.m in Sources */ = {isa = PBXBuildFile; fileRef = 37CC626F1D77BA19005D5CCA /* DDStudentScoreView.m */; };
+		37CC62721D77BA24005D5CCA /* DDStudentScoreView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37CC62711D77BA24005D5CCA /* DDStudentScoreView.xib */; };
+		37CC627B1D77BF6C005D5CCA /* DDStudentScoreInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 37CC62791D77BF6C005D5CCA /* DDStudentScoreInfoCell.m */; };
+		37CC627C1D77BF6C005D5CCA /* DDStudentScoreInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37CC627A1D77BF6C005D5CCA /* DDStudentScoreInfoCell.xib */; };
+		37CC62801D77C155005D5CCA /* DDStudentScoreCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 37CC627E1D77C155005D5CCA /* DDStudentScoreCollectionCell.m */; };
+		37CC62811D77C155005D5CCA /* DDStudentScoreCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37CC627F1D77C155005D5CCA /* DDStudentScoreCollectionCell.xib */; };
 		37CDB47C1D71B01000C4EE77 /* ADD@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 37CDB47A1D71B01000C4EE77 /* ADD@2x.png */; };
 		37CDB47D1D71B01000C4EE77 /* ADD@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 37CDB47B1D71B01000C4EE77 /* ADD@3x.png */; };
 		37CDB4801D71B70400C4EE77 /* DDRoutineActionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 37CDB47F1D71B70400C4EE77 /* DDRoutineActionView.m */; };
@@ -755,9 +759,15 @@
 		37CC62641D77A727005D5CCA /* DDTeacherScoreTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDTeacherScoreTableViewCell.h; sourceTree = "<group>"; };
 		37CC62651D77A727005D5CCA /* DDTeacherScoreTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDTeacherScoreTableViewCell.m; sourceTree = "<group>"; };
 		37CC62661D77A727005D5CCA /* DDTeacherScoreTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DDTeacherScoreTableViewCell.xib; sourceTree = "<group>"; };
-		37CC62691D77B39F005D5CCA /* DDTeacherScoreView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDTeacherScoreView.h; sourceTree = "<group>"; };
-		37CC626A1D77B39F005D5CCA /* DDTeacherScoreView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDTeacherScoreView.m; sourceTree = "<group>"; };
-		37CC626C1D77B3B1005D5CCA /* DDTeacherScoreView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DDTeacherScoreView.xib; sourceTree = "<group>"; };
+		37CC626E1D77BA19005D5CCA /* DDStudentScoreView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDStudentScoreView.h; sourceTree = "<group>"; };
+		37CC626F1D77BA19005D5CCA /* DDStudentScoreView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDStudentScoreView.m; sourceTree = "<group>"; };
+		37CC62711D77BA24005D5CCA /* DDStudentScoreView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DDStudentScoreView.xib; sourceTree = "<group>"; };
+		37CC62781D77BF6C005D5CCA /* DDStudentScoreInfoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDStudentScoreInfoCell.h; sourceTree = "<group>"; };
+		37CC62791D77BF6C005D5CCA /* DDStudentScoreInfoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDStudentScoreInfoCell.m; sourceTree = "<group>"; };
+		37CC627A1D77BF6C005D5CCA /* DDStudentScoreInfoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DDStudentScoreInfoCell.xib; sourceTree = "<group>"; };
+		37CC627D1D77C155005D5CCA /* DDStudentScoreCollectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDStudentScoreCollectionCell.h; sourceTree = "<group>"; };
+		37CC627E1D77C155005D5CCA /* DDStudentScoreCollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDStudentScoreCollectionCell.m; sourceTree = "<group>"; };
+		37CC627F1D77C155005D5CCA /* DDStudentScoreCollectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DDStudentScoreCollectionCell.xib; sourceTree = "<group>"; };
 		37CDB47A1D71B01000C4EE77 /* ADD@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ADD@2x.png"; sourceTree = "<group>"; };
 		37CDB47B1D71B01000C4EE77 /* ADD@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ADD@3x.png"; sourceTree = "<group>"; };
 		37CDB47E1D71B70400C4EE77 /* DDRoutineActionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDRoutineActionView.h; sourceTree = "<group>"; };
@@ -1273,9 +1283,15 @@
 				37CC62641D77A727005D5CCA /* DDTeacherScoreTableViewCell.h */,
 				37CC62651D77A727005D5CCA /* DDTeacherScoreTableViewCell.m */,
 				37CC62661D77A727005D5CCA /* DDTeacherScoreTableViewCell.xib */,
-				37CC62691D77B39F005D5CCA /* DDTeacherScoreView.h */,
-				37CC626A1D77B39F005D5CCA /* DDTeacherScoreView.m */,
-				37CC626C1D77B3B1005D5CCA /* DDTeacherScoreView.xib */,
+				37CC626E1D77BA19005D5CCA /* DDStudentScoreView.h */,
+				37CC626F1D77BA19005D5CCA /* DDStudentScoreView.m */,
+				37CC62711D77BA24005D5CCA /* DDStudentScoreView.xib */,
+				37CC62781D77BF6C005D5CCA /* DDStudentScoreInfoCell.h */,
+				37CC62791D77BF6C005D5CCA /* DDStudentScoreInfoCell.m */,
+				37CC627A1D77BF6C005D5CCA /* DDStudentScoreInfoCell.xib */,
+				37CC627D1D77C155005D5CCA /* DDStudentScoreCollectionCell.h */,
+				37CC627E1D77C155005D5CCA /* DDStudentScoreCollectionCell.m */,
+				37CC627F1D77C155005D5CCA /* DDStudentScoreCollectionCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -2506,6 +2522,7 @@
 				37FC0FEA1D6D9364001177A0 /* like@3x.png in Resources */,
 				373EF5881D6AACA50031400C /* DDHomeButtonCell.xib in Resources */,
 				37B7DFA41D5B1B990072CCE7 /* DDSetValueController.xib in Resources */,
+				37CC627C1D77BF6C005D5CCA /* DDStudentScoreInfoCell.xib in Resources */,
 				379B973E1D75C09900BADBFA /* DNImagePickerController.strings in Resources */,
 				37EC84F01D77018800AD223C /* DDGroupInfoFooterView.xib in Resources */,
 				37FE3EED1D70120A00BFF358 /* zan@3x.png in Resources */,
@@ -2513,6 +2530,7 @@
 				378CC4EF1D58174E00356039 /* icon_wo_normal@2x.png in Resources */,
 				3796AB371D72FC4F0066266F /* DDCommunityCell.xib in Resources */,
 				3725BCC41D7595D30034C36C /* community_add@3x.png in Resources */,
+				37CC62721D77BA24005D5CCA /* DDStudentScoreView.xib in Resources */,
 				3796AB101D724F020066266F /* er@3x.png in Resources */,
 				371050191D582DBF0079FC85 /* icon_phone@3x.png in Resources */,
 				378CC4D11D58159400356039 /* icon_home_selected@2x.png in Resources */,
@@ -2554,7 +2572,6 @@
 				37E7C4841D74A24D00291E1B /* LikeCmtBg@2x.png in Resources */,
 				37EC84DB1D76E47800AD223C /* DDGroupMemberController.xib in Resources */,
 				373EF59A1D6AAF1F0031400C /* zhou@2x.png in Resources */,
-				37CC626D1D77B3B1005D5CCA /* DDTeacherScoreView.xib in Resources */,
 				3710504A1D5875F40079FC85 /* PlaceholderCar.png in Resources */,
 				378CC4D71D58165400356039 /* icon_xue_normal@2x.png in Resources */,
 				37CDB4841D71B73400C4EE77 /* DDRoutineActionView.xib in Resources */,
@@ -2563,6 +2580,7 @@
 				373EF5951D6AAF1F0031400C /* chengji@2x.png in Resources */,
 				373EF5831D6AA9DB0031400C /* DDButtonView.xib in Resources */,
 				37767DCC1D5F0746001790CC /* DDHomeworkCell.xib in Resources */,
+				37CC62811D77C155005D5CCA /* DDStudentScoreCollectionCell.xib in Resources */,
 				37EC84E01D76E66200AD223C /* DDGroupMemberUserViewCell.xib in Resources */,
 				37CC62681D77A727005D5CCA /* DDTeacherScoreTableViewCell.xib in Resources */,
 				3725BCE61D75A01E0034C36C /* write@2x.png in Resources */,
@@ -2709,6 +2727,7 @@
 				3725BCBA1D758FBE0034C36C /* FaceThemeView.m in Sources */,
 				37E1B0F91D73DA4900D012F0 /* UIAlertView+Extension.m in Sources */,
 				3710500D1D581E110079FC85 /* DDTextField.m in Sources */,
+				37CC62801D77C155005D5CCA /* DDStudentScoreCollectionCell.m in Sources */,
 				9389F37B1D50EF1400055E3B /* UIAlertView+Blocks.m in Sources */,
 				37CC624D1D773AC7005D5CCA /* DDCuscomeLeftCell.m in Sources */,
 				3797C7C31D588047007C1EBD /* DDEditPassController.m in Sources */,
@@ -2727,6 +2746,7 @@
 				9389F3371D50E93A00055E3B /* NSString+Custom.m in Sources */,
 				9389F3831D50EF1400055E3B /* ContextFilterLogFormatter.m in Sources */,
 				9389F2E11D50DEFD00055E3B /* AppDelegate.m in Sources */,
+				37CC62701D77BA19005D5CCA /* DDStudentScoreView.m in Sources */,
 				3725BC711D756E6F0034C36C /* DDScoreInfoView.m in Sources */,
 				3725BCB71D758FBE0034C36C /* FaceButton.m in Sources */,
 				934BD8351D5397C200BB238A /* DDHomeController.m in Sources */,
@@ -2734,7 +2754,6 @@
 				37B9518E1D5B0B2C00CA5E43 /* DDSetAnthorCell.m in Sources */,
 				934BD8491D53981900BB238A /* DDCommunityController.m in Sources */,
 				3725BCBE1D758FBE0034C36C /* OfficialAccountToolbar.m in Sources */,
-				37CC626B1D77B39F005D5CCA /* DDTeacherScoreView.m in Sources */,
 				934BD83F1D5397F100BB238A /* DDMineController.m in Sources */,
 				9389F2DE1D50DEFD00055E3B /* main.m in Sources */,
 				37E1B0DD1D73D98B00D012F0 /* LZMomentsPictureCell.m in Sources */,
@@ -2750,6 +2769,7 @@
 				37EC84E31D76F33300AD223C /* DDGroupSetManagerModel.m in Sources */,
 				37D2112C1D5A367E0048A923 /* DDSetMineInfoController.m in Sources */,
 				37E1B0DE1D73D98B00D012F0 /* LZPhotoContainerView.m in Sources */,
+				37CC627B1D77BF6C005D5CCA /* DDStudentScoreInfoCell.m in Sources */,
 				3756DB7F1D6A879800FC9BEE /* DDExternValue.m in Sources */,
 				379B973C1D75C09900BADBFA /* DNImageFlowViewController.m in Sources */,
 				3725BCB11D758FBE0034C36C /* ChatToolBarItem.m in Sources */,

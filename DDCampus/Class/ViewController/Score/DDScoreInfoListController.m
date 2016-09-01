@@ -10,9 +10,11 @@
 #import "DDScoreTrendCell.h"
 #import "DDScoreTeacherCell.h"
 #import "UITableView+FDTemplateLayoutCell.h"
+#import "DDStudentScoreInfoCell.h"
 
 static NSString * const trend = @"trend";
 static NSString * const teacher = @"teacher";
+static NSString * const studentcell = @"studentcell";
 
 @interface DDScoreInfoListController ()<UITableViewDelegate,UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet DDTableView *dataTable;
@@ -31,7 +33,12 @@ static NSString * const teacher = @"teacher";
     _dataArray = [NSMutableArray new];
     _dataTable.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
         if (selfWeak.index==0) {
-            [selfWeak loadData];
+            if (selfWeak.type ==3) {
+                [selfWeak getScoreWithTeacher];
+            }
+            else{
+                [selfWeak loadData];
+            }
         }
         else{
             [selfWeak loadScoreRend];
@@ -39,7 +46,8 @@ static NSString * const teacher = @"teacher";
     }];
     [_dataTable registerNib:[UINib nibWithNibName:@"DDScoreTrendCell" bundle:nil] forCellReuseIdentifier:trend];
     [_dataTable registerNib:[UINib nibWithNibName:@"DDScoreTeacherCell" bundle:nil] forCellReuseIdentifier:teacher];
-    _dataTable.frame = CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT-80);
+    [_dataTable registerNib:[UINib nibWithNibName:@"DDStudentScoreInfoCell" bundle:nil] forCellReuseIdentifier:studentcell];
+    _dataTable.frame = CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT-30);
     _dataTable.separatorStyle = UITableViewCellSeparatorStyleNone;
 }
 
@@ -58,9 +66,15 @@ static NSString * const teacher = @"teacher";
     if (_index == 0) {
         if (_type==3) {
             DDScoreTeacherCell *cell = (DDScoreTeacherCell *)[self tableView:tableView cellForRowAtIndexPath:indexPath];
-            return cell.listView.height;
+            
+            return cell.listView.height+10;
         }
-        return 100;
+        else
+        {
+            DDStudentScoreInfoCell *scell = (DDStudentScoreInfoCell *)[self tableView:tableView cellForRowAtIndexPath:indexPath];
+            
+            return scell.scoreView.height+10;
+        }
     }
     else
         return 80;
@@ -72,9 +86,18 @@ static NSString * const teacher = @"teacher";
         if (_type==3) {
             DDScoreTeacherCell *cell = [tableView dequeueReusableCellWithIdentifier:teacher];
             [cell.listView setData:_array[indexPath.row]];
+            cell.backgroundColor =RGB(237, 238, 239);
+            cell.selectionStyle = UITableViewCellSelectionStyleNone;
             return cell;
         }
-        return nil;
+        else
+        {
+            DDStudentScoreInfoCell *scell = [tableView dequeueReusableCellWithIdentifier:studentcell];
+            [scell.scoreView setData:_array[indexPath.row]];
+            scell.backgroundColor =RGB(237, 238, 239);
+            scell.selectionStyle = UITableViewCellSelectionStyleNone;
+            return scell;
+        }
     }
     else
     {
@@ -91,6 +114,7 @@ static NSString * const teacher = @"teacher";
     [self Network_Post:@"getscore" tag:Getscore_Tag
                  param:nil
                success:^(id result) {
+                   [selfWeak.dataTable.mj_header endRefreshing];
                    if ([result[@"code"]integerValue]==200) {
                        NSMutableArray *data = [NSMutableArray arrayWithCapacity:0];
                        if ([result[DataKey]isKindOfClass:[NSArray class]]) {
@@ -110,6 +134,7 @@ static NSString * const teacher = @"teacher";
     [self Network_Post:@"getclassscore" tag:Getclassscore_Tag
                  param:@{@"classid":_classId}
                success:^(id result) {
+                   [selfWeak.dataTable.mj_header endRefreshing];
                    if ([result[@"code"]integerValue]==200) {
                        NSMutableArray *data = [NSMutableArray arrayWithCapacity:0];
                        if ([result[DataKey]isKindOfClass:[NSArray class]]) {
@@ -134,6 +159,7 @@ static NSString * const teacher = @"teacher";
                    tag:Getscoretrend_Tag
                  param:nil
                success:^(id result) {
+                   [selfWeak.dataTable.mj_header endRefreshing];
                    if ([result[@"code"]integerValue]==200) {
                        NSMutableArray *data = [NSMutableArray arrayWithCapacity:0];
                        if ([result[DataKey]isKindOfClass:[NSArray class]]) {
@@ -150,6 +176,7 @@ static NSString * const teacher = @"teacher";
 - (void)setIndex:(NSInteger)index
 {
     _index = index;
+    [self.dataTable reloadData];
     _type = [appDelegate.userModel.type integerValue];
     if (index == 0) {
         if (_type == 3) {
