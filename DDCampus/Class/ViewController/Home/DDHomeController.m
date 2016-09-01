@@ -254,7 +254,7 @@ static NSString * const homeCell = @"homeCell";
             [self.navigationController pushViewController:noticeVC animated:YES];
         }
     }
-    if (type == 1) {
+    else if (type == 1) {
         if (tag == 0) {
             DDTabBarController *tabController = (DDTabBarController *) appDelegate.window.rootViewController;
             tabController.selectedIndex = 1;
@@ -291,6 +291,48 @@ static NSString * const homeCell = @"homeCell";
             }
         }
     }
+    else if (type == 2)
+    {
+        if (tag == 0) {
+            DDTabBarController *tabController = (DDTabBarController *) appDelegate.window.rootViewController;
+            tabController.selectedIndex = 1;
+        }
+        else if (tag == 1) {
+            DDScoreInfoController *scoreVC = [[DDScoreInfoController alloc]initWithNibName:@"DDScoreInfoController" bundle:nil];
+            [self.navigationController pushViewController:scoreVC animated:YES];
+        }
+        else if (tag == 2)
+        {
+            DDTabBarController *tabController = (DDTabBarController *) appDelegate.window.rootViewController;
+            tabController.selectedIndex = 2;
+            if ([NSStringFromClass([tabController.selectedViewController classForCoder]) isEqualToString:@"DDNavigationController"]) {
+                DDNavigationController *navController = (DDNavigationController *)tabController.selectedViewController;
+                UIViewController *rootController = [navController.viewControllers lastObject];
+                if ([rootController isKindOfClass: [DDRoutineController class]]) {
+                    DDRoutineController *routineVC = (DDRoutineController *)rootController;
+                    routineVC.selectIndex = @"0";
+                }
+            }
+            
+        }
+        else if (tag == 3)
+        {
+            DDTabBarController *tabController = (DDTabBarController *) appDelegate.window.rootViewController;
+            tabController.selectedIndex = 2;
+            if ([NSStringFromClass([tabController.selectedViewController classForCoder]) isEqualToString:@"DDNavigationController"]) {
+                DDNavigationController *navController = (DDNavigationController *)tabController.selectedViewController;
+                UIViewController *rootController = [navController.viewControllers lastObject];
+                if ([rootController isKindOfClass: [DDRoutineController class]]) {
+                    DDRoutineController *routineVC = (DDRoutineController *)rootController;
+                    routineVC.selectIndex = @"1";
+                }
+            }
+        }else if (tag == 4)
+        {
+            DDTabBarController *tabController = (DDTabBarController *) appDelegate.window.rootViewController;
+            tabController.selectedIndex = 1;
+        }
+    }
 }
 
 
@@ -301,61 +343,63 @@ static NSString * const homeCell = @"homeCell";
         [selfWeak.homeTable.mj_footer endRefreshing];
         if ([result[@"code"]integerValue]==200) {
             NSMutableArray *array = [NSMutableArray new];
-            for (NSDictionary *dic in result[DataKey][@"list"]) {
-                LZMoments *model = [LZMoments new];
-                model.pid = [NSString stringWithFormat:@"%@",dic[@"id"]];
-                model.iconName = [dic[@"pic"] isValidString]?[NSString stringWithFormat:@"%@%@",PicUrl,dic[@"pic"]]:@"";
-                model.name = dic[@"nickname"];
-                model.msgContent = dic[@"message"];
-                NSMutableArray *imageArray = [NSMutableArray arrayWithCapacity:0];
-                if ([dic[@"pic1"] isValidString]) {
-                    [imageArray addObject:[dic[@"pic1"] isValidString]?[NSString stringWithFormat:@"%@%@",PicUrl,dic[@"pic1"]]:@""];
-                }
-                if ([dic[@"pic2"] isValidString]) {
-                    [imageArray addObject:[dic[@"pic2"] isValidString]?[NSString stringWithFormat:@"%@%@",PicUrl,dic[@"pic2"]]:@""];
-                }
-                if ([dic[@"pic3"] isValidString]) {
-                    [imageArray addObject:[dic[@"pic3"] isValidString]?[NSString stringWithFormat:@"%@%@",PicUrl,dic[@"pic3"]]:@""];
-                }
-                model.picNamesArray = imageArray;
-                //点赞
-                if ([dic[@"cklikelist"]isKindOfClass:[NSArray class]]) {
-                    NSMutableArray *tempLikeItems = [NSMutableArray new];
-                    for (NSDictionary *zanDic in dic[@"cklikelist"]) {
-                        LZMomentsCellLikeItemModel *likeModel = [[LZMomentsCellLikeItemModel alloc] init];
-                        likeModel.userId = zanDic[@"uid"];
-                        likeModel.userName = zanDic[@"nickname"];
-                        [tempLikeItems addObject:likeModel];
+            if ([result[DataKey][@"list"] isKindOfClass:[NSArray class]]) {
+                for (NSDictionary *dic in result[DataKey][@"list"]) {
+                    LZMoments *model = [LZMoments new];
+                    model.pid = [NSString stringWithFormat:@"%@",dic[@"id"]];
+                    model.iconName = [dic[@"pic"] isValidString]?[NSString stringWithFormat:@"%@%@",PicUrl,dic[@"pic"]]:@"";
+                    model.name = dic[@"nickname"];
+                    model.msgContent = dic[@"message"];
+                    NSMutableArray *imageArray = [NSMutableArray arrayWithCapacity:0];
+                    if ([dic[@"pic1"] isValidString]) {
+                        [imageArray addObject:[dic[@"pic1"] isValidString]?[NSString stringWithFormat:@"%@%@",PicUrl,dic[@"pic1"]]:@""];
                     }
-                     model.likeItemsArray = [tempLikeItems copy];
-                }
-                if ([dic[@"replylist"]isKindOfClass:[NSArray class]]) {
-                     NSMutableArray *tempComments = [NSMutableArray new];
-                    for (NSDictionary *commentDic in dic[@"replylist"]) {
-                        LZMomentsCellCommentItemModel *commentItemModel = [LZMomentsCellCommentItemModel new];
-                        commentItemModel.firstUserName = commentDic[@"nickname"];
-                        commentItemModel.rpid = [NSString stringWithFormat:@"%@",commentDic[@"rpid"]];
-                        commentItemModel.firstUserId = commentDic[@"id"];
-                        commentItemModel.commentString =commentDic[@"comment"];
-                        [tempComments addObject:commentItemModel];
+                    if ([dic[@"pic2"] isValidString]) {
+                        [imageArray addObject:[dic[@"pic2"] isValidString]?[NSString stringWithFormat:@"%@%@",PicUrl,dic[@"pic2"]]:@""];
                     }
-                     model.commentItemsArray = [tempComments copy];
+                    if ([dic[@"pic3"] isValidString]) {
+                        [imageArray addObject:[dic[@"pic3"] isValidString]?[NSString stringWithFormat:@"%@%@",PicUrl,dic[@"pic3"]]:@""];
+                    }
+                    model.picNamesArray = imageArray;
+                    //点赞
+                    if ([dic[@"cklikelist"]isKindOfClass:[NSArray class]]) {
+                        NSMutableArray *tempLikeItems = [NSMutableArray new];
+                        for (NSDictionary *zanDic in dic[@"cklikelist"]) {
+                            LZMomentsCellLikeItemModel *likeModel = [[LZMomentsCellLikeItemModel alloc] init];
+                            likeModel.userId = zanDic[@"uid"];
+                            likeModel.userName = zanDic[@"nickname"];
+                            [tempLikeItems addObject:likeModel];
+                        }
+                        model.likeItemsArray = [tempLikeItems copy];
+                    }
+                    if ([dic[@"replylist"]isKindOfClass:[NSArray class]]) {
+                        NSMutableArray *tempComments = [NSMutableArray new];
+                        for (NSDictionary *commentDic in dic[@"replylist"]) {
+                            LZMomentsCellCommentItemModel *commentItemModel = [LZMomentsCellCommentItemModel new];
+                            commentItemModel.firstUserName = commentDic[@"nickname"];
+                            commentItemModel.rpid = [NSString stringWithFormat:@"%@",commentDic[@"rpid"]];
+                            commentItemModel.firstUserId = commentDic[@"id"];
+                            commentItemModel.commentString =commentDic[@"comment"];
+                            [tempComments addObject:commentItemModel];
+                        }
+                        model.commentItemsArray = [tempComments copy];
+                    }
+                    LZMomentsViewModel *momentsViewModel = [LZMomentsViewModel viewModelWithStatus:model];
+                    [array addObject:momentsViewModel];
                 }
-                LZMomentsViewModel *momentsViewModel = [LZMomentsViewModel viewModelWithStatus:model];
-                [array addObject:momentsViewModel];
+                selfWeak.homeModel.usertype = result[DataKey][@"usertype"];
+                selfWeak.homeModel.totalcount = result[DataKey][@"totalcount"];
+                selfWeak.homeModel.totalpages = result[DataKey][@"totalpages"];
+                selfWeak.homeModel.lunbolist = result[DataKey][@"lunbolist"];
+                if (page==1) {
+                    selfWeak.dataArray = array;
+                }
+                else
+                {
+                    [selfWeak.dataArray addObjectsFromArray:array];
+                }
+                [selfWeak.homeTable reloadData];
             }
-            selfWeak.homeModel.usertype = result[DataKey][@"usertype"];
-            selfWeak.homeModel.totalcount = result[DataKey][@"totalcount"];
-            selfWeak.homeModel.totalpages = result[DataKey][@"totalpages"];
-            selfWeak.homeModel.lunbolist = result[DataKey][@"lunbolist"];
-            if (page==1) {
-                selfWeak.dataArray = array;
-            }
-            else
-            {
-                [selfWeak.dataArray addObjectsFromArray:array];
-            }
-            [selfWeak.homeTable reloadData];
         }
     } failure:^(NSError *error) {
         [selfWeak.homeTable.mj_header endRefreshing];
