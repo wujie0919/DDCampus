@@ -56,21 +56,26 @@ static NSString * const homeCell = @"homeCell";
     _headerView = [DDCommunityHeaderView headerView:CGRectMake(0, 0, SCREEN_WIDTH, 45) selectBlock:^(NSInteger tag, DDCommounityModel *model) {
         selfWeak.type = [NSString stringWithFormat:@"%ld",(long)model.type];
         selfWeak.commounityModel = model;
-        NSMutableArray *array = selfWeak.dataDic[selfWeak.type];
+        if (model.type == 3) {
+            selfWeak.groupId = [NSString stringWithFormat:@"%ld",(long)model.groupId];
+            selfWeak.staticDataKey = selfWeak.groupId;
+            [selfWeak.pageDic setObject:@(1) forKey:selfWeak.groupId];
+        }
+        else
+        {
+            selfWeak.staticDataKey = selfWeak.type;
+            [selfWeak.pageDic setObject:@(1) forKey:selfWeak.staticDataKey];
+        }
+        NSMutableArray *array = selfWeak.dataDic[selfWeak.staticDataKey];
         if (array.count<=0) {
-            if (model.type == 3) {
-                selfWeak.groupId = [NSString stringWithFormat:@"%ld",(long)model.groupId];
-                _staticDataKey = selfWeak.groupId;
-                [selfWeak.pageDic setObject:@(1) forKey:selfWeak.groupId];
-            }
-            else
-            {
-                _staticDataKey = selfWeak.type;
-                [selfWeak.pageDic setObject:@(1) forKey:selfWeak.type];
-            }
-            [selfWeak.dataTable reloadData];
+            
+            
             [selfWeak loadData];
             [selfWeak showRightTitle];
+        }else
+        {
+            [selfWeak showRightTitle];
+            [selfWeak.dataTable reloadData];
         }
     }];
     [self.view addSubview:_headerView];
