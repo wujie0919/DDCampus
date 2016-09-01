@@ -26,12 +26,16 @@ static NSInteger const Do_notice_Tag= 4002;
 static NSInteger const Do_homework_Tag = 4003;
 static NSInteger const Do_forumreply_Tag = 4004;
 static NSInteger const Do_forumpostlike_Tag = 4005;
+static NSInteger const Getnotice_Tag= 4006;
 
+//事务
 static NSInteger const Getdutyday_Tag = 5001;
 static NSInteger const Getclassweekpoint_Tag = 5002;
 static NSInteger const Showdutyday_Tag = 5003;
 static NSInteger const Do_savedutyday_Tag = 5004;
 static NSInteger const Getteacherclass_Tag = 5005;
+static NSInteger const Getdutyweekset_tag = 5006;
+static NSInteger const Getdutyweek_Tag = 5007;
 
 //社区
 static NSInteger const Getforumpost_Tag = 6001;

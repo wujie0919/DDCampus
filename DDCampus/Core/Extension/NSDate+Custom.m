@@ -478,7 +478,14 @@ static NSDateFormatter *dateFormatter = nil;
     return [dateFormatter stringFromDate:self];
 }
 
-+ (NSString *)getDateValue:(NSString *)date
++ (NSString *)getDateValue:(NSString *)date  format:(NSString *)format
+{
+    double publishLong = [date doubleValue];
+    NSDate *pDate = [NSDate dateWithTimeIntervalSince1970:publishLong];
+    return [pDate stringWithFormate:format];
+}
+
++ (NSString *)getDateValue:(NSString *)date 
 {
     double publishLong = [date doubleValue];
     NSDate *pDate = [NSDate dateWithTimeIntervalSince1970:publishLong];

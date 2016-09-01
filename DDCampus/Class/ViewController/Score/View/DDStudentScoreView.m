@@ -68,7 +68,6 @@ static NSString * score = @"score";
         _infoView.hidden = YES;
     }
     _height = CGRectGetMaxY(_nameLabel.frame);
-    NSLog(@"%d",2%3);
     if (_array.count%3 == 0) {
         _infoView.frame = CGRectMake(20, _height+10, 200, (_array.count/3)*20);
         _height = _height+(_array.count/3)*20+((_array.count/3)*5);

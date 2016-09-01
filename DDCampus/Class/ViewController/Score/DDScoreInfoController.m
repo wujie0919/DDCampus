@@ -28,8 +28,15 @@
     [self setBackBarButtonItem];
     _index = 0;
     _scoreView = [[DDScoreInfoView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 45)];
+    @WeakObj(self);
     _scoreView.handler = ^(NSInteger tag){
-        
+        selfWeak.index = tag;
+        [selfWeak.scrollview setContentOffset:CGPointMake(selfWeak.index*SCREEN_WIDTH, 0) animated:YES];
+        if (selfWeak.model) {
+            selfWeak.scoreVC.classId = selfWeak.model.class_id;
+        }
+        [selfWeak.scoreVC setIndex:selfWeak.index];
+        selfWeak.scoreVC.view.frame = CGRectMake(selfWeak.index*SCREEN_WIDTH, 0, SCREEN_WIDTH, selfWeak.scrollview.frame.size.height);
     };
     self.title = @"成绩";
     _scoreView.titleArray = @[@"成绩单",@"成绩趋势"];
@@ -41,7 +48,7 @@
     _scrollview.contentSize = CGSizeMake(SCREEN_WIDTH*_scoreView.titleArray.count,SCREEN_HEIGHT-_scrollview.frame.size.height);
     _scoreVC = [[DDScoreInfoListController alloc]initWithNibName:@"DDScoreInfoListController" bundle:nil];
     [_scrollview addSubview:_scoreVC.view];
-    @WeakObj(self);
+    
     _scoreVC.block = ^(NSDictionary *dict){
         DDCurveViewController *curveVC = [[DDCurveViewController alloc]initWithNibName:@"DDCurveViewController" bundle:nil];
         curveVC.dic = dict;

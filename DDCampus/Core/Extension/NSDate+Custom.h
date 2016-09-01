@@ -117,4 +117,5 @@ NSCalendarUnitMinute)
 /**获取星期*/
 + (NSString *)getDayValue:(NSString *)date;
 + (NSString *)getMonthAndDay:(NSString *)date;
++ (NSString *)getDateValue:(NSString *)date  format:(NSString *)format;
 @end

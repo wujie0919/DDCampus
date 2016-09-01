@@ -1,12 +1,12 @@
 //
-//  DDNewCommunityViewController.m
+//  DDMineCommunityController.m
 //  DDCampus
 //
 //  Created by wu on 16/9/1.
 //  Copyright © 2016年 campus. All rights reserved.
 //
 
-#import "DDNewCommunityViewController.h"
+#import "DDMineCommunityController.h"
 #import "DDCommunityHeaderView.h"
 #import "DDCommounityModel.h"
 #import "LZMomentsCell.h"
@@ -17,14 +17,14 @@
 #import "IQKeyboardManager.h"
 #import "DDFindGroupController.h"
 #import "DDGroupInfoController.h"
-#import "DDSendCommunityController.h"
 
 static NSString * const homeCell = @"homeCell";
 
-@interface DDNewCommunityViewController ()<UITableViewDelegate,UITableViewDataSource,LZMomentsCellDelegate,UITextViewDelegate>
+@interface DDMineCommunityController ()
 {
     NSLock *_lock;
 }
+@property (weak, nonatomic) IBOutlet DDTableView *dataTable;
 @property (nonatomic, strong) DDCommunityHeaderView *headerView;
 @property (nonatomic, copy) NSString *groupId;
 @property (nonatomic, copy) NSString *type;
@@ -37,16 +37,15 @@ static NSString * const homeCell = @"homeCell";
 @property (nonatomic, copy) NSString *rpid;
 @property (nonatomic, strong) UIButton *rightButton;
 @property (nonatomic, strong) DDCommounityModel *commounityModel;
-@property (nonatomic, strong) UIButton *sendCommunityButton;
-
 @end
 
-@implementation DDNewCommunityViewController
+@implementation DDMineCommunityController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    self.title = @"社区";
+    self.title = @"我的社区";
+    [self setBackBarButtonItem];
     _type = @"1";
     _staticDataKey = _type;
     _page = 1;
@@ -107,26 +106,8 @@ static NSString * const homeCell = @"homeCell";
         [selfWeak.pageDic setValue:@(selfWeak.page) forKey:selfWeak.staticDataKey];
         [selfWeak loadData];
     }];
-
-    _dataTable.separatorStyle = UITableViewCellSeparatorStyleNone;
     
-    _sendCommunityButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    [_sendCommunityButton setImage:[UIImage imageNamed:@"write"] forState:UIControlStateNormal];
-    [_sendCommunityButton setImage:[UIImage imageNamed:@"write"] forState:UIControlStateHighlighted];
-    [_sendCommunityButton addTarget:self action:@selector(enditCommunity) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:_sendCommunityButton];
-    [_sendCommunityButton mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.bottom.equalTo(selfWeak.view).with.offset(-40);
-        make.right.equalTo(selfWeak.view).with.offset(-20);
-        make.size.mas_equalTo(CGSizeMake(40, 40));
-    }];
-
-}
-
-- (void)enditCommunity
-{
-    DDSendCommunityController *sendVC = [[DDSendCommunityController alloc]initWithNibName:@"DDSendCommunityController" bundle:nil];
-    [self.navigationController pushViewController:sendVC animated:YES];
+    _dataTable.separatorStyle = UITableViewCellSeparatorStyleNone;
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -247,7 +228,7 @@ static NSString * const homeCell = @"homeCell";
                        [tempLikeItems addObject:likeModel];
                        model.status.likeItemsArray = [tempLikeItems copy];
                        NSMutableArray *oldArray = [selfWeak.dataDic valueForKey:selfWeak.staticDataKey];
-
+                       
                        [oldArray replaceObjectAtIndex:_index.row withObject:model];
                        [selfWeak.dataDic setValue:oldArray forKey:selfWeak.staticDataKey];
                        [selfWeak.dataTable reloadRowsAtIndexPaths:@[_index] withRowAnimation:UITableViewRowAnimationNone];
@@ -288,14 +269,14 @@ static NSString * const homeCell = @"homeCell";
                          @"page":_pageDic[_staticDataKey],
                          @"type":_type,
                          @"groupid":_groupId?_groupId:@""} success:^(id result) {
-                            [selfWeak.dataTable.mj_header endRefreshing];
-                            [selfWeak.dataTable.mj_footer endRefreshing];
-                              NSMutableArray *array = [NSMutableArray new];
+                             [selfWeak.dataTable.mj_header endRefreshing];
+                             [selfWeak.dataTable.mj_footer endRefreshing];
+                             NSMutableArray *array = [NSMutableArray new];
                              if ([result[@"code"]integerValue]==200) {
                                  if ([result[DataKey][@"group"]isKindOfClass:[NSArray class]]) {
                                      selfWeak.headerView.dataSource =[NSMutableArray arrayWithArray:result[DataKey][@"group"]];
                                  }
-                                
+                                 
                                  if ([result[DataKey][@"list"]isKindOfClass:[NSArray class]]) {
                                      for (NSDictionary *dic in result[DataKey][@"list"]) {
                                          LZMoments *model = [LZMoments new];
@@ -428,38 +409,38 @@ static NSString * const homeCell = @"homeCell";
 
 - (void)showRightTitle
 {
-    if ([_type integerValue]!=3) {
-        
-        _rightButton= [UIButton buttonWithType:UIButtonTypeCustom];
-        _rightButton.titleLabel.font = [UIFont systemFontOfSize:14];
-        _rightButton.backgroundColor = RGB(48, 185, 113);
-        _rightButton.frame = CGRectMake(0, 5, 100, 30);
-        _rightButton.layer.cornerRadius= 5;
-        _rightButton.layer.masksToBounds = YES;
-        _rightButton.layer.borderColor = [UIColor whiteColor].CGColor;
-        _rightButton.layer.borderWidth = 1;
-        [_rightButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-        
-        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:_rightButton];
-        [_rightButton addTarget:self action:@selector(findGroup) forControlEvents:UIControlEventTouchUpInside];
-        [_rightButton setTitle:@"发现社区" forState:UIControlStateNormal];
-        
-    }else{
-        _rightButton= [UIButton buttonWithType:UIButtonTypeCustom];
-        
-        _rightButton.titleLabel.font = [UIFont systemFontOfSize:14];
-        _rightButton.backgroundColor = RGB(48, 185, 113);
-        _rightButton.frame = CGRectMake(0, 5, 100, 30);
-        _rightButton.layer.cornerRadius= 5;
-        _rightButton.layer.masksToBounds = YES;
-        _rightButton.layer.borderColor = [UIColor whiteColor].CGColor;
-        _rightButton.layer.borderWidth = 1;
-        [_rightButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-        
-        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:_rightButton];
-        [_rightButton addTarget:self action:@selector(showGroupInfo) forControlEvents:UIControlEventTouchUpInside];
-        [_rightButton setTitle:@"群组资料" forState:UIControlStateNormal];
-    }
+//    if ([_type integerValue]!=3) {
+//        
+//        _rightButton= [UIButton buttonWithType:UIButtonTypeCustom];
+//        _rightButton.titleLabel.font = [UIFont systemFontOfSize:14];
+//        _rightButton.backgroundColor = RGB(48, 185, 113);
+//        _rightButton.frame = CGRectMake(0, 5, 100, 30);
+//        _rightButton.layer.cornerRadius= 5;
+//        _rightButton.layer.masksToBounds = YES;
+//        _rightButton.layer.borderColor = [UIColor whiteColor].CGColor;
+//        _rightButton.layer.borderWidth = 1;
+//        [_rightButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+//        
+//        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:_rightButton];
+//        [_rightButton addTarget:self action:@selector(findGroup) forControlEvents:UIControlEventTouchUpInside];
+//        [_rightButton setTitle:@"发现社区" forState:UIControlStateNormal];
+//        
+//    }else{
+//        _rightButton= [UIButton buttonWithType:UIButtonTypeCustom];
+//        
+//        _rightButton.titleLabel.font = [UIFont systemFontOfSize:14];
+//        _rightButton.backgroundColor = RGB(48, 185, 113);
+//        _rightButton.frame = CGRectMake(0, 5, 100, 30);
+//        _rightButton.layer.cornerRadius= 5;
+//        _rightButton.layer.masksToBounds = YES;
+//        _rightButton.layer.borderColor = [UIColor whiteColor].CGColor;
+//        _rightButton.layer.borderWidth = 1;
+//        [_rightButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+//        
+//        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:_rightButton];
+//        [_rightButton addTarget:self action:@selector(showGroupInfo) forControlEvents:UIControlEventTouchUpInside];
+//        [_rightButton setTitle:@"群组资料" forState:UIControlStateNormal];
+//    }
 }
 
 - (void)findGroup
@@ -484,10 +465,6 @@ static NSString * const homeCell = @"homeCell";
     [self.navigationController pushViewController:infoVc animated:YES];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
 
 /*
 #pragma mark - Navigation

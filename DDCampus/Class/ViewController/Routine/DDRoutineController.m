@@ -12,6 +12,7 @@
 #import "DDRoutinDayController.h"
 #import "DDSelectClassActionView.h"
 #import "DDRoutineSelectStudentModel.h"
+#import "DDRoutinePlanController.h"
 
 @interface DDRoutineController ()
 @property (nonatomic, assign) NSInteger index;
@@ -195,7 +196,8 @@
 
 - (void)showWeek
 {
-    
+    DDRoutinePlanController *planVC=[[DDRoutinePlanController alloc]initWithNibName:@"DDRoutinePlanController" bundle:nil];
+    [self.navigationController pushViewController:planVC animated:YES];
 }
 
 

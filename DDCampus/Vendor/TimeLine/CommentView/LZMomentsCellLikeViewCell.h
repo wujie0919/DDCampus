@@ -13,5 +13,5 @@
 + (instancetype)cellWithTable:(UITableView *)tableView;
 
 @property (nonatomic, strong) NSMutableArray *likeItemsArray;
-
+@property (nonatomic, strong) NSMutableArray *commentArray;
 @end

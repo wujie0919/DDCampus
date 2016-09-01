@@ -113,6 +113,12 @@
     }
     
     _label.attributedText = [attributedText copy];
+    if (self.commentArray.count<=0) {
+        _divider.hidden = YES;
+    }
+    else{
+        _divider.hidden = NO;
+    }
 }
 
 - (NSMutableAttributedString *)generateAttributedStringWithLikeItemModel:(LZMomentsCellLikeItemModel *)model

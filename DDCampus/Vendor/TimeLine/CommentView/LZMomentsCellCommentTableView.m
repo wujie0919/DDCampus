@@ -93,7 +93,9 @@ static NSString * const HeaderFooterViewIdentifier = @"LZMomentsSectionHeaderVie
     }
     
     LZMomentsCellLikeHeaderFooterView *header = [LZMomentsCellLikeHeaderFooterView cellWithTable:tableView];
+    header.commentArray = self.commentItemsArray;
     header.likeItemsArray = self.likeItemsArray;
+    
     return header;
 }
 

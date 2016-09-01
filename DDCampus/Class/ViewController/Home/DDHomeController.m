@@ -27,6 +27,7 @@
 #import "DDRoutineController.h"
 #import "DDScoreInfoController.h"
 #import "DDCommentView.h"
+#import "DDMessageController.h"
 
 static NSString * const imageCell = @"imageCell";
 static NSString * const buttonCell = @"buttonCell";
@@ -97,6 +98,22 @@ static NSString * const homeCell = @"homeCell";
     }
     _homeTable.separatorStyle = UITableViewCellSeparatorStyleNone;
     
+    UIButton *rightButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    rightButton.titleLabel.font = [UIFont systemFontOfSize:14];
+    rightButton.frame = CGRectMake(0, 0, 30, 30);
+    
+    [rightButton addTarget:self action:@selector(showMessage) forControlEvents:UIControlEventTouchUpInside];
+    UIView *view = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 30, 30)];
+    [view addSubview:rightButton];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:view];
+
+    
+}
+
+- (void)showMessage
+{
+    DDMessageController *messageVC = [[DDMessageController alloc]initWithNibName:@"DDMessageController" bundle:nil];
+    [self.navigationController pushViewController:messageVC animated:YES];
 }
 
 - (void)keyboardHide:(NSNotification *)notif {

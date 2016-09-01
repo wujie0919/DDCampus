@@ -14,6 +14,7 @@
 #import "DDSetMineInfoController.h"
 #import "DDAgreementViewController.h"
 #import "DDMineHelpController.h"
+#import "DDMineCommunityController.h"
 
 static NSString * const mineCell = @"mineCell";
 static NSString * const headerCell = @"header";
@@ -123,6 +124,10 @@ static NSString * const headerCell = @"header";
     if (section == 0) {
         DDSetMineInfoController *setMineController = [[DDSetMineInfoController alloc]initWithNibName:@"DDSetMineInfoController" bundle:nil];
         [self.navigationController pushViewController:setMineController animated:YES];
+    }
+    if (section == 1) {
+        DDMineCommunityController *communityVC=[[DDMineCommunityController alloc]init];
+        [self.navigationController pushViewController:communityVC animated:YES];
     }
     if (section == 3) {
         DDAdviseViewController *adviseController = [[DDAdviseViewController alloc]initWithNibName:@"DDAdviseViewController" bundle:nil];

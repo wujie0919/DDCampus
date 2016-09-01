@@ -46,9 +46,8 @@
                 make.left.equalTo(selfWeak).offset(selfWeak.homework_teacherLabel.frame.origin.x);
                 make.size.mas_equalTo(CGSizeMake(textSize.width, textSize.height));
             }];
-            [_homework_contentLabel sizeToFit];
-//            _homework_contentLabel.frame = CGRectMake(10, self.homework_teacherLabel.frame.origin.y+self.homework_teacherLabel.frame.size.height, SCREEN_WIDTH-20, textSize.height);
-            _homework_contentLabel.backgroundColor = [UIColor redColor];
+//            [_homework_contentLabel sizeToFit];
+            _homework_contentLabel.frame = CGRectMake(10, self.homework_teacherLabel.frame.origin.y+self.homework_teacherLabel.frame.size.height, SCREEN_WIDTH-20, textSize.height);
             _height = _homework_contentLabel.frame.origin.y+textSize.height+10;
         }else
             _height = self.homework_teacherLabel.frame.origin.y+self.homework_teacherLabel.frame.size.height+10;

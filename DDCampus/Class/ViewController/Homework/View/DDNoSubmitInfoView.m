@@ -52,14 +52,23 @@ static NSString * const valueCell = @"valueCell";
 {
     _array = array;
     [_unSubmitCollectionView reloadData];
+//    if (_array.count%3 == 0) {
+//        _infoView.frame = CGRectMake(20, _height+10, 200, (_array.count/3)*20);
+//        _height = _height+(_array.count/3)*20+((_array.count/3)*5);
+//    }
+//    else
+//    {
+//        _infoView.frame = CGRectMake(20, _height+10, 200, (_array.count%3)*20);
+//        _height = _height+(_array.count%3)*20+(_array.count%3)*5;
+//    }
     @WeakObj(self);
-    [_unSubmitCollectionView mas_updateConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(selfWeak.lineLabel.mas_bottom).offset(10);
-        make.left.equalTo(selfWeak).offset(10);
-        make.right.equalTo(selfWeak).offset(-10);
-        make.height.offset(array.count*40);
-    }];
-    _height = CGRectGetMaxY(_lineLabel.frame)+10+array.count*40;
+//    [_unSubmitCollectionView mas_updateConstraints:^(MASConstraintMaker *make) {
+//        make.top.equalTo(selfWeak.lineLabel.mas_bottom).offset(10);
+//        make.left.equalTo(selfWeak).offset(10);
+//        make.right.equalTo(selfWeak).offset(-10);
+//        make.height.offset(array.count*40);
+//    }];
+    _height = CGRectGetMaxY(_unSubmitCollectionView.frame)+10;
 }
 
 #pragma mark - UICollectionView delegate and datasource
@@ -85,7 +94,7 @@ static NSString * const valueCell = @"valueCell";
 //定义每个Item 的大小
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    return CGSizeMake((SCREEN_WIDTH-20)/2, 40);
+    return CGSizeMake((SCREEN_WIDTH-20)/2-10, 40);
 }
 
 //定义每个UICollectionView 的 margin
