@@ -15,6 +15,8 @@
 #import "LZMomentsListViewModel.h"
 #import "DDCommentView.h"
 #import "IQKeyboardManager.h"
+#import "DDFindGroupController.h"
+#import "DDGroupInfoController.h"
 
 static NSString * const homeCell = @"homeCell";
 
@@ -32,6 +34,9 @@ static NSString * const homeCell = @"homeCell";
 @property (nonatomic, strong) NSIndexPath *index;
 @property (nonatomic, strong) DDCommentView *chatKeyBoard;
 @property (nonatomic, copy) NSString *rpid;
+@property (nonatomic, strong) UIButton *rightButton;
+@property (nonatomic, strong) DDCommounityModel *commounityModel;
+
 @end
 
 @implementation DDNewCommunityViewController
@@ -43,15 +48,15 @@ static NSString * const homeCell = @"homeCell";
     _type = @"1";
     _staticDataKey = _type;
     _page = 1;
+    [self showRightTitle];
     _pageDic = [NSMutableDictionary dictionary];
     _dataDic = [NSMutableDictionary dictionary];
     [_pageDic setValue:@(_page) forKey:_type];
     @WeakObj(self);
     _headerView = [DDCommunityHeaderView headerView:CGRectMake(0, 0, SCREEN_WIDTH, 45) selectBlock:^(NSInteger tag, DDCommounityModel *model) {
         selfWeak.type = [NSString stringWithFormat:@"%ld",(long)model.type];
-        
+        selfWeak.commounityModel = model;
         NSMutableArray *array = selfWeak.dataDic[selfWeak.type];
-        
         if (array.count<=0) {
             if (model.type == 3) {
                 selfWeak.groupId = [NSString stringWithFormat:@"%ld",(long)model.groupId];
@@ -65,6 +70,7 @@ static NSString * const homeCell = @"homeCell";
             }
             [selfWeak.dataTable reloadData];
             [selfWeak loadData];
+            [selfWeak showRightTitle];
         }
     }];
     [self.view addSubview:_headerView];
@@ -95,6 +101,7 @@ static NSString * const homeCell = @"homeCell";
         [selfWeak loadData];
     }];
 
+    _dataTable.separatorStyle = UITableViewCellSeparatorStyleNone;
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -392,6 +399,64 @@ static NSString * const homeCell = @"homeCell";
     else{
         
     }
+}
+
+- (void)showRightTitle
+{
+    if ([_type integerValue]!=3) {
+        
+        _rightButton= [UIButton buttonWithType:UIButtonTypeCustom];
+        _rightButton.titleLabel.font = [UIFont systemFontOfSize:14];
+        _rightButton.backgroundColor = RGB(48, 185, 113);
+        _rightButton.frame = CGRectMake(0, 5, 100, 30);
+        _rightButton.layer.cornerRadius= 5;
+        _rightButton.layer.masksToBounds = YES;
+        _rightButton.layer.borderColor = [UIColor whiteColor].CGColor;
+        _rightButton.layer.borderWidth = 1;
+        [_rightButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        
+        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:_rightButton];
+        [_rightButton addTarget:self action:@selector(findGroup) forControlEvents:UIControlEventTouchUpInside];
+        [_rightButton setTitle:@"发现社区" forState:UIControlStateNormal];
+        
+    }else{
+        _rightButton= [UIButton buttonWithType:UIButtonTypeCustom];
+        
+        _rightButton.titleLabel.font = [UIFont systemFontOfSize:14];
+        _rightButton.backgroundColor = RGB(48, 185, 113);
+        _rightButton.frame = CGRectMake(0, 5, 100, 30);
+        _rightButton.layer.cornerRadius= 5;
+        _rightButton.layer.masksToBounds = YES;
+        _rightButton.layer.borderColor = [UIColor whiteColor].CGColor;
+        _rightButton.layer.borderWidth = 1;
+        [_rightButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        
+        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:_rightButton];
+        [_rightButton addTarget:self action:@selector(showGroupInfo) forControlEvents:UIControlEventTouchUpInside];
+        [_rightButton setTitle:@"群组资料" forState:UIControlStateNormal];
+    }
+}
+
+- (void)findGroup
+{
+    DDFindGroupController *findVC = [[DDFindGroupController alloc]initWithNibName:@"DDFindGroupController" bundle:nil];
+    @WeakObj(self);
+    findVC.joinBlock = ^()
+    {
+        [selfWeak loadData];
+    };
+    [self.navigationController pushViewController:findVC animated:YES];
+}
+
+- (void)showGroupInfo
+{
+    DDGroupInfoController *infoVc = [[DDGroupInfoController alloc]initWithNibName:@"DDGroupInfoController" bundle:nil];
+    @WeakObj(self);
+    infoVc.groupDic = _commounityModel.dic;
+    infoVc.exitBlock = ^(){
+        [selfWeak loadData];
+    };
+    [self.navigationController pushViewController:infoVc animated:YES];
 }
 
 - (void)didReceiveMemoryWarning {

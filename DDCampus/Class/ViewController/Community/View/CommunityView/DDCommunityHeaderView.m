@@ -107,6 +107,7 @@ static NSString * const headerCell = @"headerCell";
                 if (i==0) {
                     m.select = YES;
                 }
+                m.dic = dic;
                 [array addObject:m];
             }
         }

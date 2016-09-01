@@ -13,4 +13,5 @@
 @property (nonatomic, assign) NSInteger type;
 @property (nonatomic, assign) BOOL select;
 @property (nonatomic, assign) NSInteger groupId;
+@property (nonatomic, copy) NSDictionary *dic;
 @end
