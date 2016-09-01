@@ -36,7 +36,7 @@ static NSString * const cellIden=@"cellIden";
     self = [super initWithFrame:frame];
     if (self) {
         _scrollview = [[UIScrollView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, self.frame.size.height-2)];
-        _scrollview.pagingEnabled = YES;
+//        _scrollview.pagingEnabled = YES;
 //        _scrollview.bounces = NO;
         _scrollview.showsVerticalScrollIndicator = NO;
         _scrollview.showsHorizontalScrollIndicator = NO;

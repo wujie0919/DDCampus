@@ -13,6 +13,8 @@
 #import "DDSendCommunityController.h"
 #import "DDGroupInfoController.h"
 #import "DDFindGroupController.h"
+#import "DDCommunityHeaderView.h"
+#import "DDCommounityModel.h"
 
 @interface DDCommunityController ()
 @property (nonatomic, strong) DDCommunityView *communityView;
@@ -29,48 +31,59 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     self.title = @"社区";
-    _index = 0;
-   
-    [self getData];
-    _communityView = [[DDCommunityView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 45)];
-    [self.view  addSubview:_communityView];
-    @WeakObj(self);
-    [_communityView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(selfWeak.view).offset(0);
-        make.right.equalTo(selfWeak.view).offset(0);
-        make.left.equalTo(selfWeak.view).offset(0);
-        make.height.mas_equalTo(45);
-    }];
-
-    _listController = [[DDCommunityListController alloc]initWithNibName:@"DDCommunityListController" bundle:nil];
-    _scrollview.frame = CGRectMake(0, self.communityView.frame.size.height, SCREEN_WIDTH,SCREEN_HEIGHT- self.communityView.frame.size.height);
-    _scrollview.bounces = NO;
-    _scrollview.pagingEnabled = YES;
-    
-    _listController.view.frame = CGRectMake(_index*SCREEN_WIDTH, 0, SCREEN_WIDTH,_scrollview.frame.size.height);
-    [_scrollview addSubview:_listController.view];
-    [_listController setIndex:0];
-    _communityView.handler = ^(NSInteger tag){
-        if (selfWeak.listController) {
-            [selfWeak showTitle];
-            selfWeak.listController.groupDic = selfWeak.communityView.dataArray[tag];
-            [selfWeak.listController setIndex:tag];
-        }
-    };
-    
-    _sendCommunityButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    [_sendCommunityButton setImage:[UIImage imageNamed:@"write"] forState:UIControlStateNormal];
-    [_sendCommunityButton setImage:[UIImage imageNamed:@"write"] forState:UIControlStateHighlighted];
-    [_sendCommunityButton addTarget:self action:@selector(enditCommunity:) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:_sendCommunityButton];
-    [_sendCommunityButton mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.bottom.equalTo(selfWeak.view).with.offset(-40);
-        make.right.equalTo(selfWeak.view).with.offset(-20);
-        make.size.mas_equalTo(CGSizeMake(40, 40));
-    }];
-    _listController.handler = ^(NSMutableArray *groupArray){
+    DDCommunityHeaderView *headerView = [DDCommunityHeaderView headerView:CGRectMake(0, 0, SCREEN_WIDTH, 45) selectBlock:^(NSInteger tag, DDCommounityModel *model) {
         
-    };
+    }];
+    NSMutableArray *array=[NSMutableArray new];
+    for (int i=0; i<7; i++) {
+        DDCommounityModel *model = [[DDCommounityModel alloc]init];
+        model.name = @"公共社区";
+        [array addObject:model];
+    }
+    headerView.dataSource = array;
+    [self.view addSubview:headerView];
+//    _index = 0;
+//   
+//    [self getData];
+//    _communityView = [[DDCommunityView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 45)];
+//    [self.view  addSubview:_communityView];
+//    @WeakObj(self);
+//    [_communityView mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.top.equalTo(selfWeak.view).offset(0);
+//        make.right.equalTo(selfWeak.view).offset(0);
+//        make.left.equalTo(selfWeak.view).offset(0);
+//        make.height.mas_equalTo(45);
+//    }];
+//
+//    _listController = [[DDCommunityListController alloc]initWithNibName:@"DDCommunityListController" bundle:nil];
+//    _scrollview.frame = CGRectMake(0, self.communityView.frame.size.height, SCREEN_WIDTH,SCREEN_HEIGHT- self.communityView.frame.size.height);
+//    _scrollview.bounces = NO;
+//    _scrollview.pagingEnabled = YES;
+//    
+//    _listController.view.frame = CGRectMake(_index*SCREEN_WIDTH, 0, SCREEN_WIDTH,_scrollview.frame.size.height);
+//    [_scrollview addSubview:_listController.view];
+//    [_listController setIndex:0];
+//    _communityView.handler = ^(NSInteger tag){
+//        if (selfWeak.listController) {
+//            [selfWeak showTitle];
+//            selfWeak.listController.groupDic = selfWeak.communityView.dataArray[tag];
+//            [selfWeak.listController setIndex:tag];
+//        }
+//    };
+//    
+//    _sendCommunityButton = [UIButton buttonWithType:UIButtonTypeCustom];
+//    [_sendCommunityButton setImage:[UIImage imageNamed:@"write"] forState:UIControlStateNormal];
+//    [_sendCommunityButton setImage:[UIImage imageNamed:@"write"] forState:UIControlStateHighlighted];
+//    [_sendCommunityButton addTarget:self action:@selector(enditCommunity:) forControlEvents:UIControlEventTouchUpInside];
+//    [self.view addSubview:_sendCommunityButton];
+//    [_sendCommunityButton mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.bottom.equalTo(selfWeak.view).with.offset(-40);
+//        make.right.equalTo(selfWeak.view).with.offset(-20);
+//        make.size.mas_equalTo(CGSizeMake(40, 40));
+//    }];
+//    _listController.handler = ^(NSMutableArray *groupArray){
+//        
+//    };
 }
 
 

@@ -13,6 +13,7 @@
 #import "DDRoutineController.h"
 #import "DDMineController.h"
 #import "DDNavigationController.h"
+#import "DDNewCommunityViewController.h"
 
 @interface DDTabBarController ()<UITabBarControllerDelegate>
 
@@ -45,7 +46,9 @@
     routineNav.tabBarItem.selectedImage = [[UIImage imageNamed:@"icon_shi_selectd"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     
     //社区
-    DDCommunityController *communityController = [[DDCommunityController alloc]initWithNibName:@"DDCommunityController" bundle:nil];
+//    DDCommunityController *communityController = [[DDCommunityController alloc]initWithNibName:@"DDCommunityController" bundle:nil];
+    
+    DDNewCommunityViewController *communityController = [[DDNewCommunityViewController alloc]initWithNibName:@"DDNewCommunityViewController" bundle:nil];
     DDNavigationController *communityNav = [[DDNavigationController alloc] initWithRootViewController:communityController];
     communityNav.tabBarItem.title = @"社区";
     communityNav.tabBarItem.image = [[UIImage imageNamed:@"icon_she_normal"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];

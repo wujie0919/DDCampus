@@ -257,6 +257,12 @@
 		37CC62C01D782450005D5CCA /* DDMineHelpCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37CC62BE1D782450005D5CCA /* DDMineHelpCell.xib */; };
 		37CC62C31D782461005D5CCA /* DDHelpView.m in Sources */ = {isa = PBXBuildFile; fileRef = 37CC62C21D782461005D5CCA /* DDHelpView.m */; };
 		37CC62C51D782471005D5CCA /* DDHelpView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37CC62C41D782471005D5CCA /* DDHelpView.xib */; };
+		37CC62C91D782C7C005D5CCA /* DDCommunityHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 37CC62C81D782C7C005D5CCA /* DDCommunityHeaderView.m */; };
+		37CC62CD1D782D97005D5CCA /* DDCommunityHeaderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 37CC62CB1D782D97005D5CCA /* DDCommunityHeaderCell.m */; };
+		37CC62CE1D782D97005D5CCA /* DDCommunityHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37CC62CC1D782D97005D5CCA /* DDCommunityHeaderCell.xib */; };
+		37CC62D11D782ED9005D5CCA /* DDCommounityModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 37CC62D01D782ED9005D5CCA /* DDCommounityModel.m */; };
+		37CC62D51D78387F005D5CCA /* DDNewCommunityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37CC62D31D78387F005D5CCA /* DDNewCommunityViewController.m */; };
+		37CC62D61D78387F005D5CCA /* DDNewCommunityViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37CC62D41D78387F005D5CCA /* DDNewCommunityViewController.xib */; };
 		37CDB47C1D71B01000C4EE77 /* ADD@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 37CDB47A1D71B01000C4EE77 /* ADD@2x.png */; };
 		37CDB47D1D71B01000C4EE77 /* ADD@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 37CDB47B1D71B01000C4EE77 /* ADD@3x.png */; };
 		37CDB4801D71B70400C4EE77 /* DDRoutineActionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 37CDB47F1D71B70400C4EE77 /* DDRoutineActionView.m */; };
@@ -821,6 +827,16 @@
 		37CC62C11D782461005D5CCA /* DDHelpView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDHelpView.h; sourceTree = "<group>"; };
 		37CC62C21D782461005D5CCA /* DDHelpView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDHelpView.m; sourceTree = "<group>"; };
 		37CC62C41D782471005D5CCA /* DDHelpView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DDHelpView.xib; sourceTree = "<group>"; };
+		37CC62C71D782C7C005D5CCA /* DDCommunityHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDCommunityHeaderView.h; sourceTree = "<group>"; };
+		37CC62C81D782C7C005D5CCA /* DDCommunityHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDCommunityHeaderView.m; sourceTree = "<group>"; };
+		37CC62CA1D782D97005D5CCA /* DDCommunityHeaderCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDCommunityHeaderCell.h; sourceTree = "<group>"; };
+		37CC62CB1D782D97005D5CCA /* DDCommunityHeaderCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDCommunityHeaderCell.m; sourceTree = "<group>"; };
+		37CC62CC1D782D97005D5CCA /* DDCommunityHeaderCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DDCommunityHeaderCell.xib; sourceTree = "<group>"; };
+		37CC62CF1D782ED9005D5CCA /* DDCommounityModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDCommounityModel.h; sourceTree = "<group>"; };
+		37CC62D01D782ED9005D5CCA /* DDCommounityModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDCommounityModel.m; sourceTree = "<group>"; };
+		37CC62D21D78387F005D5CCA /* DDNewCommunityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDNewCommunityViewController.h; sourceTree = "<group>"; };
+		37CC62D31D78387F005D5CCA /* DDNewCommunityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDNewCommunityViewController.m; sourceTree = "<group>"; };
+		37CC62D41D78387F005D5CCA /* DDNewCommunityViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DDNewCommunityViewController.xib; sourceTree = "<group>"; };
 		37CDB47A1D71B01000C4EE77 /* ADD@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ADD@2x.png"; sourceTree = "<group>"; };
 		37CDB47B1D71B01000C4EE77 /* ADD@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ADD@3x.png"; sourceTree = "<group>"; };
 		37CDB47E1D71B70400C4EE77 /* DDRoutineActionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDRoutineActionView.h; sourceTree = "<group>"; };
@@ -1703,6 +1719,7 @@
 		3796AB2F1D72F91F0066266F /* View */ = {
 			isa = PBXGroup;
 			children = (
+				37CC62C61D782C5B005D5CCA /* CommunityView */,
 				3796AB301D72F9410066266F /* DDCommunityView.h */,
 				3796AB311D72F9410066266F /* DDCommunityView.m */,
 				3796AB331D72FC4F0066266F /* DDCommunityCell.h */,
@@ -1884,6 +1901,20 @@
 				37CC62AA1D78126D005D5CCA /* DDCommonModel.m */,
 			);
 			path = CommonView;
+			sourceTree = "<group>";
+		};
+		37CC62C61D782C5B005D5CCA /* CommunityView */ = {
+			isa = PBXGroup;
+			children = (
+				37CC62C71D782C7C005D5CCA /* DDCommunityHeaderView.h */,
+				37CC62C81D782C7C005D5CCA /* DDCommunityHeaderView.m */,
+				37CC62CA1D782D97005D5CCA /* DDCommunityHeaderCell.h */,
+				37CC62CB1D782D97005D5CCA /* DDCommunityHeaderCell.m */,
+				37CC62CC1D782D97005D5CCA /* DDCommunityHeaderCell.xib */,
+				37CC62CF1D782ED9005D5CCA /* DDCommounityModel.h */,
+				37CC62D01D782ED9005D5CCA /* DDCommounityModel.m */,
+			);
+			path = CommunityView;
 			sourceTree = "<group>";
 		};
 		37CDB4791D71B01000C4EE77 /* Routine */ = {
@@ -2131,6 +2162,9 @@
 				3725BC801D75860E0034C36C /* DDSendCommunityController.h */,
 				3725BC811D75860E0034C36C /* DDSendCommunityController.m */,
 				3725BC821D75860E0034C36C /* DDSendCommunityController.xib */,
+				37CC62D21D78387F005D5CCA /* DDNewCommunityViewController.h */,
+				37CC62D31D78387F005D5CCA /* DDNewCommunityViewController.m */,
+				37CC62D41D78387F005D5CCA /* DDNewCommunityViewController.xib */,
 			);
 			path = Community;
 			sourceTree = "<group>";
@@ -2579,6 +2613,7 @@
 				37B6743B1D63454C005B2A4F /* DDHomeWorkDetailsController.xib in Resources */,
 				37FE621D1D660061004EA944 /* icon_jiantou@2x.png in Resources */,
 				37E7C4851D74A24D00291E1B /* LikeCmtBg@3x.png in Resources */,
+				37CC62CE1D782D97005D5CCA /* DDCommunityHeaderCell.xib in Resources */,
 				373EF59C1D6AAF1F0031400C /* zuoye@2x.png in Resources */,
 				375D9E081D65A27400BA2804 /* DDRoutineCell.xib in Resources */,
 				3796AB2D1D72EEFD0066266F /* bian3@2x.png in Resources */,
@@ -2694,6 +2729,7 @@
 				37CDB4841D71B73400C4EE77 /* DDRoutineActionView.xib in Resources */,
 				373EF5AB1D6AE6880031400C /* x@3x.png in Resources */,
 				373EF5A61D6AE42E0031400C /* DDHomeCell.xib in Resources */,
+				37CC62D61D78387F005D5CCA /* DDNewCommunityViewController.xib in Resources */,
 				373EF5951D6AAF1F0031400C /* chengji@2x.png in Resources */,
 				373EF5831D6AA9DB0031400C /* DDButtonView.xib in Resources */,
 				37767DCC1D5F0746001790CC /* DDHomeworkCell.xib in Resources */,
@@ -2917,6 +2953,7 @@
 				9389F3421D50E93A00055E3B /* YCBThread.m in Sources */,
 				37EC84DF1D76E66200AD223C /* DDGroupMemberUserViewCell.m in Sources */,
 				37ECCD541D71361000B91B3D /* DDNoSubmitInfoView.m in Sources */,
+				37CC62CD1D782D97005D5CCA /* DDCommunityHeaderCell.m in Sources */,
 				3796AB281D72EB930066266F /* DDHomeView.m in Sources */,
 				37FE3EFE1D702F2A00BFF358 /* DDClassweekpointModel.m in Sources */,
 				37FE3EE21D70098F00BFF358 /* SDBrowserImageView.m in Sources */,
@@ -2937,6 +2974,7 @@
 				3725BC571D754C4E0034C36C /* DDSelectClssController.m in Sources */,
 				379B974B1D75C09900BADBFA /* DNSendButton.m in Sources */,
 				37E1B1321D73DB9C00D012F0 /* NSString+MLLabel.m in Sources */,
+				37CC62D51D78387F005D5CCA /* DDNewCommunityViewController.m in Sources */,
 				379B97471D75C09900BADBFA /* DNAssetsViewCell.m in Sources */,
 				3796AB231D72DA890066266F /* DDRoutineMoreView.m in Sources */,
 				37E1B1591D73DD5200D012F0 /* LZOperationMenu.m in Sources */,
@@ -2969,6 +3007,7 @@
 				37FF99C81D5DADA600B0B8DE /* DDHomeworkBtnView.m in Sources */,
 				37ECCD4C1D71178A00B91B3D /* DDHomeworkDetailsModel.m in Sources */,
 				37E1B1101D73DB1D00D012F0 /* LZBroadcastView.m in Sources */,
+				37CC62C91D782C7C005D5CCA /* DDCommunityHeaderView.m in Sources */,
 				37E1B1581D73DD5200D012F0 /* LZMomentsOriginalView.m in Sources */,
 				3725BCC91D75961F0034C36C /* DDCreateGroupController.m in Sources */,
 				379B973D1D75C09900BADBFA /* DNImagePickerController.m in Sources */,
@@ -2988,6 +3027,7 @@
 				37CC62A81D78125A005D5CCA /* DDCommonView.m in Sources */,
 				3796AB321D72F9410066266F /* DDCommunityView.m in Sources */,
 				379B974E1D75C09900BADBFA /* JKPromptView.m in Sources */,
+				37CC62D11D782ED9005D5CCA /* DDCommounityModel.m in Sources */,
 				37E1B1111D73DB1D00D012F0 /* LZBroadcastViewCell.m in Sources */,
 				37FE3EFA1D70254900BFF358 /* DDRoutineListController.m in Sources */,
 				37EC84CB1D76D50400AD223C /* DDGroupInfoUserCell.m in Sources */,

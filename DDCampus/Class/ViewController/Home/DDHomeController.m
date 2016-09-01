@@ -131,6 +131,7 @@ static NSString * const homeCell = @"homeCell";
     [[NSNotificationCenter defaultCenter]removeObserver:self name:LZCommentClickedNotification object:nil];
 }
 
+
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     return 1;
