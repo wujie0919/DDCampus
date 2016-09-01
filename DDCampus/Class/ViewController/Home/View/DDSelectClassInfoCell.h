@@ -8,7 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
+typedef void(^SelectClassBlock)();
+
 @interface DDSelectClassInfoCell : UITableViewCell
-@property (weak, nonatomic) IBOutlet UILabel *classNameLabel;
+
+@property (weak, nonatomic) IBOutlet UIButton *selectView;
+@property (nonatomic, copy) SelectClassBlock sBlock;
 
 @end

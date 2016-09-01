@@ -18,19 +18,23 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QhV-yT-aSa" customClass="DDView">
                         <rect key="frame" x="18" y="18" width="284" height="43.5"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3B2-fp-hb9">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l74-TT-eGL">
                                 <rect key="frame" x="0.0" y="0.0" width="284" height="43.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                                <state key="normal">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="buttonClick:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="hmK-mi-IUA"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="3B2-fp-hb9" secondAttribute="bottom" id="9IU-qJ-ljC"/>
-                            <constraint firstAttribute="trailing" secondItem="3B2-fp-hb9" secondAttribute="trailing" id="bXW-A4-rXG"/>
-                            <constraint firstItem="3B2-fp-hb9" firstAttribute="leading" secondItem="QhV-yT-aSa" secondAttribute="leading" id="ooR-sE-JmT"/>
-                            <constraint firstItem="3B2-fp-hb9" firstAttribute="top" secondItem="QhV-yT-aSa" secondAttribute="top" id="yxF-OW-rrj"/>
+                            <constraint firstAttribute="bottom" secondItem="l74-TT-eGL" secondAttribute="bottom" id="6gE-4G-fCw"/>
+                            <constraint firstAttribute="trailing" secondItem="l74-TT-eGL" secondAttribute="trailing" id="GPu-NB-l6p"/>
+                            <constraint firstItem="l74-TT-eGL" firstAttribute="leading" secondItem="QhV-yT-aSa" secondAttribute="leading" id="S3A-x3-gMK"/>
+                            <constraint firstItem="l74-TT-eGL" firstAttribute="top" secondItem="QhV-yT-aSa" secondAttribute="top" id="aga-PS-EbI"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -42,7 +46,7 @@
                 </constraints>
             </tableViewCellContentView>
             <connections>
-                <outlet property="classNameLabel" destination="3B2-fp-hb9" id="hZN-6M-xEY"/>
+                <outlet property="selectView" destination="l74-TT-eGL" id="u8W-iF-D4Z"/>
             </connections>
         </tableViewCell>
     </objects>

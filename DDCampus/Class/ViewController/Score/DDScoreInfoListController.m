@@ -7,9 +7,18 @@
 //
 
 #import "DDScoreInfoListController.h"
+#import "DDScoreTrendCell.h"
+#import "DDScoreTeacherCell.h"
+#import "UITableView+FDTemplateLayoutCell.h"
 
-@interface DDScoreInfoListController ()
+static NSString * const trend = @"trend";
+static NSString * const teacher = @"teacher";
 
+@interface DDScoreInfoListController ()<UITableViewDelegate,UITableViewDataSource>
+@property (weak, nonatomic) IBOutlet DDTableView *dataTable;
+@property (nonatomic, strong) NSMutableArray *array;
+@property (nonatomic, strong) NSMutableArray *dataArray;
+@property (nonatomic, assign) NSInteger type;
 @end
 
 @implementation DDScoreInfoListController
@@ -17,7 +26,146 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    @WeakObj(self);
+    _array = [NSMutableArray new];
+    _dataArray = [NSMutableArray new];
+    _dataTable.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+        if (selfWeak.index==0) {
+            [selfWeak loadData];
+        }
+        else{
+            [selfWeak loadScoreRend];
+        }
+    }];
+    [_dataTable registerNib:[UINib nibWithNibName:@"DDScoreTrendCell" bundle:nil] forCellReuseIdentifier:trend];
+    [_dataTable registerNib:[UINib nibWithNibName:@"DDScoreTeacherCell" bundle:nil] forCellReuseIdentifier:teacher];
+    _dataTable.frame = CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT-80);
+    _dataTable.separatorStyle = UITableViewCellSeparatorStyleNone;
 }
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return _index==0?_array.count:_dataArray.count;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (_index == 0) {
+        if (_type==3) {
+            DDScoreTeacherCell *cell = (DDScoreTeacherCell *)[self tableView:tableView cellForRowAtIndexPath:indexPath];
+            return cell.listView.height;
+        }
+        return 100;
+    }
+    else
+        return 80;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (_index==0) {
+        if (_type==3) {
+            DDScoreTeacherCell *cell = [tableView dequeueReusableCellWithIdentifier:teacher];
+            [cell.listView setData:_array[indexPath.row]];
+            return cell;
+        }
+        return nil;
+    }
+    else
+    {
+        DDScoreTrendCell *cell = [tableView dequeueReusableCellWithIdentifier:trend];
+        [cell.trendView setData:_dataArray[indexPath.row]];
+        cell.backgroundColor = RGB(237, 238, 239);
+        return cell;
+    }
+}
+
+- (void)loadData
+{
+    @WeakObj(self);
+    [self Network_Post:@"getscore" tag:Getscore_Tag
+                 param:nil
+               success:^(id result) {
+                   if ([result[@"code"]integerValue]==200) {
+                       NSMutableArray *data = [NSMutableArray arrayWithCapacity:0];
+                       if ([result[DataKey]isKindOfClass:[NSArray class]]) {
+                           [data addObjectsFromArray:result[DataKey]];
+                       }
+                       selfWeak.array = data;
+                       [selfWeak.dataTable reloadData];
+                   }
+               } failure:^(NSError *error) {
+                   
+               }];
+}
+
+- (void)getScoreWithTeacher
+{
+    @WeakObj(self);
+    [self Network_Post:@"getclassscore" tag:Getclassscore_Tag
+                 param:@{@"classid":_classId}
+               success:^(id result) {
+                   if ([result[@"code"]integerValue]==200) {
+                       NSMutableArray *data = [NSMutableArray arrayWithCapacity:0];
+                       if ([result[DataKey]isKindOfClass:[NSArray class]]) {
+                           [data addObjectsFromArray:result[DataKey]];
+                       }
+                       selfWeak.array = data;
+                       [selfWeak.dataTable reloadData];
+                   }
+                   else
+                   {
+                       [MBProgressHUD showError:result[@"message"]];
+                   }
+               } failure:^(NSError *error) {
+                   [MBProgressHUD showError:@"网络异常"];
+               }];
+}
+
+- (void)loadScoreRend
+{
+    @WeakObj(self);
+    [self Network_Post:@"getscoretrend"
+                   tag:Getscoretrend_Tag
+                 param:nil
+               success:^(id result) {
+                   if ([result[@"code"]integerValue]==200) {
+                       NSMutableArray *data = [NSMutableArray arrayWithCapacity:0];
+                       if ([result[DataKey]isKindOfClass:[NSArray class]]) {
+                           [data addObjectsFromArray:result[DataKey]];
+                       }
+                       selfWeak.dataArray = data;
+                       [selfWeak.dataTable reloadData];
+                   }
+               } failure:^(NSError *error) {
+                   
+               }];
+}
+
+- (void)setIndex:(NSInteger)index
+{
+    _index = index;
+    _type = [appDelegate.userModel.type integerValue];
+    if (index == 0) {
+        if (_type == 3) {
+            [self getScoreWithTeacher];
+        }
+        else
+        {
+            [self loadData];
+        }
+    }
+    else
+    {
+        [self loadScoreRend];
+    }
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

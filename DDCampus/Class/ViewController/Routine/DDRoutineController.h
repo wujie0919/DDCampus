@@ -11,5 +11,5 @@
 
 @interface DDRoutineController : DDBaseViewController
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollview;
-@property (nonatomic, assign) NSInteger selectIndex;
+@property (nonatomic, copy) NSString *selectIndex;
 @end

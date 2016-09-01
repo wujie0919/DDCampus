@@ -13,4 +13,5 @@ typedef void(^SelectClassClickHandler)(NSInteger tag);
 @interface DDScoreInfoView : UIView
 @property (nonatomic, copy) NSArray *titleArray;
 @property (nonatomic, copy) SelectClassClickHandler handler;
+- (void)setColorFrame:(NSInteger)index;
 @end

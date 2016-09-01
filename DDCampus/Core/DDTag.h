@@ -46,4 +46,10 @@ static NSInteger const Getgroupuserlist_Tag = 6011;
 static NSInteger const Do_admingroup_Tag = 6012;
 static NSInteger const Do_grouplogout_Tag = 6013;
 static NSInteger const Do_transfergroup_Tag = 6014;
+
+//成绩
+static NSInteger const Getscore_Tag = 7001;
+static NSInteger const Getscoretrend_Tag = 7002;
+static NSInteger const Getscoredetail_Tag = 7003;
+static NSInteger const Getclassscore_Tag=7004;
 #endif /* DDTag_h */

@@ -28,7 +28,13 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
-    _index = 0;
+    if ([_selectIndex isValidString]) {
+        _index = [_selectIndex integerValue];
+    }
+    else
+    {
+        _index = 0;
+    }
     
     [self showTitle];
     _routineView = [[[NSBundle mainBundle] loadNibNamed:@"DDRoutineBtnView" owner:nil options:nil] lastObject];
@@ -66,21 +72,23 @@
     _scrollview.contentSize = CGSizeMake(SCREEN_WIDTH*2,SCREEN_HEIGHT-self.routineView.frame.size.height);
     _rVC.view.frame = CGRectMake(_index*SCREEN_WIDTH, 0, SCREEN_WIDTH,_scrollview.frame.size.height);
     [_scrollview addSubview:_rVC.view];
-    [_rVC setIndex:0];
+    [_rVC setIndex:_index];
     [self setRightButtonName:appDelegate.classArray];
+    [self.scrollview setContentOffset:CGPointMake(self.index*SCREEN_WIDTH, 0) animated:YES];
+    self.rVC.view.frame = CGRectMake(self.index*SCREEN_WIDTH, 0, SCREEN_WIDTH, self.scrollview.frame.size.height);
+    [_routineView setColorFrame:_index+1001];
 }
 
-- (void)setSelectIndex:(NSInteger)selectIndex
+- (void)setSelectIndex:(NSString *)selectIndex
 {
     _selectIndex = selectIndex;
-    if (_rVC) {
-        [_rVC setIndex:0];
-        _rVC.view.frame = CGRectMake(_index*SCREEN_WIDTH, 0, SCREEN_WIDTH, _scrollview.frame.size.height);
-    }
     if (_routineView) {
+        _index = [selectIndex integerValue];
+        [_rVC setIndex:_index];
+        [self.scrollview setContentOffset:CGPointMake(self.index*SCREEN_WIDTH, 0) animated:YES];
+        self.rVC.view.frame = CGRectMake(self.index*SCREEN_WIDTH, 0, SCREEN_WIDTH, self.scrollview.frame.size.height);
         [_routineView setColorFrame:_index+1001];
     }
-    [self showTitle];
 }
 
 - (void)viewWillAppear:(BOOL)animated

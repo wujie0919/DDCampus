@@ -26,6 +26,7 @@
 #import "DDTabBarController.h"
 #import "DDNavigationController.h"
 #import "DDRoutineController.h"
+#import "DDScoreInfoController.h"
 
 static NSString * const imageCell = @"imageCell";
 static NSString * const buttonCell = @"buttonCell";
@@ -219,7 +220,8 @@ static NSString * const homeCell = @"homeCell";
             tabController.selectedIndex = 1;
         }
         else if (tag == 1) {
-            
+            DDScoreInfoController *scoreVC = [[DDScoreInfoController alloc]initWithNibName:@"DDScoreInfoController" bundle:nil];
+            [self.navigationController pushViewController:scoreVC animated:YES];
         }
         else if (tag == 2)
         {
@@ -228,17 +230,25 @@ static NSString * const homeCell = @"homeCell";
             if ([NSStringFromClass([tabController.selectedViewController classForCoder]) isEqualToString:@"DDNavigationController"]) {
                 DDNavigationController *navController = (DDNavigationController *)tabController.selectedViewController;
                 UIViewController *rootController = [navController.viewControllers lastObject];
-                Class class = class_getSuperclass([rootController class]);
-                if (class == [DDRoutineController class]) {
+                if ([rootController isKindOfClass: [DDRoutineController class]]) {
                     DDRoutineController *routineVC = (DDRoutineController *)rootController;
-                    routineVC.selectIndex = 1;
+                    routineVC.selectIndex = @"0";
                 }
             }
             
         }
         else if (tag == 3)
         {
-            
+            DDTabBarController *tabController = (DDTabBarController *) appDelegate.window.rootViewController;
+            tabController.selectedIndex = 2;
+            if ([NSStringFromClass([tabController.selectedViewController classForCoder]) isEqualToString:@"DDNavigationController"]) {
+                DDNavigationController *navController = (DDNavigationController *)tabController.selectedViewController;
+                UIViewController *rootController = [navController.viewControllers lastObject];
+                if ([rootController isKindOfClass: [DDRoutineController class]]) {
+                    DDRoutineController *routineVC = (DDRoutineController *)rootController;
+                    routineVC.selectIndex = @"1";
+                }
+            }
         }
     }
 }

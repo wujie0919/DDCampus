@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface DDScoreInfoListController : UIViewController
-
+@property (nonatomic, assign)NSInteger index;
+@property (nonatomic, copy) NSString *classId;
 @end

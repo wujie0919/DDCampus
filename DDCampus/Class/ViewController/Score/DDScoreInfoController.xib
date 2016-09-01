@@ -18,6 +18,9 @@
             <subviews>
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iX6-Ie-KA0">
                     <rect key="frame" x="0.0" y="45" width="320" height="523"/>
+                    <connections>
+                        <outlet property="delegate" destination="-1" id="3Xe-oa-f33"/>
+                    </connections>
                 </scrollView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>

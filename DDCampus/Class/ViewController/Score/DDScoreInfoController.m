@@ -9,10 +9,13 @@
 #import "DDScoreInfoController.h"
 #import "DDScoreInfoView.h"
 #import "DDRoutineSelectStudentModel.h"
+#import "DDScoreInfoListController.h"
 
-@interface DDScoreInfoController ()
+@interface DDScoreInfoController ()<UIScrollViewDelegate>
 @property (nonatomic, strong) DDScoreInfoView *scoreView;
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollview;
+@property (nonatomic, assign) NSInteger index;
+@property (nonatomic, strong) DDScoreInfoListController *scoreVC;
 @end
 
 @implementation DDScoreInfoController
@@ -21,17 +24,40 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     [self setBackBarButtonItem];
+    _index = 0;
     _scoreView = [[DDScoreInfoView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 45)];
     _scoreView.handler = ^(NSInteger tag){
         
     };
+    self.title = @"成绩";
     _scoreView.titleArray = @[@"成绩单",@"成绩趋势"];
     [self.view addSubview:_scoreView];
     
-    _scrollview.frame = CGRectMake(0, _scoreView.frame.size.height, SCREEN_WIDTH,SCREEN_HEIGHT- _scoreView.frame.size.height);
+    _scrollview.frame = CGRectMake(0, _scoreView.frame.size.height, SCREEN_WIDTH,SCREEN_HEIGHT- _scrollview.frame.size.height);
     _scrollview.bounces = NO;
     _scrollview.pagingEnabled = YES;
-    _scrollview.contentSize = CGSizeMake(SCREEN_WIDTH*_scoreView.titleArray.count,SCREEN_HEIGHT-_scoreView.frame.size.height);
+    _scrollview.contentSize = CGSizeMake(SCREEN_WIDTH*_scoreView.titleArray.count,SCREEN_HEIGHT-_scrollview.frame.size.height);
+    _scoreVC = [[DDScoreInfoListController alloc]initWithNibName:@"DDScoreInfoListController" bundle:nil];
+    [_scrollview addSubview:_scoreVC.view];
+    _scoreVC.view.frame = CGRectMake(self.index*SCREEN_WIDTH, 0, SCREEN_WIDTH, self.scrollview.frame.size.height);
+    if (_model) {
+        _scoreVC.classId = _model.class_id;
+    }
+    [_scoreVC setIndex:_index];
+}
+
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)sView
+{
+    _index = fabs(sView.contentOffset.x) / sView.frame.size.width;
+    if (_scoreView) {
+        [_scoreView setColorFrame:_index];
+    }
+    [self.scrollview setContentOffset:CGPointMake(self.index*SCREEN_WIDTH, 0) animated:YES];
+    if (_model) {
+        _scoreVC.classId = _model.class_id;
+    }
+    [_scoreVC setIndex:_index];
+    _scoreVC.view.frame = CGRectMake(self.index*SCREEN_WIDTH, 0, SCREEN_WIDTH, self.scrollview.frame.size.height);
 }
 
 - (void)didReceiveMemoryWarning {

@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="DDTrendView">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="80"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k7z-UD-MgF">
+                    <rect key="frame" x="10" y="5" width="300" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="21" id="Io8-Uu-ls6"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eNW-a6-lTY">
+                    <rect key="frame" x="10" y="36" width="80" height="25"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="80" id="KuL-45-uj0"/>
+                        <constraint firstAttribute="height" constant="25" id="fof-e7-uuC"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <state key="normal">
+                        <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sE0-J4-SgL">
+                    <rect key="frame" x="100" y="36" width="80" height="25"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="80" id="kGT-3Q-zEW"/>
+                        <constraint firstAttribute="height" constant="25" id="rdE-vF-Kbt"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <state key="normal">
+                        <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EoY-Lv-1OF">
+                    <rect key="frame" x="190" y="36" width="80" height="25"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="80" id="NWA-LV-lPR"/>
+                        <constraint firstAttribute="height" constant="25" id="prP-Vr-d3V"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <state key="normal">
+                        <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                </button>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_jiantou.png" translatesAutoresizingMaskIntoConstraints="NO" id="FBx-Kl-ieg">
+                    <rect key="frame" x="300" y="44" width="10" height="13"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="13" id="U1s-Qb-pro"/>
+                        <constraint firstAttribute="width" constant="10" id="vbn-Bm-XoC"/>
+                    </constraints>
+                </imageView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="EoY-Lv-1OF" firstAttribute="leading" secondItem="sE0-J4-SgL" secondAttribute="trailing" constant="10" id="4C7-ut-WIE"/>
+                <constraint firstItem="k7z-UD-MgF" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="10" id="D90-Jc-zg8"/>
+                <constraint firstAttribute="trailing" secondItem="FBx-Kl-ieg" secondAttribute="trailing" constant="10" id="NK9-o3-0Gw"/>
+                <constraint firstItem="sE0-J4-SgL" firstAttribute="leading" secondItem="eNW-a6-lTY" secondAttribute="trailing" constant="10" id="UTu-nW-no7"/>
+                <constraint firstAttribute="trailing" secondItem="k7z-UD-MgF" secondAttribute="trailing" constant="10" id="UbB-kq-kA7"/>
+                <constraint firstItem="eNW-a6-lTY" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="10" id="Xij-bb-RP8"/>
+                <constraint firstItem="eNW-a6-lTY" firstAttribute="top" secondItem="k7z-UD-MgF" secondAttribute="bottom" constant="10" id="Yo2-Vn-Iaa"/>
+                <constraint firstItem="sE0-J4-SgL" firstAttribute="top" secondItem="k7z-UD-MgF" secondAttribute="bottom" constant="10" id="aeD-V4-sw5"/>
+                <constraint firstItem="EoY-Lv-1OF" firstAttribute="top" secondItem="k7z-UD-MgF" secondAttribute="bottom" constant="10" id="g3A-Rz-H9Y"/>
+                <constraint firstItem="k7z-UD-MgF" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="5" id="sYz-Ko-x0e"/>
+                <constraint firstItem="FBx-Kl-ieg" firstAttribute="top" secondItem="k7z-UD-MgF" secondAttribute="bottom" constant="18" id="tNU-rL-DKh"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="avgView" destination="eNW-a6-lTY" id="jXe-uu-W8g"/>
+                <outlet property="maxView" destination="sE0-J4-SgL" id="wsA-q6-P2Z"/>
+                <outlet property="minView" destination="EoY-Lv-1OF" id="Ehb-xk-3y9"/>
+                <outlet property="nameLabel" destination="k7z-UD-MgF" id="7gO-DE-I6X"/>
+            </connections>
+            <point key="canvasLocation" x="274" y="228.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="icon_jiantou.png" width="7" height="15"/>
+    </resources>
+</document>

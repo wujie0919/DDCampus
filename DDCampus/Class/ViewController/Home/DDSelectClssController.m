@@ -43,15 +43,26 @@ static NSString * const infoCell = @"infoCell";
 {
     DDSelectClassInfoCell *cell = [tableView dequeueReusableCellWithIdentifier:infoCell];
     DDRoutineSelectStudentModel *model = appDelegate.classArray[indexPath.row];
-    cell.classNameLabel.text = model.name;
+    [cell.selectView setTitle:model.name forState:UIControlStateNormal];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    @WeakObj(self);
+    cell.sBlock = ^(){
+        [selfWeak next:indexPath.row];
+    };
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+
+    
+}
+
+- (void)next:(NSInteger)row
+{
     DDScoreInfoController *infoVC = [[DDScoreInfoController alloc]initWithNibName:@"DDScoreInfoController" bundle:nil];
-    infoVC.model = appDelegate.classArray[indexPath.row];
+    infoVC.model = appDelegate.classArray[row];
+    
     [self.navigationController pushViewController:infoVC animated:YES];
 }
 
