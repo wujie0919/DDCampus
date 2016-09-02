@@ -12,8 +12,8 @@
 
 // 0 值周安排 1 扣分详情
 @property (nonatomic, assign) NSInteger type;
-
+@property (nonatomic, copy) NSString *classid;
 @property (nonatomic, strong) NSMutableArray *rightDataSource;
 @property (nonatomic, strong) NSMutableArray *leftDataSource;
-
+@property (nonatomic, copy) NSString *weekplanid;
 @end

@@ -21,6 +21,7 @@
 @property (nonatomic, assign) NSInteger type ;
 @property (nonatomic, strong) DDSelectClassActionView *menuWindow;
 @property (nonatomic, strong) UIButton *rightButton;
+@property (nonatomic, assign) BOOL isdutyweekuser;
 @end
 
 @implementation DDRoutineController
@@ -65,6 +66,13 @@
                 [selfWeak.rVC loadData];
             };
             [selfWeak.navigationController pushViewController:dayVC animated:YES];
+        }
+    };
+    _rVC.weekBlock = ^(BOOL status)
+    {
+        if (status != selfWeak.isdutyweekuser) {
+            selfWeak.isdutyweekuser = status;
+            [selfWeak showTitle];
         }
     };
     _scrollview.frame = CGRectMake(0, _routineView.frame.size.height, SCREEN_WIDTH,SCREEN_HEIGHT- self.routineView.frame.size.height);
@@ -176,21 +184,25 @@
 - (void)showTitle{
     if (_index ==0) {
         self.navigationItem.title = @"事务";
+        _rightButton.hidden = NO;
         [self setRightButtonName:appDelegate.classArray];
     }else{
         self.navigationItem.title = @"值周成绩";
-        _rightButton= [UIButton buttonWithType:UIButtonTypeCustom];
-        [_rightButton setTitle:@"安排值周" forState:UIControlStateNormal];
-        _rightButton.titleLabel.font = [UIFont systemFontOfSize:14];
-        _rightButton.backgroundColor = RGB(48, 185, 113);
-        _rightButton.frame = CGRectMake(0, 5, 100, 30);
-        _rightButton.layer.cornerRadius= 5;
-        _rightButton.layer.masksToBounds = YES;
-        _rightButton.layer.borderColor = [UIColor whiteColor].CGColor;
-        _rightButton.layer.borderWidth = 1;
-        [_rightButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-        [_rightButton addTarget:self action:@selector(showWeek) forControlEvents:UIControlEventTouchUpInside];
-        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:_rightButton];
+        _rightButton.hidden = !self.isdutyweekuser;
+        if (self.isdutyweekuser) {
+            _rightButton= [UIButton buttonWithType:UIButtonTypeCustom];
+            [_rightButton setTitle:@"安排值周" forState:UIControlStateNormal];
+            _rightButton.titleLabel.font = [UIFont systemFontOfSize:14];
+            _rightButton.backgroundColor = RGB(48, 185, 113);
+            _rightButton.frame = CGRectMake(0, 5, 100, 30);
+            _rightButton.layer.cornerRadius= 5;
+            _rightButton.layer.masksToBounds = YES;
+            _rightButton.layer.borderColor = [UIColor whiteColor].CGColor;
+            _rightButton.layer.borderWidth = 1;
+            [_rightButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+            [_rightButton addTarget:self action:@selector(showWeek) forControlEvents:UIControlEventTouchUpInside];
+            self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:_rightButton];
+        }
     }
 }
 

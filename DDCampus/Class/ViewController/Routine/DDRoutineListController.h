@@ -10,10 +10,12 @@
 #import "DDBaseViewController.h"
 
 typedef void(^RoutineClickBlock)(NSDictionary *data);
+typedef void(^GetIsWeekDayBlock)(BOOL status);
 
 @interface DDRoutineListController : DDBaseViewController
 @property (weak, nonatomic) IBOutlet DDTableView *dataTable;
 @property (nonatomic, assign)  NSInteger index;
 @property (nonatomic, copy) RoutineClickBlock routineBlock;
+@property (nonatomic, copy) GetIsWeekDayBlock weekBlock;
 - (void)loadData;
 @end

@@ -23,7 +23,7 @@ static NSString * const msgCell = @"msgCell";
     // Do any additional setup after loading the view from its nib.
     self.title = @"站内消息";
     [self setBackBarButtonItem];
-    
+    _array = [NSMutableArray arrayWithCapacity:0];
     [_dataTable registerNib:[UINib nibWithNibName:@"DDMessageCell" bundle:nil] forCellReuseIdentifier:msgCell];
     [self getData];
     @WeakObj(self);
@@ -56,7 +56,6 @@ static NSString * const msgCell = @"msgCell";
             }else{
                 [selfWeak.array addObjectsFromArray:dataArray];
             }
-            
             [selfWeak.dataTable reloadData];
         }
         else

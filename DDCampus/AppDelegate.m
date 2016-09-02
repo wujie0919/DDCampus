@@ -64,29 +64,43 @@ AppDelegate* appDelegate = nil;
     self.window.rootViewController = tabBarController;
     @WeakObj(self);
     NSString *class_id = [USER_DEFAULT objectForKey:classid];
-    [self Network_Post:@"getteacherclass"
-                   tag:Getteacherclass_Tag
-                 param:nil success:^(id result) {
-                     if ([result[@"code"]integerValue]==200) {
-                         NSMutableArray *array = [NSMutableArray new];
-                         if ([result[DataKey] isKindOfClass:[NSArray class]]) {
-                             for (NSDictionary *dic in result[DataKey]) {
-                                 DDRoutineSelectStudentModel *sModel = [[DDRoutineSelectStudentModel alloc]init];
-                                 sModel.class_id = dic[@"id"];
-                                 sModel.name = dic[@"name"];
-                                 sModel.selected = [sModel.class_id isEqualToString:class_id]?YES:NO;
-                                 [array addObject:sModel];
+    if ([self.userModel.type integerValue]==3) {
+        [self Network_Post:@"getteacherclass"
+                       tag:Getteacherclass_Tag
+                     param:nil success:^(id result) {
+                         if ([result[@"code"]integerValue]==200) {
+                             NSMutableArray *array = [NSMutableArray new];
+                             if ([result[DataKey] isKindOfClass:[NSArray class]]) {
+                                 for (NSDictionary *dic in result[DataKey]) {
+                                     DDRoutineSelectStudentModel *sModel = [[DDRoutineSelectStudentModel alloc]init];
+                                     sModel.class_id = dic[@"id"];
+                                     sModel.name = dic[@"name"];
+                                     sModel.selected = [sModel.class_id isEqualToString:class_id]?YES:NO;
+                                     [array addObject:sModel];
+                                 }
                              }
+                             selfWeak.classArray = array;
+                             NSNotification * notice = [NSNotification notificationWithName:GetClassNameSuccess object:nil userInfo:@{@"value":array}];
+                             //发送消息
+                             [[NSNotificationCenter defaultCenter]postNotification:notice];
                          }
-                         selfWeak.classArray = array;
-                         NSNotification * notice = [NSNotification notificationWithName:GetClassNameSuccess object:nil userInfo:@{@"value":array}];
-                         //发送消息
-                         [[NSNotificationCenter defaultCenter]postNotification:notice];
-                     }
-                     
-                 } failure:^(NSError *error) {
-                     
-                 }];
+                         
+                     } failure:^(NSError *error) {
+                         
+                     }];
+    }
+    [self Network_Post:@"getindexreddot" tag:Getindexreddot_Tag param:nil success:^(id result) {
+        if ([result[@"code"]integerValue]==200) {
+            if ([result[DataKey][@"newpmscount"]integerValue]>0 || [result[DataKey][@"newhwcount"]integerValue]>0)
+            {
+                NSNotification * notice = [NSNotification notificationWithName:NewMessageNotRead object:nil userInfo:nil];
+                //发送消息
+                [[NSNotificationCenter defaultCenter]postNotification:notice];
+            }
+        }
+    } failure:^(NSError *error) {
+        
+    }];
 }
 
 

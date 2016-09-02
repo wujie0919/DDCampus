@@ -27,6 +27,7 @@ static NSInteger const Do_homework_Tag = 4003;
 static NSInteger const Do_forumreply_Tag = 4004;
 static NSInteger const Do_forumpostlike_Tag = 4005;
 static NSInteger const Getnotice_Tag= 4006;
+static NSInteger const Getindexreddot_Tag= 4007;
 
 //事务
 static NSInteger const Getdutyday_Tag = 5001;
@@ -36,6 +37,8 @@ static NSInteger const Do_savedutyday_Tag = 5004;
 static NSInteger const Getteacherclass_Tag = 5005;
 static NSInteger const Getdutyweekset_tag = 5006;
 static NSInteger const Getdutyweek_Tag = 5007;
+static NSInteger const Getstudent_Tag = 5008;
+static NSInteger const Getdutyweekcutset_Tag = 5009;
 
 //社区
 static NSInteger const Getforumpost_Tag = 6001;
@@ -60,7 +63,7 @@ static NSInteger const Getscoredetail_Tag = 7003;
 static NSInteger const Getclassscore_Tag=7004;
 static NSInteger const Getsubjecttrend_Tag = 7005;
 static NSInteger const Getclassscoretrend_tag = 7006;
-
+static NSInteger const Getteachermulti_Tag = 7009;
 
 //个人中心
 static NSInteger const Logout_Tag = 8001;

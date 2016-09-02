@@ -8,6 +8,7 @@
 
 #import "DDRoutinePlanController.h"
 #import "DDRoutinePlanCell.h"
+#import "DDCustomScoreController.h"
 
 static NSString * const plancell = @"plancell";
 
@@ -55,11 +56,27 @@ static NSString * const plancell = @"plancell";
     return _array.count;
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    DDRoutinePlanCell *cell = (DDRoutinePlanCell *)[self tableView:tableView cellForRowAtIndexPath:indexPath];
+    return cell.planView.height;
+}
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     DDRoutinePlanCell *cell = [tableView dequeueReusableCellWithIdentifier:plancell];
     [cell.planView setData:_array[indexPath.row]];
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    DDCustomScoreController *scoreVC = [[DDCustomScoreController alloc]init];
+    scoreVC.type = 0;
+    scoreVC.classid =_array[indexPath.row][@"classid"];
+    scoreVC.weekplanid = _array[indexPath.row][@"id"];
+    [self.navigationController pushViewController:scoreVC animated:YES];
 }
 
 - (void)didReceiveMemoryWarning {

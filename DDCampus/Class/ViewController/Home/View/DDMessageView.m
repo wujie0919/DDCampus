@@ -25,7 +25,7 @@
         make.top.equalTo(selfWeak).offset(10);
         make.right.equalTo(selfWeak).offset(-10);
         make.left.equalTo(selfWeak).offset(10);
-        make.height.mas_equalTo(200);
+        make.height.mas_equalTo(220);
     }];
     
     [_classLabel mas_makeConstraints:^(MASConstraintMaker *make) {

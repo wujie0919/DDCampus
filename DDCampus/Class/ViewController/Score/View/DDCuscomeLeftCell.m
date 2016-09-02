@@ -47,8 +47,8 @@
 
 - (void)setItemWithData:(id)data
 {
-    if([data isKindOfClass:[NSString class]]){
-        _mainLabel.text = (NSString *)data;
+    if([data isKindOfClass:[NSDictionary class]]){
+        _mainLabel.text = data[@"name"];
     }
 }
 

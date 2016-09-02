@@ -28,6 +28,9 @@ extern NSString *const LZCommentClickedNotification;
 extern NSString *const LZCommentClickedNotificationKey;
 extern NSString * const LZCommentViewNoticationKey;
 
+
+extern NSString * const NewMessageNotRead;
+
 extern NSString * const TOKENOVERDUE;
 @interface DDExternValue : NSObject
 

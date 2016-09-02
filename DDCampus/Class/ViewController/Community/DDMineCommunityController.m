@@ -20,7 +20,7 @@
 
 static NSString * const homeCell = @"homeCell";
 
-@interface DDMineCommunityController ()
+@interface DDMineCommunityController ()<UITextViewDelegate,LZMomentsCellDelegate,UITableViewDelegate,UITableViewDataSource>
 {
     NSLock *_lock;
 }

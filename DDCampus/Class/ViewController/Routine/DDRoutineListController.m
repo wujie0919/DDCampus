@@ -173,6 +173,9 @@ static NSString * const weekCell = @"weekCell";
                        [selfWeak.dataTable.mj_footer endRefreshing];
                        if ([result[@"code"]integerValue]==200) {
                            selfWeak.isdutyweekuser = result[DataKey][@"isdutyweekuser"];
+                           if (selfWeak.weekBlock) {
+                               selfWeak.weekBlock(selfWeak.isdutyweekuser);
+                           }
                            selfWeak.ismaster = result[DataKey][@"ismaster"];
                            NSMutableArray *array = [NSMutableArray arrayWithCapacity:0];
                            for (NSDictionary *dic in result[DataKey][@"list"]) {

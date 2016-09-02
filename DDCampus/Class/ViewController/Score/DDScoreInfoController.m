@@ -58,6 +58,12 @@
     if (_model) {
         _scoreVC.classId = _model.class_id;
     }
+//    [_scoreVC.view mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.top.equalTo(selfWeak.scrollview).offset(0);
+//        make.right.equalTo(selfWeak.scrollview).offset(0);
+//        make.left.equalTo(selfWeak.scrollview).offset(0);
+//        make.bottom.equalTo(selfWeak.scrollview).offset(0);
+//    }];
     [_scoreVC setIndex:_index];
     NSInteger type = [appDelegate.userModel.type integerValue];
     if (type==3) {

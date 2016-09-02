@@ -160,9 +160,10 @@ static NSString * const headerCell = @"header";
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
     if (buttonIndex == 1) {
+        [appDelegate showLogin];
         [self Network_Post:@"logout" tag:Logout_Tag param:nil success:^(id result) {
             if ([result[@"code"]integerValue]==200) {
-                [appDelegate showLogin];
+                
             }
         } failure:^(NSError *error) {
             

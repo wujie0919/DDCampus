@@ -49,6 +49,8 @@ static NSString * const homeCell = @"homeCell";
 @property (nonatomic, copy) NSString *rpid;
 // 显示评论弹窗的cell的indexPath
 @property (nonatomic, strong) NSIndexPath *cellIndexPath;
+@property (nonatomic, strong) UIView *rightView;
+@property (nonatomic, strong) UIImageView *iconImage;
 @end
 
 @implementation DDHomeController
@@ -99,15 +101,16 @@ static NSString * const homeCell = @"homeCell";
     _homeTable.separatorStyle = UITableViewCellSeparatorStyleNone;
     
     UIButton *rightButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    rightButton.titleLabel.font = [UIFont systemFontOfSize:14];
+    [rightButton setImage:[UIImage imageNamed:@"xiaoxi"] forState:UIControlStateNormal];
     rightButton.frame = CGRectMake(0, 0, 30, 30);
-    
     [rightButton addTarget:self action:@selector(showMessage) forControlEvents:UIControlEventTouchUpInside];
-    UIView *view = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 30, 30)];
-    [view addSubview:rightButton];
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:view];
-
-    
+    _rightView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 30, 30)];
+    [_rightView addSubview:rightButton];
+    _iconImage = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"tuo"]];
+    _iconImage.frame = CGRectMake(18, 2, 5, 5);
+    _iconImage.hidden = YES;
+    [_rightView addSubview:_iconImage];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:_rightView];
 }
 
 - (void)showMessage
@@ -121,6 +124,13 @@ static NSString * const homeCell = @"homeCell";
     _chatKeyBoard.textView.text = @"";
     if (_chatKeyBoard.hidden == YES) {
         return;
+    }
+}
+
+- (void)messageRead
+{
+    if (_iconImage.hidden) {
+        _iconImage.hidden = !_iconImage.hidden;
     }
 }
 
@@ -138,6 +148,11 @@ static NSString * const homeCell = @"homeCell";
                                              selector:@selector(commentClick:)
                                                  name:LZCommentClickedNotification
                                                object:nil];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(messageRead)
+                                                 name:NewMessageNotRead
+                                               object:nil];
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -146,8 +161,8 @@ static NSString * const homeCell = @"homeCell";
     [IQKeyboardManager sharedManager].enableAutoToolbar = YES;
     [[NSNotificationCenter defaultCenter]removeObserver:self name:UIKeyboardWillHideNotification object:nil];
     [[NSNotificationCenter defaultCenter]removeObserver:self name:LZCommentClickedNotification object:nil];
+    [[NSNotificationCenter defaultCenter]removeObserver:self name:NewMessageNotRead object:nil];
 }
-
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
@@ -435,7 +450,6 @@ static NSString * const homeCell = @"homeCell";
                    selfWeak.index = nil;
                    [selfWeak hideHUD];
                }];
-    [self.homeTable reloadRowsAtIndexPaths:@[_index] withRowAnimation:UITableViewRowAnimationNone];
 }
 
 - (LZMomentsListViewModel *)statusListViewModel {

@@ -41,7 +41,8 @@
                              } failure:^(NSError *error) {
                                  [selfWeak hideHUD];
                                  [selfWeak showErrorHUD:@"网络异常"];
-                             }];    }
+                             }];
+    }
     else
     {
         [self showErrorHUD:@"请输入通知内容"];

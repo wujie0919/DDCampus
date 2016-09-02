@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "AFHTTPRequestOperation.h"
 
 typedef void(^successBlock)(id result);
 typedef void (^failureBlock)(NSError * error);

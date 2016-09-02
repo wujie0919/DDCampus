@@ -23,6 +23,7 @@ NSString * const GetClassNameSuccess = @"GetClassNameSuccess";
 NSString *const LZCommentClickedNotification = @"LZCommentClickedNotification";
 NSString *const LZCommentClickedNotificationKey = @"LZCommentClickedNotificationKey";
 NSString * const LZCommentViewNoticationKey = @"LZCommentViewNoticationKey";
+NSString * const NewMessageNotRead = @"NewMessageNotRead";
 NSString * const TOKENOVERDUE=@"TOKENOVERDUE";
 @implementation DDExternValue
 

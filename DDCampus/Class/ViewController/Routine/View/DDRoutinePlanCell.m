@@ -17,13 +17,12 @@
     [self.contentView addSubview:_planView];
     @WeakObj(self);
     [_planView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(selfWeak.contentView).offset(0);
-        make.right.equalTo(selfWeak.contentView).offset(0);
-        make.left.equalTo(selfWeak.contentView).offset(0);
-        make.bottom.equalTo(selfWeak.contentView).offset(-10);
-//        make.edges.equalTo(selfWeak.contentView).insets(UIEdgeInsetsMake(0, 0, 10, 0));
+//        make.top.equalTo(selfWeak.contentView).offset(0);
+//        make.right.equalTo(selfWeak.contentView).offset(0);
+//        make.left.equalTo(selfWeak.contentView).offset(0);
+//        make.bottom.equalTo(selfWeak.contentView).offset(-10);
+        make.edges.equalTo(selfWeak.contentView).insets(UIEdgeInsetsMake(0, 0, 10, 0));
     }];
-    _planView.backgroundColor = [UIColor redColor];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

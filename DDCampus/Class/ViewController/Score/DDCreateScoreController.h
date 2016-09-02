@@ -12,4 +12,8 @@
 
 @property (weak, nonatomic) IBOutlet DDView *classView;
 @property (weak, nonatomic) IBOutlet UILabel *classNameLabel;
+@property (weak, nonatomic) IBOutlet DDView *sujectView;
+@property (weak, nonatomic) IBOutlet UILabel *subjectLabel;
+@property (weak, nonatomic) IBOutlet DDView *dateView;
+@property (weak, nonatomic) IBOutlet UILabel *dateLabel;
 @end

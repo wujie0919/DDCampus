@@ -492,6 +492,11 @@ static NSDateFormatter *dateFormatter = nil;
     return [pDate stringWithFormate:@"yyyy-MM-dd HH:mm:ss"];
 }
 
+- (NSString *)formatDate:(NSDate *)date format:(NSString *)format
+{
+    return [date stringWithFormate:format];
+}
+
 + (NSString *)getDayValue:(NSString *)date
 {
     double publishLong = [date doubleValue];

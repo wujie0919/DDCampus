@@ -35,7 +35,7 @@
     self.title = self.type == 0?@"值周安排":@"扣分详情";
 //    NSLog(@"%@---",APPD.classArray);
    
-    NSMutableArray *arr = [(AppDelegate *)[UIApplication sharedApplication].delegate classArray];
+    NSMutableArray *arr = appDelegate.classArray;
     NSLog(@"%@----",arr);
     
     /**
@@ -58,7 +58,7 @@
     _rightTableView.backgroundColor = [UIColor whiteColor];
     _rightTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     
-    [self loadData];
+//    [self loadData];
     self.view.backgroundColor = RGB(238, 238, 238);
     
     _leftSelectIndex = [NSIndexPath indexPathForRow:0 inSection:0];
@@ -66,6 +66,12 @@
     [_leftTableView reloadData];
     if(self.type == 0){
         [_rightTableView setTableFooterView:[self rightFooterView]];
+//        self.rightDataSource = appDelegate.classArray;
+//        [self getStudent];
+        [self getdutyweekset];
+    }else
+    {
+        [self getdutyweekcutset];
     }
 }
 
@@ -132,15 +138,6 @@
 - (void)sureClick
 {
     NSLog(@"确认的点击");
-}
-
-- (void)loadData
-{
-    [self Network_Post:@"getdutyweekset" tag:6000 param:@{@"weekplanid":@"40"} success:^(id result) {
-        NSLog(@"result:%@",result);
-    } failure:^(NSError *error) {
-        
-    }];
 }
 
 #pragma mark
@@ -280,6 +277,49 @@
     }
 }
 
+//- (void)getStudent
+//{
+//    @WeakObj(self);
+//    [self Network_Post:@"getstudent" tag:Getstudent_Tag param:@{@"classid":_classid} success:^(id result) {
+//        if ([result[@"code"]integerValue]==200) {
+//        }
+//    } failure:^(NSError *error) {
+//        
+//    }];
+//}
 
+- (void)getdutyweekset
+{
+    @WeakObj(self);
+    [self Network_Post:@"getdutyweekset" tag:Getdutyweekset_tag param:@{@"weekplanid":_weekplanid} success:^(id result) {
+        if ([result[@"code"]integerValue]) {
+            if ([result[DataKey][@"studentlist"]isKindOfClass:[NSArray class]]) {
+                NSMutableArray *array = [NSMutableArray array];
+                [array addObjectsFromArray:result[DataKey][@"studentlist"]];
+                selfWeak.leftDataSource = array;
+                [_leftTableView  reloadData];
+
+            }
+            if ([result[DataKey][@"classlist"]isKindOfClass:[NSArray class]]) {
+                NSMutableArray *classarray = [NSMutableArray array];
+                [classarray addObjectsFromArray:result[DataKey][@"classlist"]];
+                selfWeak.rightDataSource = classarray;
+            }
+        }
+    } failure:^(NSError *error) {
+        
+    }];
+}
+
+- (void)getdutyweekcutset
+{
+    [self Network_Post:@"getdutyweekcutset" tag:Getdutyweekcutset_Tag param:@{@"weekplanid":_weekplanid} success:^(id result) {
+        if ([result[@"code"]integerValue]) {
+            
+        }
+    } failure:^(NSError *error) {
+        
+    }];
+}
 
 @end

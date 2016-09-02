@@ -63,7 +63,7 @@ static NSString * const HOST = @"http://dingding.wangjuyunhe.com/api.php?m=index
                       obj = JSONObjectByRemovingKeysWithNullValues(obj);
                       if (success) {
                           success(obj);
-                          if ([obj[@"code"] integerValue]==405) {
+                          if ([obj[@"code"] integerValue]==405 || [obj[@"code"] integerValue]==406) {
                               [[NSNotificationCenter defaultCenter] postNotificationName:TOKENOVERDUE object:self userInfo:nil];
                           }
                       }

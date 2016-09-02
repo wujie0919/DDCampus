@@ -66,7 +66,8 @@
                          } failure:^(NSError *error) {
                              [selfWeak hideHUD];
                              [selfWeak showErrorHUD:@"网络异常"];
-                         }];}
+                         }];
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
