@@ -9,7 +9,7 @@
 #import "DDAgreementViewController.h"
 
 @interface DDAgreementViewController ()
-@property (weak, nonatomic) IBOutlet UIWebView *webview;
+@property (weak, nonatomic) IBOutlet UITextView *textView;
 
 @end
 
@@ -24,14 +24,8 @@
     [self showLoadHUD:@"加载中..."];
     [self Network_Post:@"getagreement" tag:Getagreement_Tag
                  param:nil success:^(id result) {
-                     
-                     
                      if ([result[@"code"]integerValue]==200) {
-                         NSMutableString *html = [[NSMutableString alloc]init];
-                         [html appendString:@"<html><body>"];
-                         [html appendString:result[DataKey]];
-                         [html appendString:@"</body></html>"];
-                         [selfWeak.webview loadHTMLString:html baseURL:nil];
+                         selfWeak.textView.text = result[DataKey];
                      }
                      [selfWeak hideHUD];
                  } failure:^(NSError *error) {

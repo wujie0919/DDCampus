@@ -7,8 +7,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DDAgreementViewController">
             <connections>
+                <outlet property="textView" destination="fgE-KY-cpQ" id="EPB-uj-p0d"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
-                <outlet property="webview" destination="y2B-Nq-hzE" id="m2z-Fv-q2v"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -16,17 +16,19 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y2B-Nq-hzE">
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="fgE-KY-cpQ">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                    <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
-                </webView>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                </textView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="y2B-Nq-hzE" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="McW-Gz-GLq"/>
-                <constraint firstAttribute="bottom" secondItem="y2B-Nq-hzE" secondAttribute="bottom" id="N8H-MY-Fey"/>
-                <constraint firstAttribute="trailing" secondItem="y2B-Nq-hzE" secondAttribute="trailing" id="SEB-Q7-kZF"/>
-                <constraint firstItem="y2B-Nq-hzE" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="ldg-Uu-Zzm"/>
+                <constraint firstAttribute="trailing" secondItem="fgE-KY-cpQ" secondAttribute="trailing" id="9EP-kK-gF0"/>
+                <constraint firstAttribute="bottom" secondItem="fgE-KY-cpQ" secondAttribute="bottom" id="EMp-MW-Sm0"/>
+                <constraint firstItem="fgE-KY-cpQ" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="F22-UY-7tc"/>
+                <constraint firstItem="fgE-KY-cpQ" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="cHG-lK-fzx"/>
             </constraints>
             <point key="canvasLocation" x="274" y="248"/>
         </view>
