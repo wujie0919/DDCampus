@@ -64,8 +64,10 @@
     }
     @WeakObj(self);
     [_menuWindow show:self.classData handler:^(NSMutableArray *nameList) {
-        DDRoutineSelectStudentModel *model = nameList[0];
-        selfWeak.classNameLabel.text = model.name;
+        if (nameList.count>0) {
+            DDRoutineSelectStudentModel *model = nameList[0];
+            selfWeak.classNameLabel.text = model.name;
+        }
     } singleFlg:NO];
     
 }
@@ -79,8 +81,10 @@
     }
     @WeakObj(self);
     [_menuWindow show:self.quanArray handler:^(NSMutableArray *nameList) {
-        DDRoutineSelectStudentModel *model = nameList[0];
-        selfWeak.qzLabel.text = model.name;
+        if (nameList.count>0) {
+            DDRoutineSelectStudentModel *model = nameList[0];
+            selfWeak.qzLabel.text = model.name;
+        }
     } singleFlg:NO];
 }
 
@@ -91,9 +95,14 @@
     }
     @WeakObj(self);
     [_menuWindow show:self.subjectArray handler:^(NSMutableArray *nameList) {
-        DDRoutineSelectStudentModel *model = nameList[0];
-        selfWeak.subjectLabel.text = model.name;
-    } singleFlg:NO];
+        NSMutableString *string = [[NSMutableString alloc]init];
+        for (DDRoutineSelectStudentModel *model in nameList) {
+            [string appendFormat:@"%@,",model.name];
+        }
+        if (string.length>0) {
+            selfWeak.subjectLabel.text = [string substringToIndex:string.length-1];
+        }
+    } singleFlg:YES];
 }
 - (IBAction)createScore:(id)sender {
 }

@@ -114,7 +114,12 @@ static NSString * const selectCell = @"selectCell";
         [array addObject:_selectModel];
     }else
     {
-        array = _dataArray;
+        for (DDRoutineSelectStudentModel *model in _dataArray) {
+            if (model.selected) {
+                [array addObject:model];
+                continue;
+            }
+        }
     }
     _selectModel = nil;
     _bcHandler(array);

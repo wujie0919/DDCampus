@@ -168,10 +168,12 @@
     }
     @WeakObj(self);
     [_menuWindow show:appDelegate.classArray handler:^(NSMutableArray *nameList) {
-        DDRoutineSelectStudentModel *model = nameList[0];
-        [selfWeak.rightButton setTitle:model.name forState:UIControlStateNormal];
-        [NSTools setObject:model.class_id forKey:classid];
-        [NSTools setObject:model.name forKey:classname];
+        if (nameList.count>0) {
+            DDRoutineSelectStudentModel *model = nameList[0];
+            [selfWeak.rightButton setTitle:model.name forState:UIControlStateNormal];
+            [NSTools setObject:model.class_id forKey:classid];
+            [NSTools setObject:model.name forKey:classname];
+        }
         [selfWeak.rVC loadData];
     } singleFlg:NO];
 
