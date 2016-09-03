@@ -22,6 +22,8 @@
 @property (weak, nonatomic) IBOutlet UIImageView *selectImageView;
 @property (nonatomic, strong) NSMutableArray *quanArray;
 @property (weak, nonatomic) IBOutlet UILabel *qzLabel;
+@property (weak, nonatomic) IBOutlet DDView *maxView;
+@property (weak, nonatomic) IBOutlet UILabel *MaxLabel;
 @end
 
 @implementation DDCreateScoreController
@@ -92,6 +94,8 @@
         DDRoutineSelectStudentModel *model = nameList[0];
         selfWeak.subjectLabel.text = model.name;
     } singleFlg:NO];
+}
+- (IBAction)createScore:(id)sender {
 }
 
 - (void)showDateView

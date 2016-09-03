@@ -31,11 +31,11 @@
 {
     _dic = data;
     [_nameView setTitle:data[@"name"] forState:UIControlStateNormal];
-    NSString *max = [NSString stringWithFormat:@"%ld",[data[@"max"] integerValue]];
+    NSString *max = [NSString stringWithFormat:@"%d",[data[@"max"] integerValue]];
     _maxLabel.text = [NSString stringWithFormat:@"最高分 %@",max];
-    NSString *min = [NSString stringWithFormat:@"%ld",[data[@"min"] integerValue]];
+    NSString *min = [NSString stringWithFormat:@"%d",[data[@"min"] integerValue]];
     _minLabel.text = [NSString stringWithFormat:@"最低分 %@",min];
-    NSString *avg = [NSString stringWithFormat:@"%ld",[data[@"avg"] integerValue]];
+    NSString *avg = [NSString stringWithFormat:@"%d",[data[@"avg"] integerValue]];
     _avgLabel.text = [NSString stringWithFormat:@"平均分 %@",avg];
 }
 @end

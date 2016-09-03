@@ -217,6 +217,12 @@
 		37B1E3371D79713600E8E167 /* DDSelectDateView.m in Sources */ = {isa = PBXBuildFile; fileRef = 37B1E3361D79713600E8E167 /* DDSelectDateView.m */; };
 		37B1E33B1D79715600E8E167 /* DDSelectDateView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37B1E33A1D79715600E8E167 /* DDSelectDateView.xib */; };
 		37B1E33E1D79725400E8E167 /* DDSelectDateActionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 37B1E33D1D79725400E8E167 /* DDSelectDateActionView.m */; };
+		37B1E3421D79921600E8E167 /* DDWeekRankController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37B1E3401D79921600E8E167 /* DDWeekRankController.m */; };
+		37B1E3431D79921600E8E167 /* DDWeekRankController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37B1E3411D79921600E8E167 /* DDWeekRankController.xib */; };
+		37B1E3471D7994E600E8E167 /* DDWeekRankingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 37B1E3451D7994E600E8E167 /* DDWeekRankingCell.m */; };
+		37B1E3481D7994E600E8E167 /* DDWeekRankingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37B1E3461D7994E600E8E167 /* DDWeekRankingCell.xib */; };
+		37B1E34B1D79950300E8E167 /* DDWeekRankingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 37B1E34A1D79950300E8E167 /* DDWeekRankingView.m */; };
+		37B1E34D1D79951100E8E167 /* DDWeekRankingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37B1E34C1D79951100E8E167 /* DDWeekRankingView.xib */; };
 		37B674351D6337CA005B2A4F /* URTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 37B674341D6337CA005B2A4F /* URTableView.m */; };
 		37B6743A1D63454C005B2A4F /* DDHomeWorkDetailsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37B674381D63454C005B2A4F /* DDHomeWorkDetailsController.m */; };
 		37B6743B1D63454C005B2A4F /* DDHomeWorkDetailsController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37B674391D63454C005B2A4F /* DDHomeWorkDetailsController.xib */; };
@@ -788,6 +794,15 @@
 		37B1E33A1D79715600E8E167 /* DDSelectDateView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DDSelectDateView.xib; sourceTree = "<group>"; };
 		37B1E33C1D79725400E8E167 /* DDSelectDateActionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDSelectDateActionView.h; sourceTree = "<group>"; };
 		37B1E33D1D79725400E8E167 /* DDSelectDateActionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDSelectDateActionView.m; sourceTree = "<group>"; };
+		37B1E33F1D79921600E8E167 /* DDWeekRankController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDWeekRankController.h; sourceTree = "<group>"; };
+		37B1E3401D79921600E8E167 /* DDWeekRankController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDWeekRankController.m; sourceTree = "<group>"; };
+		37B1E3411D79921600E8E167 /* DDWeekRankController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DDWeekRankController.xib; sourceTree = "<group>"; };
+		37B1E3441D7994E600E8E167 /* DDWeekRankingCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDWeekRankingCell.h; sourceTree = "<group>"; };
+		37B1E3451D7994E600E8E167 /* DDWeekRankingCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDWeekRankingCell.m; sourceTree = "<group>"; };
+		37B1E3461D7994E600E8E167 /* DDWeekRankingCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DDWeekRankingCell.xib; sourceTree = "<group>"; };
+		37B1E3491D79950300E8E167 /* DDWeekRankingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDWeekRankingView.h; sourceTree = "<group>"; };
+		37B1E34A1D79950300E8E167 /* DDWeekRankingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDWeekRankingView.m; sourceTree = "<group>"; };
+		37B1E34C1D79951100E8E167 /* DDWeekRankingView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DDWeekRankingView.xib; sourceTree = "<group>"; };
 		37B674331D6337CA005B2A4F /* URTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = URTableView.h; sourceTree = "<group>"; };
 		37B674341D6337CA005B2A4F /* URTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = URTableView.m; sourceTree = "<group>"; };
 		37B674371D63454C005B2A4F /* DDHomeWorkDetailsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDHomeWorkDetailsController.h; sourceTree = "<group>"; };
@@ -1733,6 +1748,12 @@
 				37AFC49D1D790266004DF7EB /* DDRoutinPlanInfoCell.h */,
 				37AFC49E1D790266004DF7EB /* DDRoutinPlanInfoCell.m */,
 				37AFC49F1D790266004DF7EB /* DDRoutinPlanInfoCell.xib */,
+				37B1E3441D7994E600E8E167 /* DDWeekRankingCell.h */,
+				37B1E3451D7994E600E8E167 /* DDWeekRankingCell.m */,
+				37B1E3461D7994E600E8E167 /* DDWeekRankingCell.xib */,
+				37B1E3491D79950300E8E167 /* DDWeekRankingView.h */,
+				37B1E34A1D79950300E8E167 /* DDWeekRankingView.m */,
+				37B1E34C1D79951100E8E167 /* DDWeekRankingView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -2372,6 +2393,9 @@
 				37CC62D71D78517A005D5CCA /* DDRoutinePlanController.h */,
 				37CC62D81D78517A005D5CCA /* DDRoutinePlanController.m */,
 				37CC62D91D78517A005D5CCA /* DDRoutinePlanController.xib */,
+				37B1E33F1D79921600E8E167 /* DDWeekRankController.h */,
+				37B1E3401D79921600E8E167 /* DDWeekRankController.m */,
+				37B1E3411D79921600E8E167 /* DDWeekRankController.xib */,
 			);
 			path = Routine;
 			sourceTree = "<group>";
@@ -2776,6 +2800,7 @@
 				3796AB371D72FC4F0066266F /* DDCommunityCell.xib in Resources */,
 				3725BCC41D7595D30034C36C /* community_add@3x.png in Resources */,
 				370495151D787DBA003A4B18 /* xiaoxi@3x.png in Resources */,
+				37B1E3481D7994E600E8E167 /* DDWeekRankingCell.xib in Resources */,
 				37CC62721D77BA24005D5CCA /* DDStudentScoreView.xib in Resources */,
 				3796AB101D724F020066266F /* er@3x.png in Resources */,
 				371050191D582DBF0079FC85 /* icon_phone@3x.png in Resources */,
@@ -2815,6 +2840,7 @@
 				37EC84FE1D770A8700AD223C /* DDNewMemberController.xib in Resources */,
 				37CC62E51D7855BB005D5CCA /* DDRoutinePlanCell.xib in Resources */,
 				934BD8361D5397C200BB238A /* DDHomeController.xib in Resources */,
+				37B1E34D1D79951100E8E167 /* DDWeekRankingView.xib in Resources */,
 				379B97591D75DD0A00BADBFA /* DDGroupJoinCell.xib in Resources */,
 				37CC62591D774241005D5CCA /* DDTrendView.xib in Resources */,
 				37E1B1671D7447CC00D012F0 /* usericon@2x.png in Resources */,
@@ -2836,6 +2862,7 @@
 				373EF5831D6AA9DB0031400C /* DDButtonView.xib in Resources */,
 				37767DCC1D5F0746001790CC /* DDHomeworkCell.xib in Resources */,
 				37CC62811D77C155005D5CCA /* DDStudentScoreCollectionCell.xib in Resources */,
+				37B1E3431D79921600E8E167 /* DDWeekRankController.xib in Resources */,
 				37CC62BB1D7822AA005D5CCA /* DDMineHelpController.xib in Resources */,
 				37EC84E01D76E66200AD223C /* DDGroupMemberUserViewCell.xib in Resources */,
 				37CC62681D77A727005D5CCA /* DDTeacherScoreTableViewCell.xib in Resources */,
@@ -3022,6 +3049,7 @@
 				37B9518E1D5B0B2C00CA5E43 /* DDSetAnthorCell.m in Sources */,
 				934BD8491D53981900BB238A /* DDCommunityController.m in Sources */,
 				3725BCBE1D758FBE0034C36C /* OfficialAccountToolbar.m in Sources */,
+				37B1E3471D7994E600E8E167 /* DDWeekRankingCell.m in Sources */,
 				934BD83F1D5397F100BB238A /* DDMineController.m in Sources */,
 				9389F2DE1D50DEFD00055E3B /* main.m in Sources */,
 				37E1B0DD1D73D98B00D012F0 /* LZMomentsPictureCell.m in Sources */,
@@ -3163,6 +3191,7 @@
 				371050431D5871B70079FC85 /* DDImageView.m in Sources */,
 				37CC62BF1D782450005D5CCA /* DDMineHelpCell.m in Sources */,
 				37CC62431D773A8A005D5CCA /* DDScoreTrendCell.m in Sources */,
+				37B1E34B1D79950300E8E167 /* DDWeekRankingView.m in Sources */,
 				3725BCDD1D7598FA0034C36C /* DDGroupInfoController.m in Sources */,
 				37EC84C61D76CFAA00AD223C /* DDGroupInfoViewCell.m in Sources */,
 				9389F34B1D50E93A00055E3B /* NSUtil.m in Sources */,
@@ -3184,6 +3213,7 @@
 				9389F33B1D50E93A00055E3B /* UINavigationController+Autorotate.m in Sources */,
 				37FC0FE01D6D7003001177A0 /* DDHomeLikeCell.m in Sources */,
 				3725BCBF1D758FBE0034C36C /* RFRecordButton.m in Sources */,
+				37B1E3421D79921600E8E167 /* DDWeekRankController.m in Sources */,
 				934BD84E1D53982A00BB238A /* DDLoginController.m in Sources */,
 				37CC62AB1D78126D005D5CCA /* DDCommonModel.m in Sources */,
 				379B97411D75C09900BADBFA /* NSURL+DNIMagePickerUrlEqual.m in Sources */,
@@ -3340,6 +3370,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.campus.DDCampus;
 				PRODUCT_NAME = "丁丁校园";
 				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -3359,6 +3390,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.campus.DDCampus;
 				PRODUCT_NAME = "丁丁校园";
 				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};

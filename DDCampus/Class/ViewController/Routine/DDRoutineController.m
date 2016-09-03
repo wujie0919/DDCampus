@@ -13,6 +13,8 @@
 #import "DDSelectClassActionView.h"
 #import "DDRoutineSelectStudentModel.h"
 #import "DDRoutinePlanController.h"
+#import "DDWeekRankController.h"
+#import "DDClassweekpointModel.h"
 
 @interface DDRoutineController ()
 @property (nonatomic, assign) NSInteger index;
@@ -59,14 +61,22 @@
     _type = [appDelegate.userModel.type integerValue];
     _rVC = [[DDRoutineListController alloc]initWithNibName:@"DDHomeWorkInfoController" bundle:nil];
     _rVC.routineBlock = ^(NSDictionary *dic){
-        if (selfWeak.type==3) {
-            DDRoutinDayController *dayVC = [[DDRoutinDayController alloc]initWithNibName:@"DDRoutinDayController" bundle:nil];
-            dayVC.dutydayid = dic[@"id"];
-            dayVC.handler = ^(){
-                [selfWeak.rVC loadData];
-            };
-            [selfWeak.navigationController pushViewController:dayVC animated:YES];
+        if (selfWeak.index==0) {
+            if (selfWeak.type==3) {
+                DDRoutinDayController *dayVC = [[DDRoutinDayController alloc]initWithNibName:@"DDRoutinDayController" bundle:nil];
+                dayVC.dutydayid = dic[@"id"];
+                dayVC.handler = ^(){
+                    [selfWeak.rVC loadData];
+                };
+                [selfWeak.navigationController pushViewController:dayVC animated:YES];
+            }
         }
+    };
+    _rVC.gBlock = ^(DDClassweekpointModel *model){
+        
+        DDWeekRankController *rankVC = [[DDWeekRankController alloc]initWithNibName:@"DDWeekRankController" bundle:nil];
+        rankVC.weekplanid = model.weekplanid;
+        [selfWeak.navigationController pushViewController:rankVC animated:YES];
     };
     _rVC.weekBlock = ^(BOOL status)
     {

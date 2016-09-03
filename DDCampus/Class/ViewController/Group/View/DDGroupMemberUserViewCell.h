@@ -11,5 +11,5 @@
 @interface DDGroupMemberUserViewCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet DDImageView *headerView;
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
-- (void)setCellData:(NSDictionary * _Nonnull)dic;
+- (void)setCellData:(NSDictionary *)dic;
 @end

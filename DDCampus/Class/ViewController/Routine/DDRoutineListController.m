@@ -123,6 +123,11 @@ static NSString * const weekCell = @"weekCell";
             _routineBlock(_dayArray[indexPath.row]);
         }
     }
+    if (_index == 1) {
+        if (_gBlock) {
+            _gBlock(_weekArray[indexPath.row]);
+        }
+    }
 }
 
 - (void)reload:(NSIndexPath *)indexPath
@@ -152,7 +157,7 @@ static NSString * const weekCell = @"weekCell";
                              selfWeak.dayArray = array;
                              [selfWeak.dataTable reloadData];
                          }
-                         if ([result[@"code"]integerValue]==400) {
+                         else {
                              [selfWeak showErrorHUD:result[@"message"]];
                          }
                          [selfWeak.dataTable.mj_header endRefreshing];
@@ -172,7 +177,7 @@ static NSString * const weekCell = @"weekCell";
                        [selfWeak.dataTable.mj_header endRefreshing];
                        [selfWeak.dataTable.mj_footer endRefreshing];
                        if ([result[@"code"]integerValue]==200) {
-                           selfWeak.isdutyweekuser = result[DataKey][@"isdutyweekuser"];
+                           selfWeak.isdutyweekuser = [result[DataKey][@"isdutyweekuser"]boolValue];
                            if (selfWeak.weekBlock) {
                                selfWeak.weekBlock(selfWeak.isdutyweekuser);
                            }
