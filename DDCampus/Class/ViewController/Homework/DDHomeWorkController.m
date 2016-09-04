@@ -68,7 +68,13 @@
         detailsVC.homeworkModel = model;
         [selfWeak.navigationController pushViewController:detailsVC animated:YES];
     };
-    _scrollview.frame = CGRectMake(0, self.homeworkView.frame.size.height, SCREEN_WIDTH,SCREEN_HEIGHT- self.homeworkView.frame.size.height);
+//    _scrollview.frame = CGRectMake(0, self.homeworkView.frame.size.height, SCREEN_WIDTH,SCREEN_HEIGHT- self.homeworkView.frame.size.height);
+    [_scrollview mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(selfWeak.homeworkView.mas_bottom).offset(0);
+        make.right.equalTo(selfWeak.view).offset(0);
+        make.left.equalTo(selfWeak.view).offset(0);
+        make.bottom.equalTo(selfWeak.view).offset(0);
+    }];
     _scrollview.bounces = NO;
     _scrollview.pagingEnabled = YES;
     _scrollview.contentSize = CGSizeMake(SCREEN_WIDTH*3,SCREEN_HEIGHT-self.homeworkView.frame.size.height);

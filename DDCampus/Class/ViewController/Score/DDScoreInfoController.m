@@ -43,7 +43,13 @@
     _scoreView.titleArray = @[@"成绩单",@"成绩趋势"];
     [self.view addSubview:_scoreView];
     
-    _scrollview.frame = CGRectMake(0, _scoreView.frame.size.height, SCREEN_WIDTH,SCREEN_HEIGHT- _scrollview.frame.size.height);
+//    _scrollview.frame = CGRectMake(0, _scoreView.frame.size.height, SCREEN_WIDTH,SCREEN_HEIGHT- _scrollview.frame.size.height);
+    [_scrollview mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(selfWeak.scoreView.mas_bottom).offset(0);
+        make.right.equalTo(selfWeak.view).offset(0);
+        make.left.equalTo(selfWeak.view).offset(0);
+        make.bottom.equalTo(selfWeak.view).offset(0);
+    }];
     _scrollview.bounces = NO;
     _scrollview.pagingEnabled = YES;
     _scrollview.contentSize = CGSizeMake(SCREEN_WIDTH*_scoreView.titleArray.count,SCREEN_HEIGHT-_scrollview.frame.size.height);

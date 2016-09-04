@@ -85,7 +85,13 @@
             [selfWeak showTitle];
         }
     };
-    _scrollview.frame = CGRectMake(0, _routineView.frame.size.height, SCREEN_WIDTH,SCREEN_HEIGHT- self.routineView.frame.size.height);
+//    _scrollview.frame = CGRectMake(0, _routineView.frame.size.height, SCREEN_WIDTH,SCREEN_HEIGHT- self.routineView.frame.size.height);
+    [_scrollview mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(selfWeak.routineView.mas_bottom).offset(0);
+        make.right.equalTo(selfWeak.view).offset(0);
+        make.left.equalTo(selfWeak.view).offset(0);
+        make.bottom.equalTo(selfWeak.view).offset(0);
+    }];
     _scrollview.bounces = NO;
     _scrollview.pagingEnabled = YES;
     _scrollview.contentSize = CGSizeMake(SCREEN_WIDTH*2,SCREEN_HEIGHT-self.routineView.frame.size.height);

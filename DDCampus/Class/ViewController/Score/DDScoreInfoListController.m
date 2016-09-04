@@ -186,8 +186,12 @@ static NSString * const studentcell = @"studentcell";
                        selfWeak.dataArray = data;
                        [selfWeak.dataTable reloadData];
                    }
+                   else
+                   {
+                       [MBProgressHUD showError:result[@"message"]];
+                   }
                } failure:^(NSError *error) {
-                   
+                    [MBProgressHUD showError:@"网络异常"];
                }];
 }
 

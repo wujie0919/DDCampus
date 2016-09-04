@@ -84,7 +84,7 @@ static NSString * scorecell = @"scorecell";
 
 - (void)editScore
 {
-    [self showLoadHUD:@"提交中..."];
+    
     if (_socoreDic.count < _array.count) {
         [self showErrorHUD:@"请输入完成的成绩"];
         return;
@@ -96,8 +96,9 @@ static NSString * scorecell = @"scorecell";
             [scoreArray addObject:_socoreDic[key]];
             [scoreIdArray addObject:key];
         }
-        [self showLoadHUD:@"提交中..."];
+        
         @WeakObj(self);
+        [self showLoadHUD:@"提交中..."];
         [self Network_Post:@"do_score" tag:Do_score_Tag
                      param:@{@"scorethemeid":_dataDic[@"id"],
                              @"scoreid":scoreIdArray,
@@ -113,6 +114,10 @@ static NSString * scorecell = @"scorecell";
                                    selfWeak.dict = _dataArray[0];
                                    selfWeak.array = _dataArray[0][@"subject"];
                                    [selfWeak.dataTable reloadData];
+                               }
+                               else
+                               {
+                                   [selfWeak.navigationController popViewControllerAnimated:YES];
                                }
                            }
                            else
