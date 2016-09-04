@@ -12,6 +12,7 @@
 #import "DDScoreInfoListController.h"
 #import "DDCurveViewController.h"
 #import "DDCreateScoreController.h"
+#import "DDScoreDetailsController.h"
 
 @interface DDScoreInfoController ()<UIScrollViewDelegate>
 @property (nonatomic, strong) DDScoreInfoView *scoreView;
@@ -49,10 +50,22 @@
     _scoreVC = [[DDScoreInfoListController alloc]initWithNibName:@"DDScoreInfoListController" bundle:nil];
     [_scrollview addSubview:_scoreVC.view];
     
-    _scoreVC.block = ^(NSDictionary *dict){
-        DDCurveViewController *curveVC = [[DDCurveViewController alloc]initWithNibName:@"DDCurveViewController" bundle:nil];
-        curveVC.dic = dict;
-        [selfWeak.navigationController pushViewController:curveVC animated:YES];
+    _scoreVC.block = ^(NSDictionary *dict,NSInteger state){
+        if (selfWeak.index == 1) {
+            DDCurveViewController *curveVC = [[DDCurveViewController alloc]initWithNibName:@"DDCurveViewController" bundle:nil];
+            curveVC.dic = dict;
+            [selfWeak.navigationController pushViewController:curveVC animated:YES];
+        }
+        else
+        {
+            if (state ==3) {
+                DDScoreDetailsController *sDetailsVC = [[DDScoreDetailsController alloc]initWithNibName:@"DDScoreDetailsController" bundle:nil];
+                sDetailsVC.scorethemeid = [NSString stringWithFormat:@"%@",dict[@"id"]];
+                sDetailsVC.title = dict[@"name"];
+                [selfWeak.navigationController pushViewController:sDetailsVC animated:YES];
+            }
+        }
+        
     };
     _scoreVC.view.frame = CGRectMake(self.index*SCREEN_WIDTH, 0, SCREEN_WIDTH, self.scrollview.frame.size.height);
     if (_model) {

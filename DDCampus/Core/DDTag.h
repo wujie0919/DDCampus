@@ -65,6 +65,8 @@ static NSInteger const Getclassscore_Tag=7004;
 static NSInteger const Getsubjecttrend_Tag = 7005;
 static NSInteger const Getclassscoretrend_tag = 7006;
 static NSInteger const Getteachermulti_Tag = 7009;
+static NSInteger const Do_scoretheme_Tag = 7010;
+static NSInteger const Do_score_Tag = 7011;
 
 //个人中心
 static NSInteger const Logout_Tag = 8001;

@@ -350,6 +350,28 @@
 		37E1B1601D73DD9200D012F0 /* LZMoments.m in Sources */ = {isa = PBXBuildFile; fileRef = 37E1B15F1D73DD9200D012F0 /* LZMoments.m */; };
 		37E1B1671D7447CC00D012F0 /* usericon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 37E1B1651D7447CC00D012F0 /* usericon@2x.png */; };
 		37E1B1681D7447CC00D012F0 /* usericon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 37E1B1661D7447CC00D012F0 /* usericon@3x.png */; };
+		37E5F2381D7BBEB6009FDF5F /* DDEditMaxScoreController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37E5F2361D7BBEB6009FDF5F /* DDEditMaxScoreController.m */; };
+		37E5F2391D7BBEB6009FDF5F /* DDEditMaxScoreController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37E5F2371D7BBEB6009FDF5F /* DDEditMaxScoreController.xib */; };
+		37E5F2421D7BC751009FDF5F /* DDEditMaxScoreCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 37E5F2401D7BC751009FDF5F /* DDEditMaxScoreCell.m */; };
+		37E5F2431D7BC751009FDF5F /* DDEditMaxScoreCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37E5F2411D7BC751009FDF5F /* DDEditMaxScoreCell.xib */; };
+		37E5F2461D7BC772009FDF5F /* DDMaxScoreView.m in Sources */ = {isa = PBXBuildFile; fileRef = 37E5F2451D7BC772009FDF5F /* DDMaxScoreView.m */; };
+		37E5F2481D7BC781009FDF5F /* DDMaxScoreView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37E5F2471D7BC781009FDF5F /* DDMaxScoreView.xib */; };
+		37E5F24C1D7BE0A5009FDF5F /* DDScoreDetailsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37E5F24A1D7BE0A5009FDF5F /* DDScoreDetailsController.m */; };
+		37E5F24D1D7BE0A5009FDF5F /* DDScoreDetailsController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37E5F24B1D7BE0A5009FDF5F /* DDScoreDetailsController.xib */; };
+		37E5F2511D7BEADE009FDF5F /* DDScoreDetailsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 37E5F24F1D7BEADE009FDF5F /* DDScoreDetailsCell.m */; };
+		37E5F2521D7BEADE009FDF5F /* DDScoreDetailsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37E5F2501D7BEADE009FDF5F /* DDScoreDetailsCell.xib */; };
+		37E5F2551D7BEBAA009FDF5F /* DDScoreDetailsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 37E5F2541D7BEBAA009FDF5F /* DDScoreDetailsView.m */; };
+		37E5F2571D7BEBB7009FDF5F /* DDScoreDetailsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37E5F2561D7BEBB7009FDF5F /* DDScoreDetailsView.xib */; };
+		37E5F25B1D7C0B0F009FDF5F /* DDScoreDetailsCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 37E5F2591D7C0B0F009FDF5F /* DDScoreDetailsCollectionCell.m */; };
+		37E5F25C1D7C0B0F009FDF5F /* DDScoreDetailsCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37E5F25A1D7C0B0F009FDF5F /* DDScoreDetailsCollectionCell.xib */; };
+		37E5F2601D7C2A4C009FDF5F /* DDScoreDetailOtherViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 37E5F25E1D7C2A4C009FDF5F /* DDScoreDetailOtherViewCell.m */; };
+		37E5F2611D7C2A4C009FDF5F /* DDScoreDetailOtherViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37E5F25F1D7C2A4C009FDF5F /* DDScoreDetailOtherViewCell.xib */; };
+		37E5F2651D7C2D39009FDF5F /* DDEntryScoreController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37E5F2631D7C2D39009FDF5F /* DDEntryScoreController.m */; };
+		37E5F2661D7C2D39009FDF5F /* DDEntryScoreController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37E5F2641D7C2D39009FDF5F /* DDEntryScoreController.xib */; };
+		37E5F2691D7C2DAA009FDF5F /* DDEntryScoreView.m in Sources */ = {isa = PBXBuildFile; fileRef = 37E5F2681D7C2DAA009FDF5F /* DDEntryScoreView.m */; };
+		37E5F26B1D7C2DB8009FDF5F /* DDEntryScoreView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37E5F26A1D7C2DB8009FDF5F /* DDEntryScoreView.xib */; };
+		37E5F26F1D7C2F9E009FDF5F /* DDEntryScoreViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 37E5F26D1D7C2F9E009FDF5F /* DDEntryScoreViewCell.m */; };
+		37E5F2701D7C2F9E009FDF5F /* DDEntryScoreViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37E5F26E1D7C2F9E009FDF5F /* DDEntryScoreViewCell.xib */; };
 		37E7C4841D74A24D00291E1B /* LikeCmtBg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 37E7C4821D74A24D00291E1B /* LikeCmtBg@2x.png */; };
 		37E7C4851D74A24D00291E1B /* LikeCmtBg@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 37E7C4831D74A24D00291E1B /* LikeCmtBg@3x.png */; };
 		37EC84BD1D7687AA00AD223C /* DDFindGroupModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 37EC84BC1D7687AA00AD223C /* DDFindGroupModel.m */; };
@@ -487,6 +509,7 @@
 /* Begin PBXFileReference section */
 		370495121D787DBA003A4B18 /* xiaoxi@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "xiaoxi@2x.png"; sourceTree = "<group>"; };
 		370495131D787DBA003A4B18 /* xiaoxi@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "xiaoxi@3x.png"; sourceTree = "<group>"; };
+		37085E481D7AAC09001AC838 /* libAFNetworking.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libAFNetworking.a; path = "../../../Library/Developer/Xcode/DerivedData/DDCampus-fogvghxhncpucyeaoqxmytmhjbkz/Build/Products/Debug-iphonesimulator/AFNetworking/libAFNetworking.a"; sourceTree = "<group>"; };
 		371050011D581A020079FC85 /* DDBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDBaseViewController.h; sourceTree = "<group>"; };
 		371050021D581A020079FC85 /* DDBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDBaseViewController.m; sourceTree = "<group>"; };
 		371050051D581BDF0079FC85 /* DDButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDButton.h; sourceTree = "<group>"; };
@@ -1018,6 +1041,39 @@
 		37E1B15F1D73DD9200D012F0 /* LZMoments.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LZMoments.m; sourceTree = "<group>"; };
 		37E1B1651D7447CC00D012F0 /* usericon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "usericon@2x.png"; sourceTree = "<group>"; };
 		37E1B1661D7447CC00D012F0 /* usericon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "usericon@3x.png"; sourceTree = "<group>"; };
+		37E5F2351D7BBEB6009FDF5F /* DDEditMaxScoreController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDEditMaxScoreController.h; sourceTree = "<group>"; };
+		37E5F2361D7BBEB6009FDF5F /* DDEditMaxScoreController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDEditMaxScoreController.m; sourceTree = "<group>"; };
+		37E5F2371D7BBEB6009FDF5F /* DDEditMaxScoreController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DDEditMaxScoreController.xib; sourceTree = "<group>"; };
+		37E5F23F1D7BC751009FDF5F /* DDEditMaxScoreCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDEditMaxScoreCell.h; sourceTree = "<group>"; };
+		37E5F2401D7BC751009FDF5F /* DDEditMaxScoreCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDEditMaxScoreCell.m; sourceTree = "<group>"; };
+		37E5F2411D7BC751009FDF5F /* DDEditMaxScoreCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DDEditMaxScoreCell.xib; sourceTree = "<group>"; };
+		37E5F2441D7BC772009FDF5F /* DDMaxScoreView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDMaxScoreView.h; sourceTree = "<group>"; };
+		37E5F2451D7BC772009FDF5F /* DDMaxScoreView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDMaxScoreView.m; sourceTree = "<group>"; };
+		37E5F2471D7BC781009FDF5F /* DDMaxScoreView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DDMaxScoreView.xib; sourceTree = "<group>"; };
+		37E5F2491D7BE0A5009FDF5F /* DDScoreDetailsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDScoreDetailsController.h; sourceTree = "<group>"; };
+		37E5F24A1D7BE0A5009FDF5F /* DDScoreDetailsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDScoreDetailsController.m; sourceTree = "<group>"; };
+		37E5F24B1D7BE0A5009FDF5F /* DDScoreDetailsController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DDScoreDetailsController.xib; sourceTree = "<group>"; };
+		37E5F24E1D7BEADE009FDF5F /* DDScoreDetailsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDScoreDetailsCell.h; sourceTree = "<group>"; };
+		37E5F24F1D7BEADE009FDF5F /* DDScoreDetailsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDScoreDetailsCell.m; sourceTree = "<group>"; };
+		37E5F2501D7BEADE009FDF5F /* DDScoreDetailsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DDScoreDetailsCell.xib; sourceTree = "<group>"; };
+		37E5F2531D7BEBAA009FDF5F /* DDScoreDetailsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDScoreDetailsView.h; sourceTree = "<group>"; };
+		37E5F2541D7BEBAA009FDF5F /* DDScoreDetailsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDScoreDetailsView.m; sourceTree = "<group>"; };
+		37E5F2561D7BEBB7009FDF5F /* DDScoreDetailsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DDScoreDetailsView.xib; sourceTree = "<group>"; };
+		37E5F2581D7C0B0F009FDF5F /* DDScoreDetailsCollectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDScoreDetailsCollectionCell.h; sourceTree = "<group>"; };
+		37E5F2591D7C0B0F009FDF5F /* DDScoreDetailsCollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDScoreDetailsCollectionCell.m; sourceTree = "<group>"; };
+		37E5F25A1D7C0B0F009FDF5F /* DDScoreDetailsCollectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DDScoreDetailsCollectionCell.xib; sourceTree = "<group>"; };
+		37E5F25D1D7C2A4C009FDF5F /* DDScoreDetailOtherViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDScoreDetailOtherViewCell.h; sourceTree = "<group>"; };
+		37E5F25E1D7C2A4C009FDF5F /* DDScoreDetailOtherViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDScoreDetailOtherViewCell.m; sourceTree = "<group>"; };
+		37E5F25F1D7C2A4C009FDF5F /* DDScoreDetailOtherViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DDScoreDetailOtherViewCell.xib; sourceTree = "<group>"; };
+		37E5F2621D7C2D39009FDF5F /* DDEntryScoreController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDEntryScoreController.h; sourceTree = "<group>"; };
+		37E5F2631D7C2D39009FDF5F /* DDEntryScoreController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDEntryScoreController.m; sourceTree = "<group>"; };
+		37E5F2641D7C2D39009FDF5F /* DDEntryScoreController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DDEntryScoreController.xib; sourceTree = "<group>"; };
+		37E5F2671D7C2DAA009FDF5F /* DDEntryScoreView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDEntryScoreView.h; sourceTree = "<group>"; };
+		37E5F2681D7C2DAA009FDF5F /* DDEntryScoreView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDEntryScoreView.m; sourceTree = "<group>"; };
+		37E5F26A1D7C2DB8009FDF5F /* DDEntryScoreView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DDEntryScoreView.xib; sourceTree = "<group>"; };
+		37E5F26C1D7C2F9E009FDF5F /* DDEntryScoreViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDEntryScoreViewCell.h; sourceTree = "<group>"; };
+		37E5F26D1D7C2F9E009FDF5F /* DDEntryScoreViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDEntryScoreViewCell.m; sourceTree = "<group>"; };
+		37E5F26E1D7C2F9E009FDF5F /* DDEntryScoreViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DDEntryScoreViewCell.xib; sourceTree = "<group>"; };
 		37E7C4821D74A24D00291E1B /* LikeCmtBg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LikeCmtBg@2x.png"; sourceTree = "<group>"; };
 		37E7C4831D74A24D00291E1B /* LikeCmtBg@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LikeCmtBg@3x.png"; sourceTree = "<group>"; };
 		37EC84BB1D7687AA00AD223C /* DDFindGroupModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDFindGroupModel.h; sourceTree = "<group>"; };
@@ -1252,6 +1308,7 @@
 		2A2C08543080C74ACBD0CE85 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				37085E481D7AAC09001AC838 /* libAFNetworking.a */,
 				DF41905D72695CD56DBFA5FA /* libPods-DDCampus.a */,
 			);
 			name = Frameworks;
@@ -1403,6 +1460,15 @@
 				37CC62981D7802C6005D5CCA /* DDCreateScoreController.h */,
 				37CC62991D7802C6005D5CCA /* DDCreateScoreController.m */,
 				37CC629A1D7802C6005D5CCA /* DDCreateScoreController.xib */,
+				37E5F2351D7BBEB6009FDF5F /* DDEditMaxScoreController.h */,
+				37E5F2361D7BBEB6009FDF5F /* DDEditMaxScoreController.m */,
+				37E5F2371D7BBEB6009FDF5F /* DDEditMaxScoreController.xib */,
+				37E5F2491D7BE0A5009FDF5F /* DDScoreDetailsController.h */,
+				37E5F24A1D7BE0A5009FDF5F /* DDScoreDetailsController.m */,
+				37E5F24B1D7BE0A5009FDF5F /* DDScoreDetailsController.xib */,
+				37E5F2621D7C2D39009FDF5F /* DDEntryScoreController.h */,
+				37E5F2631D7C2D39009FDF5F /* DDEntryScoreController.m */,
+				37E5F2641D7C2D39009FDF5F /* DDEntryScoreController.xib */,
 			);
 			path = Score;
 			sourceTree = "<group>";
@@ -1447,6 +1513,30 @@
 				37CC62871D77DE7D005D5CCA /* DDSubjeCtureCell.h */,
 				37CC62881D77DE7D005D5CCA /* DDSubjeCtureCell.m */,
 				37CC62891D77DE7D005D5CCA /* DDSubjeCtureCell.xib */,
+				37E5F23F1D7BC751009FDF5F /* DDEditMaxScoreCell.h */,
+				37E5F2401D7BC751009FDF5F /* DDEditMaxScoreCell.m */,
+				37E5F2411D7BC751009FDF5F /* DDEditMaxScoreCell.xib */,
+				37E5F2441D7BC772009FDF5F /* DDMaxScoreView.h */,
+				37E5F2451D7BC772009FDF5F /* DDMaxScoreView.m */,
+				37E5F2471D7BC781009FDF5F /* DDMaxScoreView.xib */,
+				37E5F24E1D7BEADE009FDF5F /* DDScoreDetailsCell.h */,
+				37E5F24F1D7BEADE009FDF5F /* DDScoreDetailsCell.m */,
+				37E5F2501D7BEADE009FDF5F /* DDScoreDetailsCell.xib */,
+				37E5F2531D7BEBAA009FDF5F /* DDScoreDetailsView.h */,
+				37E5F2541D7BEBAA009FDF5F /* DDScoreDetailsView.m */,
+				37E5F2561D7BEBB7009FDF5F /* DDScoreDetailsView.xib */,
+				37E5F2581D7C0B0F009FDF5F /* DDScoreDetailsCollectionCell.h */,
+				37E5F2591D7C0B0F009FDF5F /* DDScoreDetailsCollectionCell.m */,
+				37E5F25A1D7C0B0F009FDF5F /* DDScoreDetailsCollectionCell.xib */,
+				37E5F25D1D7C2A4C009FDF5F /* DDScoreDetailOtherViewCell.h */,
+				37E5F25E1D7C2A4C009FDF5F /* DDScoreDetailOtherViewCell.m */,
+				37E5F25F1D7C2A4C009FDF5F /* DDScoreDetailOtherViewCell.xib */,
+				37E5F2671D7C2DAA009FDF5F /* DDEntryScoreView.h */,
+				37E5F2681D7C2DAA009FDF5F /* DDEntryScoreView.m */,
+				37E5F26A1D7C2DB8009FDF5F /* DDEntryScoreView.xib */,
+				37E5F26C1D7C2F9E009FDF5F /* DDEntryScoreViewCell.h */,
+				37E5F26D1D7C2F9E009FDF5F /* DDEntryScoreViewCell.m */,
+				37E5F26E1D7C2F9E009FDF5F /* DDEntryScoreViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -2715,6 +2805,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3796AB111D724F020066266F /* err@2x.png in Resources */,
+				37E5F2391D7BBEB6009FDF5F /* DDEditMaxScoreController.xib in Resources */,
 				37FC0FE61D6D7018001177A0 /* DDCommentCell.xib in Resources */,
 				3796AB2E1D72EEFD0066266F /* bian3@3x.png in Resources */,
 				37EC84F31D7702AC00AD223C /* new_message@2x.png in Resources */,
@@ -2730,6 +2821,7 @@
 				37ECCD511D7135F400B91B3D /* DDNoSubmitInfoCell.xib in Resources */,
 				934BD83B1D5397DF00BB238A /* DDHomeWorkController.xib in Resources */,
 				37B6743B1D63454C005B2A4F /* DDHomeWorkDetailsController.xib in Resources */,
+				37E5F24D1D7BE0A5009FDF5F /* DDScoreDetailsController.xib in Resources */,
 				37FE621D1D660061004EA944 /* icon_jiantou@2x.png in Resources */,
 				37E7C4851D74A24D00291E1B /* LikeCmtBg@3x.png in Resources */,
 				37CC62CE1D782D97005D5CCA /* DDCommunityHeaderCell.xib in Resources */,
@@ -2743,6 +2835,7 @@
 				378CC4E11D5816B400356039 /* icon_shi_selectd@3x.png in Resources */,
 				371050381D586DC10079FC85 /* agreement@3x.png in Resources */,
 				934BD84A1D53981900BB238A /* DDCommunityController.xib in Resources */,
+				37E5F26B1D7C2DB8009FDF5F /* DDEntryScoreView.xib in Resources */,
 				3725BCEC1D75A4D00034C36C /* DDSelectImageCell.xib in Resources */,
 				376E30551D64C13C0078850A /* DDHomeWorkDetailsCell.xib in Resources */,
 				37AF9A091D662754006302A3 /* DDRankCell.xib in Resources */,
@@ -2751,6 +2844,7 @@
 				37EC84F41D7702AC00AD223C /* new_message@3x.png in Resources */,
 				37FE3EF01D7013B600BFF358 /* comment@2x.png in Resources */,
 				3725BCCF1D7598950034C36C /* DDFindGroupController.xib in Resources */,
+				37E5F2481D7BC781009FDF5F /* DDMaxScoreView.xib in Resources */,
 				37ECCD5B1D71365800B91B3D /* DDSubmitInfoView.xib in Resources */,
 				3796AB171D724FB40066266F /* DDPublishNoticeController.xib in Resources */,
 				378CC4D81D58165400356039 /* icon_xue_normal@3x.png in Resources */,
@@ -2760,6 +2854,7 @@
 				3725BCB61D758FBE0034C36C /* systemEmoji.plist in Resources */,
 				37EC84E91D76F51400AD223C /* member_normal@3x.png in Resources */,
 				3710503C1D586DC10079FC85 /* feedback@3x.png in Resources */,
+				37E5F2521D7BEADE009FDF5F /* DDScoreDetailsCell.xib in Resources */,
 				37FE3EF11D7013B600BFF358 /* comment@3x.png in Resources */,
 				3725BC681D7553440034C36C /* DDScoreInfoController.xib in Resources */,
 				37EC84C21D7697C000AD223C /* DDFindGroupReusableView.xib in Resources */,
@@ -2807,6 +2902,7 @@
 				378CC4D11D58159400356039 /* icon_home_selected@2x.png in Resources */,
 				371050181D582DBF0079FC85 /* icon_phone@2x.png in Resources */,
 				37FE62301D661559004EA944 /* DDRoutineRanController.xib in Resources */,
+				37E5F2661D7C2D39009FDF5F /* DDEntryScoreController.xib in Resources */,
 				37FE3EF61D70226700BFF358 /* DDCommunityListController.xib in Resources */,
 				373EF5BA1D6B00360031400C /* score@3x.png in Resources */,
 				373EF5A11D6AAF740031400C /* tizuoye@3x.png in Resources */,
@@ -2818,10 +2914,13 @@
 				37CC62B11D7815FA005D5CCA /* logout_icon@3x.png in Resources */,
 				373EF5BE1D6B01AC0031400C /* notice@3x.png in Resources */,
 				373EF5991D6AAF1F0031400C /* zhiri@3x.png in Resources */,
+				37E5F25C1D7C0B0F009FDF5F /* DDScoreDetailsCollectionCell.xib in Resources */,
 				37EC84EB1D76F51400AD223C /* member_select2x.png in Resources */,
 				3725BCD41D7598BA0034C36C /* DDSetGroupManagerController.xib in Resources */,
+				37E5F2611D7C2A4C009FDF5F /* DDScoreDetailOtherViewCell.xib in Resources */,
 				37EC84C71D76CFAA00AD223C /* DDGroupInfoViewCell.xib in Resources */,
 				378CC4D21D58159400356039 /* icon_home_selected@3x.png in Resources */,
+				37E5F2571D7BEBB7009FDF5F /* DDScoreDetailsView.xib in Resources */,
 				934BD84F1D53982A00BB238A /* DDLoginController.xib in Resources */,
 				37CC62F91D78614E005D5CCA /* DDMineCommunityController.xib in Resources */,
 				37EC84EA1D76F51400AD223C /* member_select@3x.png in Resources */,
@@ -2866,6 +2965,7 @@
 				37CC62BB1D7822AA005D5CCA /* DDMineHelpController.xib in Resources */,
 				37EC84E01D76E66200AD223C /* DDGroupMemberUserViewCell.xib in Resources */,
 				37CC62681D77A727005D5CCA /* DDTeacherScoreTableViewCell.xib in Resources */,
+				37E5F2431D7BC751009FDF5F /* DDEditMaxScoreCell.xib in Resources */,
 				3725BCE61D75A01E0034C36C /* write@2x.png in Resources */,
 				373EF5BD1D6B01AC0031400C /* notice@2x.png in Resources */,
 				37EC84E81D76F51400AD223C /* member_normal@2x.png in Resources */,
@@ -2922,6 +3022,7 @@
 				37CC62511D773AC7005D5CCA /* DDShowKouFenView.xib in Resources */,
 				371050281D583DBB0079FC85 /* DDMineViewCell.xib in Resources */,
 				37CC625E1D7798A8005D5CCA /* DDScoreListView.xib in Resources */,
+				37E5F2701D7C2F9E009FDF5F /* DDEntryScoreViewCell.xib in Resources */,
 				3710503B1D586DC10079FC85 /* feedback@2x.png in Resources */,
 				37E1B1151D73DB1D00D012F0 /* picture_download_icon@2x.png in Resources */,
 				373EF5981D6AAF1F0031400C /* zhiri@2x.png in Resources */,
@@ -2988,8 +3089,10 @@
 				379E84061D794BF200097402 /* NSObject+HTTP.m in Sources */,
 				3725BCEB1D75A4D00034C36C /* DDSelectImageCell.m in Sources */,
 				9389F3821D50EF1400055E3B /* DDTTYLogger.m in Sources */,
+				37E5F2511D7BEADE009FDF5F /* DDScoreDetailsCell.m in Sources */,
 				37CDB48C1D71C3C600C4EE77 /* DDRoutineSelectStudentModel.m in Sources */,
 				376E305A1D64CD110078850A /* DDRoutineBtnView.m in Sources */,
+				37E5F2421D7BC751009FDF5F /* DDEditMaxScoreCell.m in Sources */,
 				37AF9A0F1D662CA0006302A3 /* DDScrollImageView.m in Sources */,
 				9389F3401D50E93A00055E3B /* UIView+Custom.m in Sources */,
 				3725BCB31D758FBE0034C36C /* MoreItem.m in Sources */,
@@ -3010,15 +3113,18 @@
 				9389F3361D50E93A00055E3B /* NSObject+Custom.m in Sources */,
 				37CC62E41D7855BB005D5CCA /* DDRoutinePlanCell.m in Sources */,
 				379B973A1D75C09900BADBFA /* DNAlbumTableViewController.m in Sources */,
+				37E5F25B1D7C0B0F009FDF5F /* DDScoreDetailsCollectionCell.m in Sources */,
 				37EC84DA1D76E47800AD223C /* DDGroupMemberController.m in Sources */,
 				3725BCB81D758FBE0034C36C /* FacePageView.m in Sources */,
 				37CC62621D779C94005D5CCA /* DDScoreTeacherCell.m in Sources */,
 				37E1B1571D73DD5200D012F0 /* LZMomentsCell.m in Sources */,
 				3725BC531D7546850034C36C /* NSTimer+Addition.m in Sources */,
 				3725BCBA1D758FBE0034C36C /* FaceThemeView.m in Sources */,
+				37E5F26F1D7C2F9E009FDF5F /* DDEntryScoreViewCell.m in Sources */,
 				37E1B0F91D73DA4900D012F0 /* UIAlertView+Extension.m in Sources */,
 				3710500D1D581E110079FC85 /* DDTextField.m in Sources */,
 				37CC62801D77C155005D5CCA /* DDStudentScoreCollectionCell.m in Sources */,
+				37E5F2551D7BEBAA009FDF5F /* DDScoreDetailsView.m in Sources */,
 				9389F37B1D50EF1400055E3B /* UIAlertView+Blocks.m in Sources */,
 				37CC624D1D773AC7005D5CCA /* DDCuscomeLeftCell.m in Sources */,
 				3797C7C31D588047007C1EBD /* DDEditPassController.m in Sources */,
@@ -3060,6 +3166,7 @@
 				37CDB4801D71B70400C4EE77 /* DDRoutineActionView.m in Sources */,
 				9389F37F1D50EF1400055E3B /* DDASLLogger.m in Sources */,
 				37E1B1551D73DD5200D012F0 /* LZMomentsCellCommentViewCell.m in Sources */,
+				37E5F24C1D7BE0A5009FDF5F /* DDScoreDetailsController.m in Sources */,
 				3725BCBD1D758FBE0034C36C /* ChatToolBar.m in Sources */,
 				373EF5A51D6AE42E0031400C /* DDHomeCell.m in Sources */,
 				37E1B1391D73DB9C00D012F0 /* MLLinkLabel.m in Sources */,
@@ -3071,6 +3178,7 @@
 				379B973C1D75C09900BADBFA /* DNImageFlowViewController.m in Sources */,
 				3725BCB11D758FBE0034C36C /* ChatToolBarItem.m in Sources */,
 				3725BCB01D758FBE0034C36C /* ChatKeyBoard.m in Sources */,
+				37E5F2651D7C2D39009FDF5F /* DDEntryScoreController.m in Sources */,
 				3725BCB91D758FBE0034C36C /* FacePanel.m in Sources */,
 				3796AB1B1D725D6A0066266F /* DDSelectClassActionView.m in Sources */,
 				37E1B15A1D73DD5200D012F0 /* LZMomentsListViewModel.m in Sources */,
@@ -3118,6 +3226,7 @@
 				379B974B1D75C09900BADBFA /* DNSendButton.m in Sources */,
 				37E1B1321D73DB9C00D012F0 /* NSString+MLLabel.m in Sources */,
 				37CC62D51D78387F005D5CCA /* DDNewCommunityViewController.m in Sources */,
+				37E5F2601D7C2A4C009FDF5F /* DDScoreDetailOtherViewCell.m in Sources */,
 				379B97471D75C09900BADBFA /* DNAssetsViewCell.m in Sources */,
 				3796AB231D72DA890066266F /* DDRoutineMoreView.m in Sources */,
 				37E1B1591D73DD5200D012F0 /* LZOperationMenu.m in Sources */,
@@ -3152,6 +3261,7 @@
 				37FF99C81D5DADA600B0B8DE /* DDHomeworkBtnView.m in Sources */,
 				37ECCD4C1D71178A00B91B3D /* DDHomeworkDetailsModel.m in Sources */,
 				37E1B1101D73DB1D00D012F0 /* LZBroadcastView.m in Sources */,
+				37E5F2381D7BBEB6009FDF5F /* DDEditMaxScoreController.m in Sources */,
 				37CC62C91D782C7C005D5CCA /* DDCommunityHeaderView.m in Sources */,
 				37E1B1581D73DD5200D012F0 /* LZMomentsOriginalView.m in Sources */,
 				3725BCC91D75961F0034C36C /* DDCreateGroupController.m in Sources */,
@@ -3196,6 +3306,7 @@
 				37EC84C61D76CFAA00AD223C /* DDGroupInfoViewCell.m in Sources */,
 				9389F34B1D50E93A00055E3B /* NSUtil.m in Sources */,
 				3725BC501D7546670034C36C /* XTLoopScrollView.m in Sources */,
+				37E5F2691D7C2DAA009FDF5F /* DDEntryScoreView.m in Sources */,
 				379B974D1D75C09900BADBFA /* DNUnAuthorizedTipsView.m in Sources */,
 				9389F3351D50E93A00055E3B /* NSDictionary+Custom.m in Sources */,
 				37E1B1331D73DB9C00D012F0 /* MLExpressionManager.m in Sources */,
@@ -3215,6 +3326,7 @@
 				3725BCBF1D758FBE0034C36C /* RFRecordButton.m in Sources */,
 				37B1E3421D79921600E8E167 /* DDWeekRankController.m in Sources */,
 				934BD84E1D53982A00BB238A /* DDLoginController.m in Sources */,
+				37E5F2461D7BC772009FDF5F /* DDMaxScoreView.m in Sources */,
 				37CC62AB1D78126D005D5CCA /* DDCommonModel.m in Sources */,
 				379B97411D75C09900BADBFA /* NSURL+DNIMagePickerUrlEqual.m in Sources */,
 				379B975D1D76397B00BADBFA /* DDJoinModel.m in Sources */,

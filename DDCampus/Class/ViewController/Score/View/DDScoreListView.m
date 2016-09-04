@@ -59,10 +59,12 @@ static NSString * const scell= @"scell";
 {
     _nameLabel.text = dic[@"name"];
     _dateLabel.text = dic[@"examtime"];
-    NSLog(@"%@",dic);
     NSMutableArray *data = [NSMutableArray arrayWithCapacity:0];
-    if ([dic[@"subject"][dic[@"subjectallid"]]isKindOfClass:[NSDictionary class]]) {
-        [data addObject:dic[@"subject"][dic[@"subjectallid"]]];
+    if ([dic[@"subject"]isKindOfClass:[NSDictionary class]]) {
+        NSArray *keys = [dic[@"subject"] allKeys];
+        for (NSString *value in keys) {
+            [data addObject:dic[@"subject"][value]];
+        }
     }
     _array = data;
     [_scoreTable reloadData];

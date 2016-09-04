@@ -113,7 +113,15 @@ static NSString * const studentcell = @"studentcell";
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     if (_index == 1) {
         if (_block) {
-            _block(_dataArray[indexPath.row]);
+            _block(_dataArray[indexPath.row],_type);
+        }
+    }
+    else
+    {
+        if (_type == 3) {
+            if (_block) {
+                _block(_array[indexPath.row],_type);
+            }
         }
     }
 }

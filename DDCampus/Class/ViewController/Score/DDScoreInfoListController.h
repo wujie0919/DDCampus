@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-typedef void(^TableCellSelectBlock)(NSDictionary *dict);
+typedef void(^TableCellSelectBlock)(NSDictionary *dict,NSInteger type);
 
 @interface DDScoreInfoListController : UIViewController
 @property (nonatomic, assign)NSInteger index;

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="DDEntryScoreView">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="O96-0c-ZcF" customClass="DDView">
+                    <rect key="frame" x="10" y="0.0" width="300" height="44"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i2C-nB-FQG">
+                            <rect key="frame" x="5" y="0.0" width="60" height="44"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="60" id="phy-bo-QVc"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ScE-SB-l8X">
+                            <rect key="frame" x="65" y="0.0" width="225" height="44"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                            <connections>
+                                <action selector="valueChange:" destination="iN0-l3-epB" eventType="editingChanged" id="gQu-mZ-7iW"/>
+                            </connections>
+                        </textField>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="i2C-nB-FQG" secondAttribute="bottom" id="3oK-OQ-no7"/>
+                        <constraint firstItem="i2C-nB-FQG" firstAttribute="leading" secondItem="O96-0c-ZcF" secondAttribute="leading" constant="5" id="MfB-nU-9yF"/>
+                        <constraint firstAttribute="trailing" secondItem="ScE-SB-l8X" secondAttribute="trailing" constant="10" id="V2c-wg-GCW"/>
+                        <constraint firstItem="i2C-nB-FQG" firstAttribute="top" secondItem="O96-0c-ZcF" secondAttribute="top" id="hLy-xh-4c4"/>
+                        <constraint firstItem="ScE-SB-l8X" firstAttribute="leading" secondItem="i2C-nB-FQG" secondAttribute="trailing" id="iI1-T3-MyM"/>
+                        <constraint firstAttribute="bottom" secondItem="ScE-SB-l8X" secondAttribute="bottom" id="s98-Z4-hZl"/>
+                        <constraint firstItem="ScE-SB-l8X" firstAttribute="top" secondItem="O96-0c-ZcF" secondAttribute="top" id="xPh-wg-LQK"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="O96-0c-ZcF" secondAttribute="trailing" constant="10" id="FCU-26-MYe"/>
+                <constraint firstAttribute="bottom" secondItem="O96-0c-ZcF" secondAttribute="bottom" id="Ndf-Ug-HQt"/>
+                <constraint firstItem="O96-0c-ZcF" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="UWZ-pY-YEo"/>
+                <constraint firstItem="O96-0c-ZcF" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="10" id="f5o-2H-8j9"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="nameLabel" destination="i2C-nB-FQG" id="t2U-gy-j8o"/>
+                <outlet property="valueText" destination="ScE-SB-l8X" id="ixC-sP-5cn"/>
+            </connections>
+            <point key="canvasLocation" x="274" y="164"/>
+        </view>
+    </objects>
+</document>
