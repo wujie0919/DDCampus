@@ -15,6 +15,7 @@
 #import "DDAgreementViewController.h"
 #import "DDMineHelpController.h"
 #import "DDMineCommunityController.h"
+#import "DDAboutController.h"
 
 static NSString * const mineCell = @"mineCell";
 static NSString * const headerCell = @"header";
@@ -51,6 +52,9 @@ static NSString * const headerCell = @"header";
     NSInteger row = 1;
     if (section == 2) {
         row = 3;
+    }
+    if (section == 3) {
+        row = 2;
     }
     if(section ==5)
     {
@@ -107,8 +111,15 @@ static NSString * const headerCell = @"header";
     }
     
     if (section == 3) {
-        mCell.iconImage.image = [UIImage imageNamed:@"feedback"];
-        mCell.title.text = @"反馈建议";
+        if (indexPath.row ==0) {
+            mCell.iconImage.image = [UIImage imageNamed:@"feedback"];
+            mCell.title.text = @"反馈建议";
+        }
+        if (indexPath.row == 1) {
+            mCell.iconImage.image = [UIImage imageNamed:@"about"];
+            mCell.title.text = @"关于丁丁";
+        }
+        
     }
     if (section == 4) {
         mCell.iconImage.image = [UIImage imageNamed:@"logout_icon"];
@@ -130,8 +141,15 @@ static NSString * const headerCell = @"header";
         [self.navigationController pushViewController:communityVC animated:YES];
     }
     if (section == 3) {
-        DDAdviseViewController *adviseController = [[DDAdviseViewController alloc]initWithNibName:@"DDAdviseViewController" bundle:nil];
-        [self.navigationController pushViewController:adviseController animated:YES];
+        if (indexPath.row == 0) {
+            DDAdviseViewController *adviseController = [[DDAdviseViewController alloc]initWithNibName:@"DDAdviseViewController" bundle:nil];
+            [self.navigationController pushViewController:adviseController animated:YES];
+        }
+        
+        if (indexPath.row == 1) {
+            DDAboutController *aboutVC = [[DDAboutController alloc]initWithNibName:@"DDAboutController" bundle:nil];
+            [self.navigationController pushViewController:aboutVC animated:YES];
+        }
     }
     
     if (section == 2) {

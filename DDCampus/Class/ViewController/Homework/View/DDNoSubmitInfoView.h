@@ -8,10 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
+typedef void(^CallStudentPhoneBlock)(NSDictionary *data);
+
 @interface DDNoSubmitInfoView : UIView<UICollectionViewDelegate,UICollectionViewDataSource>
 @property (weak, nonatomic) IBOutlet UICollectionView *unSubmitCollectionView;
 @property (weak, nonatomic) IBOutlet UILabel *infoLabel;
 @property (nonatomic, copy) NSArray *array;
 @property (nonatomic, assign) CGFloat height;
 @property (weak, nonatomic) IBOutlet UILabel *lineLabel;
+@property (nonatomic, copy) CallStudentPhoneBlock callBlock;
 @end

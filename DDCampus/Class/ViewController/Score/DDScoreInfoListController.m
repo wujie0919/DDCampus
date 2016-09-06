@@ -47,7 +47,7 @@ static NSString * const studentcell = @"studentcell";
     [_dataTable registerNib:[UINib nibWithNibName:@"DDScoreTrendCell" bundle:nil] forCellReuseIdentifier:trend];
     [_dataTable registerNib:[UINib nibWithNibName:@"DDScoreTeacherCell" bundle:nil] forCellReuseIdentifier:teacher];
     [_dataTable registerNib:[UINib nibWithNibName:@"DDStudentScoreInfoCell" bundle:nil] forCellReuseIdentifier:studentcell];
-    _dataTable.frame = CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT-30);
+    _dataTable.frame = CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT-160);
     _dataTable.separatorStyle = UITableViewCellSeparatorStyleNone;
 }
 

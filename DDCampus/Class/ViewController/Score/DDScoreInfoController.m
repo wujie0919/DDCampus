@@ -52,7 +52,10 @@
     }];
     _scrollview.bounces = NO;
     _scrollview.pagingEnabled = YES;
-    _scrollview.contentSize = CGSizeMake(SCREEN_WIDTH*_scoreView.titleArray.count,SCREEN_HEIGHT-_scrollview.frame.size.height);
+    _scrollview.showsVerticalScrollIndicator = NO;
+    _scrollview.showsHorizontalScrollIndicator = NO;
+    _scrollview.alwaysBounceVertical = NO;
+    _scrollview.contentSize = CGSizeMake(SCREEN_WIDTH*_scoreView.titleArray.count,0);
     _scoreVC = [[DDScoreInfoListController alloc]initWithNibName:@"DDScoreInfoListController" bundle:nil];
     [_scrollview addSubview:_scoreVC.view];
     
@@ -73,7 +76,7 @@
         }
         
     };
-    _scoreVC.view.frame = CGRectMake(self.index*SCREEN_WIDTH, 0, SCREEN_WIDTH, self.scrollview.frame.size.height);
+    _scoreVC.view.frame = CGRectMake(self.index*SCREEN_WIDTH, 0, SCREEN_WIDTH, self.scrollview.bounds.size.height);
     if (_model) {
         _scoreVC.classId = _model.class_id;
     }

@@ -23,11 +23,11 @@
     if([sourData isKindOfClass:[NSArray class]]){
         NSArray * data = (NSArray *)sourData;
         for (NSInteger i = 0; i < data.count; i++) {
-            NSString *str = data[i];
-            if([str isKindOfClass:[NSString class]]){
+            NSDictionary *dic = data[i];
+            if([dic isKindOfClass:[NSDictionary class]]){
                 UIButton *button = buttons[i];
                 button.hidden = NO;
-                [button setTitle:str forState:UIControlStateNormal];
+                [button setTitle:dic[@"class_name"] forState:UIControlStateNormal];
             }
         }
     }else if([sourData isKindOfClass:[NSString class]]){

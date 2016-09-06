@@ -115,6 +115,9 @@ static NSString * const homeCell = @"homeCell";
 
 - (void)showMessage
 {
+    if (_iconImage.hidden == NO) {
+        _iconImage.hidden = YES;
+    }
     DDMessageController *messageVC = [[DDMessageController alloc]initWithNibName:@"DDMessageController" bundle:nil];
     [self.navigationController pushViewController:messageVC animated:YES];
 }

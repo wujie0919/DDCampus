@@ -102,4 +102,12 @@ static NSString * const valueCell = @"valueCell";
 {
     return UIEdgeInsetsMake(0, 0, 0, 0);
 }
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSDictionary *dic = _array[indexPath.row];
+    if (_callBlock) {
+        _callBlock(dic);
+    }
+}
 @end

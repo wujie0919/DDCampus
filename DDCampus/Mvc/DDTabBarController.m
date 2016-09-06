@@ -14,6 +14,7 @@
 #import "DDMineController.h"
 #import "DDNavigationController.h"
 #import "DDNewCommunityViewController.h"
+#import "DDTeacherHomeworkController.h"
 
 @interface DDTabBarController ()<UITabBarControllerDelegate>
 
@@ -31,12 +32,19 @@
     homeNav.tabBarItem.image = [[UIImage imageNamed:@"icon_home_normal"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     homeNav.tabBarItem.selectedImage = [[UIImage imageNamed:@"icon_home_selected"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     
+    
     //作业
     DDHomeWorkController *workController = [[DDHomeWorkController alloc]initWithNibName:@"DDHomeWorkController" bundle:nil];
     DDNavigationController *workNav = [[DDNavigationController alloc] initWithRootViewController:workController];
     workNav.tabBarItem.title = @"作业";
     workNav.tabBarItem.image = [[UIImage imageNamed:@"icon_xue_normal"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     workNav.tabBarItem.selectedImage = [[UIImage imageNamed:@"icon_xue_selected"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    //老师作业
+    DDTeacherHomeworkController *teacherController = [[DDTeacherHomeworkController alloc]initWithNibName:@"DDTeacherHomeworkController" bundle:nil];
+    DDNavigationController *teacherNav = [[DDNavigationController alloc] initWithRootViewController:teacherController];
+    teacherNav.tabBarItem.title = @"作业";
+    teacherNav.tabBarItem.image = [[UIImage imageNamed:@"icon_xue_normal"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    teacherNav.tabBarItem.selectedImage = [[UIImage imageNamed:@"icon_xue_selected"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     
     //事务
     DDRoutineController *routineController = [[DDRoutineController alloc]initWithNibName:@"DDRoutineController" bundle:nil];
@@ -61,7 +69,14 @@
     mineNav.tabBarItem.image = [[UIImage imageNamed:@"icon_wo_normal"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     mineNav.tabBarItem.selectedImage = [[UIImage imageNamed:@"icon_wo_selected"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     
-    self.viewControllers = @[homeNav,workNav,routineNav,communityNav,mineNav];
+    NSInteger type = [appDelegate.userModel.type integerValue];
+    if (type == 3) {
+        self.viewControllers = @[homeNav,teacherNav,routineNav,communityNav,mineNav];
+    }
+    else
+    {
+        self.viewControllers = @[homeNav,workNav,routineNav,communityNav,mineNav];
+    }
     
 //    self.delegate = self;
 }

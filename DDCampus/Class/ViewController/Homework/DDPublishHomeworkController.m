@@ -10,7 +10,7 @@
 #import "DDSelectClassActionView.h"
 #import "DDRoutineSelectStudentModel.h"
 
-@interface DDPublishHomeworkController ()
+@interface DDPublishHomeworkController ()<UITextViewDelegate>
 {
     BOOL select;
 }
@@ -57,6 +57,18 @@
         }
     } singleFlg:YES];
 }
+
+- (void)textViewDidChange:(UITextView *)textView
+{
+    if (![textView.text isValidString]) {
+        _placLabel.hidden = NO;
+    }
+    else
+    {
+        _placLabel.hidden = YES;
+    }
+}
+
 - (IBAction)agreeButton:(id)sender {
     select = !select;
     if (select) {

@@ -11,6 +11,7 @@
 @interface DDPublishHomeworkController : DDBaseViewController
 @property (weak, nonatomic) IBOutlet DDView *selectClassView;
 @property (weak, nonatomic) IBOutlet UILabel *classLabel;
+@property (weak, nonatomic) IBOutlet UILabel *placLabel;
 
 @property (weak, nonatomic) IBOutlet UITextField *titleLabel;
 @property (weak, nonatomic) IBOutlet UITextView *contentView;

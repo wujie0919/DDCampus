@@ -80,12 +80,14 @@
     };
     _rVC.weekBlock = ^(BOOL status)
     {
-        if (status != selfWeak.isdutyweekuser) {
+        if (status == selfWeak.isdutyweekuser) {
             selfWeak.isdutyweekuser = status;
             [selfWeak showTitle];
         }
     };
 //    _scrollview.frame = CGRectMake(0, _routineView.frame.size.height, SCREEN_WIDTH,SCREEN_HEIGHT- self.routineView.frame.size.height);
+    self.automaticallyAdjustsScrollViewInsets = NO;
+    
     [_scrollview mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(selfWeak.routineView.mas_bottom).offset(0);
         make.right.equalTo(selfWeak.view).offset(0);
@@ -94,7 +96,10 @@
     }];
     _scrollview.bounces = NO;
     _scrollview.pagingEnabled = YES;
-    _scrollview.contentSize = CGSizeMake(SCREEN_WIDTH*2,SCREEN_HEIGHT-self.routineView.frame.size.height);
+    _scrollview.showsVerticalScrollIndicator = NO;
+    _scrollview.showsHorizontalScrollIndicator = NO;
+    _scrollview.contentSize = CGSizeMake(SCREEN_WIDTH*2,0);
+    _scrollview.alwaysBounceVertical = NO;
     _rVC.view.frame = CGRectMake(_index*SCREEN_WIDTH, 0, SCREEN_WIDTH,_scrollview.frame.size.height);
     [_scrollview addSubview:_rVC.view];
     [_rVC setIndex:_index];
@@ -207,7 +212,7 @@
     }else{
         self.navigationItem.title = @"值周成绩";
         _rightButton.hidden = !self.isdutyweekuser;
-        if (self.isdutyweekuser) {
+        if (!self.isdutyweekuser) {
             _rightButton= [UIButton buttonWithType:UIButtonTypeCustom];
             [_rightButton setTitle:@"安排值周" forState:UIControlStateNormal];
             _rightButton.titleLabel.font = [UIFont systemFontOfSize:14];

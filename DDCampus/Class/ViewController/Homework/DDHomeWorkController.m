@@ -76,8 +76,11 @@
         make.bottom.equalTo(selfWeak.view).offset(0);
     }];
     _scrollview.bounces = NO;
+    _scrollview.showsVerticalScrollIndicator = NO;
+    _scrollview.showsHorizontalScrollIndicator = NO;
     _scrollview.pagingEnabled = YES;
-    _scrollview.contentSize = CGSizeMake(SCREEN_WIDTH*3,SCREEN_HEIGHT-self.homeworkView.frame.size.height);
+    _scrollview.contentSize = CGSizeMake(SCREEN_WIDTH*3,0);
+    _scrollview.alwaysBounceVertical = NO;
     _hVC.view.frame = CGRectMake(_index*SCREEN_WIDTH, 0, SCREEN_WIDTH,_scrollview.frame.size.height);
     [_scrollview addSubview:_hVC.view];
     [_hVC setIndex:0];

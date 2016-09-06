@@ -10,6 +10,7 @@
                 <outlet property="classLabel" destination="fd3-nT-d7F" id="JsP-4R-gZv"/>
                 <outlet property="contentView" destination="SKW-Dn-lYg" id="JjY-Sx-AgT"/>
                 <outlet property="infoLabel" destination="DEg-mm-NeC" id="cnv-iF-cmA"/>
+                <outlet property="placLabel" destination="C9C-Ok-rRA" id="Txd-mM-NFy"/>
                 <outlet property="selectClassView" destination="LrY-Jk-mCs" id="I9g-fl-Naq"/>
                 <outlet property="selectView" destination="pcn-UN-NcL" id="4FN-oo-WXA"/>
                 <outlet property="titleLabel" destination="bIo-HT-XBU" id="e4D-Rk-iah"/>

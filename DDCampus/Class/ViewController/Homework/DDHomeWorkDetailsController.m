@@ -18,7 +18,7 @@ static NSString * const detailsCell = @"detailsCell";
 static NSString * const UnSubmitInfoCell = @"UnSubmitInfoCell";
 static NSString * const SubmitInfoCell =@"SubmitInfoCell";
 
-@interface DDHomeWorkDetailsController ()<UITableViewDelegate,UITableViewDataSource>
+@interface DDHomeWorkDetailsController ()<UITableViewDelegate,UITableViewDataSource,UIAlertViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *detailsTable;
 @property (nonatomic, strong) DDHomeworkDetailsModel *detailsModel;
@@ -27,6 +27,7 @@ static NSString * const SubmitInfoCell =@"SubmitInfoCell";
 @property (nonatomic, strong) DDButton *button;
 @property (nonatomic, assign) BOOL hasDone;
 @property (nonatomic, assign) BOOL hasNoDone;
+@property (nonatomic, copy) NSDictionary *phoneDic;
 @end
 
 @implementation DDHomeWorkDetailsController
@@ -36,6 +37,7 @@ static NSString * const SubmitInfoCell =@"SubmitInfoCell";
     // Do any additional setup after loading the view from its nib.
     [self setBackBarButtonItem];
     _type = [appDelegate.userModel.type integerValue];
+    _phoneDic = [NSDictionary dictionary];
     @WeakObj(self);
     if (_type==1 || _type ==2) {
         self.title = @"作业详情";
@@ -224,6 +226,10 @@ static NSString * const SubmitInfoCell =@"SubmitInfoCell";
             else{
                 DDNoSubmitInfoCell *cell = [tableView dequeueReusableCellWithIdentifier:UnSubmitInfoCell];
                 [cell.unSbumitView setArray:_array[1]];
+                @WeakObj(self);
+                cell.unSbumitView.callBlock = ^(NSDictionary *dic){
+                    [selfWeak callPhone:dic];
+                };
                 cell.backgroundColor = RGB(237, 238, 239);
                 return cell;
             }
@@ -237,6 +243,21 @@ static NSString * const SubmitInfoCell =@"SubmitInfoCell";
         }
     }
     return nil;
+}
+
+- (void)callPhone:(NSDictionary *)phone
+{
+    _phoneDic = phone;
+    UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"" message:[NSString stringWithFormat:@"您确定要联系%@同学吗？",phone[@"name"]] delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
+    [alert show];
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (buttonIndex==1) {
+        NSMutableString* str=[[NSMutableString alloc] initWithFormat:@"telprompt://%@",_phoneDic[@"mobile"]];
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:str]];
+    }
 }
 
 - (void)submit:(UIButton *)button

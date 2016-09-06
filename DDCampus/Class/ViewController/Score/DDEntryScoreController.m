@@ -90,6 +90,7 @@ static NSString * scorecell = @"scorecell";
         return;
     }
     if (_array.count>0) {
+        [self.view endEditing:YES];
         NSMutableArray *scoreIdArray = [NSMutableArray arrayWithCapacity:0];
         NSMutableArray *scoreArray = [NSMutableArray arrayWithCapacity:0];
         for (NSString *key in _socoreDic) {

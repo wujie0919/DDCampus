@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -11,32 +11,19 @@
             <rect key="frame" x="0.0" y="0.0" width="90" height="100"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qTI-co-5gc">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="qTI-co-5gc">
                     <rect key="frame" x="22" y="15" width="45" height="45"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="45" id="W1d-gE-Ghs"/>
-                        <constraint firstAttribute="width" constant="45" id="pfM-bH-iuy"/>
-                    </constraints>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kLX-24-8bf">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="kLX-24-8bf">
                     <rect key="frame" x="0.0" y="70" width="90" height="21"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="21" id="kLX-QS-Jze"/>
-                    </constraints>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-            <constraints>
-                <constraint firstItem="qTI-co-5gc" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="0Xe-Ko-Iqd"/>
-                <constraint firstAttribute="trailing" secondItem="kLX-24-8bf" secondAttribute="trailing" id="1BR-u9-hPV"/>
-                <constraint firstItem="kLX-24-8bf" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Did-ia-RCc"/>
-                <constraint firstItem="qTI-co-5gc" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="15" id="aGM-xr-gPO"/>
-                <constraint firstItem="kLX-24-8bf" firstAttribute="top" secondItem="qTI-co-5gc" secondAttribute="bottom" constant="10" id="e8s-rt-nsQ"/>
-                <constraint firstItem="kLX-24-8bf" firstAttribute="top" secondItem="qTI-co-5gc" secondAttribute="bottom" constant="10" id="eEe-fc-vn1"/>
-            </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>

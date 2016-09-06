@@ -19,9 +19,9 @@
     DDTableView *_rightTableView;
     NSIndexPath *_leftSelectIndex;
     NSIndexPath *_rightSelectIndex;
-    NSArray *_selectArray;
+    
 }
-
+@property (nonatomic, copy) NSArray *selectArray;
 @end
 
 @implementation DDCustomScoreController
@@ -41,7 +41,7 @@
     /**
      *  测试数据
      */
-    [self test];
+//    [self test];
     
     self.automaticallyAdjustsScrollViewInsets = NO;
     _leftTableView = [[DDTableView alloc] initWithFrame:CGRectMake(0, 0, 120, CGRectGetHeight(self.view.frame)) style:UITableViewStylePlain];
@@ -63,7 +63,7 @@
     
     _leftSelectIndex = [NSIndexPath indexPathForRow:0 inSection:0];
     _selectArray = self.rightDataSource[0];
-    [_leftTableView reloadData];
+//    [_leftTableView reloadData];
     if(self.type == 0){
         [_rightTableView setTableFooterView:[self rightFooterView]];
 //        self.rightDataSource = appDelegate.classArray;
@@ -234,7 +234,7 @@
 {
     if(tableView == _leftTableView){
         [self showLeftCell:indexPath andHiddenIndex:_leftSelectIndex];
-        _selectArray = self.rightDataSource[indexPath.row];
+//        _selectArray = self.rightDataSource[indexPath.row];
         [_rightTableView reloadData];
     }else{
         
@@ -301,9 +301,10 @@
 
             }
             if ([result[DataKey][@"classlist"]isKindOfClass:[NSArray class]]) {
-                NSMutableArray *classarray = [NSMutableArray array];
-                [classarray addObjectsFromArray:result[DataKey][@"classlist"]];
-                selfWeak.rightDataSource = classarray;
+//                NSMutableArray *classarray = [NSMutableArray array];
+//                [classarray addObjectsFromArray:result[DataKey][@"classlist"]];
+                selfWeak.selectArray = result[DataKey][@"classlist"];
+                [_rightTableView reloadData];
             }
         }
     } failure:^(NSError *error) {

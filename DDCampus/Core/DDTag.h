@@ -73,4 +73,5 @@ static NSInteger const Logout_Tag = 8001;
 static NSInteger const Do_saveheadpic_Tag = 8002;
 static NSInteger const Getagreement_Tag = 8003;
 static NSInteger const Gethelplist_Tag = 8004;
+static NSInteger const Getversionupgrade_Tag = 8005;
 #endif /* DDTag_h */
