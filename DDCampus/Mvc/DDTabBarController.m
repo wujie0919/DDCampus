@@ -15,6 +15,8 @@
 #import "DDNavigationController.h"
 #import "DDNewCommunityViewController.h"
 #import "DDTeacherHomeworkController.h"
+#import "DDNewRoutineController.h"
+#import "DDNewHomeworkController.h"
 
 @interface DDTabBarController ()<UITabBarControllerDelegate>
 
@@ -34,7 +36,7 @@
     
     
     //作业
-    DDHomeWorkController *workController = [[DDHomeWorkController alloc]initWithNibName:@"DDHomeWorkController" bundle:nil];
+    DDNewHomeworkController *workController = [[DDNewHomeworkController alloc]init];
     DDNavigationController *workNav = [[DDNavigationController alloc] initWithRootViewController:workController];
     workNav.tabBarItem.title = @"作业";
     workNav.tabBarItem.image = [[UIImage imageNamed:@"icon_xue_normal"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
@@ -47,7 +49,7 @@
     teacherNav.tabBarItem.selectedImage = [[UIImage imageNamed:@"icon_xue_selected"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     
     //事务
-    DDRoutineController *routineController = [[DDRoutineController alloc]initWithNibName:@"DDRoutineController" bundle:nil];
+    DDNewRoutineController *routineController = [[DDNewRoutineController alloc]init];
     DDNavigationController *routineNav = [[DDNavigationController alloc] initWithRootViewController:routineController];
     routineNav.tabBarItem.title = @"事务";
     routineNav.tabBarItem.image = [[UIImage imageNamed:@"icon_shi_normal"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];

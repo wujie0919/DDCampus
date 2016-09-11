@@ -44,6 +44,9 @@
                     <state key="normal" title="全部">
                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
+                    <connections>
+                        <action selector="selectStudentClick:" destination="-1" eventType="touchUpInside" id="k9s-qy-q7G"/>
+                    </connections>
                 </button>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="MoW-Cz-BVB" customClass="DDTableView">
                     <rect key="frame" x="28" y="168" width="240" height="128"/>

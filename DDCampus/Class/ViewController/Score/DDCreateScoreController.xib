@@ -151,7 +151,7 @@
                         <action selector="selectZong:" destination="-1" eventType="touchUpInside" id="AIu-Z0-Ay1"/>
                     </connections>
                 </button>
-                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7dA-pb-z8l">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7dA-pb-z8l">
                     <rect key="frame" x="8" y="313" width="304" height="30"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="30" id="o6y-qH-rfb"/>

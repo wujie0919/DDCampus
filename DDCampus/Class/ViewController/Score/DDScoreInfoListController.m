@@ -11,6 +11,8 @@
 #import "DDScoreTeacherCell.h"
 #import "UITableView+FDTemplateLayoutCell.h"
 #import "DDStudentScoreInfoCell.h"
+#import "DDScoreDetailsController.h"
+#import "DDCurveViewController.h"
 
 static NSString * const trend = @"trend";
 static NSString * const teacher = @"teacher";
@@ -30,6 +32,7 @@ static NSString * const studentcell = @"studentcell";
     // Do any additional setup after loading the view from its nib.
     @WeakObj(self);
     _array = [NSMutableArray new];
+    self.view.backgroundColor = [UIColor redColor];
     _dataArray = [NSMutableArray new];
     _dataTable.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
         if (selfWeak.index==0) {
@@ -41,13 +44,21 @@ static NSString * const studentcell = @"studentcell";
             }
         }
         else{
-            [selfWeak loadScoreRend];
+            if (selfWeak.type ==3) {
+                [selfWeak getclassscoretrend];
+            }else
+            {
+                [selfWeak loadScoreRend];
+            }
+            
         }
     }];
     [_dataTable registerNib:[UINib nibWithNibName:@"DDScoreTrendCell" bundle:nil] forCellReuseIdentifier:trend];
     [_dataTable registerNib:[UINib nibWithNibName:@"DDScoreTeacherCell" bundle:nil] forCellReuseIdentifier:teacher];
     [_dataTable registerNib:[UINib nibWithNibName:@"DDStudentScoreInfoCell" bundle:nil] forCellReuseIdentifier:studentcell];
-    _dataTable.frame = CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT-160);
+    [_dataTable mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.equalTo(selfWeak.view).insets(UIEdgeInsetsMake(0, 0, 0, 0));
+    }];
     _dataTable.separatorStyle = UITableViewCellSeparatorStyleNone;
 }
 
@@ -112,16 +123,20 @@ static NSString * const studentcell = @"studentcell";
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     if (_index == 1) {
-        if (_block) {
-            _block(_dataArray[indexPath.row],_type);
-        }
+        NSDictionary *dict = _dataArray[indexPath.row];
+        DDCurveViewController *curveVC = [[DDCurveViewController alloc]initWithNibName:@"DDCurveViewController" bundle:nil];
+        curveVC.dic = dict;
+        curveVC.classid = _classId;
+        [self.navigationController pushViewController:curveVC animated:YES];
     }
     else
     {
         if (_type == 3) {
-            if (_block) {
-                _block(_array[indexPath.row],_type);
-            }
+            NSDictionary *dict = _array[indexPath.row];
+            DDScoreDetailsController *sDetailsVC = [[DDScoreDetailsController alloc]initWithNibName:@"DDScoreDetailsController" bundle:nil];
+            sDetailsVC.scorethemeid = [NSString stringWithFormat:@"%@",dict[@"id"]];
+            sDetailsVC.title = dict[@"name"];
+            [self.navigationController pushViewController:sDetailsVC animated:YES];
         }
     }
 }
@@ -195,6 +210,30 @@ static NSString * const studentcell = @"studentcell";
                }];
 }
 
+- (void)getclassscoretrend
+{
+     @WeakObj(self);
+    [self Network_Post:@"getclassscoretrend" tag:Getclassscoretrend_tag
+                 param:@{@"classid":_classId}
+               success:^(id result) {
+                   [selfWeak.dataTable.mj_header endRefreshing];
+                   if ([result[@"code"]integerValue]==200) {
+                       NSMutableArray *data = [NSMutableArray arrayWithCapacity:0];
+                       if ([result[DataKey]isKindOfClass:[NSArray class]]) {
+                           [data addObjectsFromArray:result[DataKey]];
+                       }
+                       selfWeak.dataArray = data;
+                       [selfWeak.dataTable reloadData];
+                   }
+                   else
+                   {
+                       [MBProgressHUD showError:result[@"message"]];
+                   }
+               } failure:^(NSError *error) {
+                   [MBProgressHUD showError:@"网络异常"];
+               }];
+}
+
 - (void)setIndex:(NSInteger)index
 {
     _index = index;
@@ -211,7 +250,12 @@ static NSString * const studentcell = @"studentcell";
     }
     else
     {
-        [self loadScoreRend];
+        if (self.type ==3) {
+            [self getclassscoretrend];
+        }else
+        {
+            [self loadScoreRend];
+        }
     }
 }
 

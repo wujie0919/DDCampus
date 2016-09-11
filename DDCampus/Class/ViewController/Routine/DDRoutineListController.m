@@ -11,6 +11,9 @@
 #import "DDRoutineWeekCell.h"
 #import "DDClassweekpointModel.h"
 #import "UITableView+FDTemplateLayoutCell.h"
+#import "DDRoutinDayController.h"
+#import "DDWeekRankController.h"
+
 static NSString * const routineCell = @"routineCell";
 static NSString * const weekCell = @"weekCell";
 @interface DDRoutineListController ()<UITableViewDataSource,UITableViewDelegate>
@@ -33,14 +36,14 @@ static NSString * const weekCell = @"weekCell";
         [selfWeak loadData];
     }];
     
-//    _dataTable.mj_footer = [MJRefreshBackNormalFooter footerWithRefreshingBlock:^{
-//        [selfWeak loadData];
-//    }];
     _dataTable.delegate = self;
     _dataTable.dataSource = self;
     [_dataTable registerNib:[UINib nibWithNibName:@"DDRoutineCell" bundle:nil] forCellReuseIdentifier:routineCell];
     [_dataTable registerNib:[UINib nibWithNibName:@"DDRoutineWeekCell" bundle:nil] forCellReuseIdentifier:weekCell];
-    _dataTable.frame = CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT-160);
+//    _dataTable.frame = CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT-160);
+    [_dataTable mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.equalTo(selfWeak.view).insets(UIEdgeInsetsMake(0, 0, 0, 0));
+    }];
 }
 
 - (void)setIndex:(NSInteger)index
@@ -118,15 +121,24 @@ static NSString * const weekCell = @"weekCell";
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    NSInteger type = [appDelegate.userModel.type integerValue];
     if (_index==0) {
-        if (_routineBlock && _ismaster) {
-            _routineBlock(_dayArray[indexPath.row]);
+        if (_ismaster && type==3) {
+            @WeakObj(self);
+            NSDictionary *dic = _dayArray[indexPath.row];
+            DDRoutinDayController *dayVC = [[DDRoutinDayController alloc]initWithNibName:@"DDRoutinDayController" bundle:nil];
+            dayVC.dutydayid = dic[@"id"];
+            dayVC.handler = ^(){
+                [selfWeak loadData];
+            };
+            [self.navigationController pushViewController:dayVC animated:YES];
         }
     }
     if (_index == 1) {
-        if (_gBlock) {
-            _gBlock(_weekArray[indexPath.row]);
-        }
+        DDClassweekpointModel *model = _weekArray[indexPath.row];
+        DDWeekRankController *rankVC = [[DDWeekRankController alloc]initWithNibName:@"DDWeekRankController" bundle:nil];
+        rankVC.weekplanid = model.weekplanid;
+        [self.navigationController pushViewController:rankVC animated:YES];
     }
 }
 

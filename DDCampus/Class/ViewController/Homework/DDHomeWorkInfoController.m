@@ -9,6 +9,7 @@
 #import "DDHomeWorkInfoController.h"
 #import "DDHomeworkCell.h"
 #import "DDHomeWorkDetailsController.h"
+#import "DDHomeWorkDetailsController.h"
 
 static NSString * const homeworkCell = @"homeworkCell";
 static NSInteger const pagesize = 5;
@@ -37,7 +38,7 @@ static NSInteger const pagesize = 5;
     _weiArray = [NSMutableArray new];
     [_dataTable registerNib:[UINib nibWithNibName:@"DDHomeworkCell" bundle:nil] forCellReuseIdentifier:homeworkCell];
     _dataTable.separatorStyle = UITableViewCellSeparatorStyleNone;
-    _dataTable.frame = CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT-160);
+//    _dataTable.frame = CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT-160);
     @WeakObj(self);
     _dataTable.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
         if (selfWeak.index == 0) {
@@ -64,7 +65,10 @@ static NSInteger const pagesize = 5;
         }
         [selfWeak loadData];
     }];
-
+    
+    [_dataTable mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.equalTo(selfWeak.view).insets(UIEdgeInsetsMake(0, 0, 0, 0));
+    }];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -219,19 +223,19 @@ static NSInteger const pagesize = 5;
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    if (_tbsBlock) {
-        DDHomeworkModel *model = [DDHomeworkModel new];
-        NSInteger row = indexPath.row;
-        if (_index==0) {
-            model=_dataArray[row];
-        }else if (_index == 1)
-        {
-            model = _yiArray[row];
-        }else{
-            model = _weiArray[row];
-        }
-        _tbsBlock(model);
+    DDHomeworkModel *model = [DDHomeworkModel new];
+    NSInteger row = indexPath.row;
+    if (_index==0) {
+        model=_dataArray[row];
+    }else if (_index == 1)
+    {
+        model = _yiArray[row];
+    }else{
+        model = _weiArray[row];
     }
+    DDHomeWorkDetailsController *detailsVC = [[DDHomeWorkDetailsController alloc]initWithNibName:@"DDHomeWorkDetailsController" bundle:nil];
+    detailsVC.homeworkModel = model;
+    [self.navigationController pushViewController:detailsVC animated:YES];
 }
 
 /*

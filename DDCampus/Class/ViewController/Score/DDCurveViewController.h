@@ -17,4 +17,5 @@
 @property (weak, nonatomic) IBOutlet DDTableView *dataTable;
 @property (weak, nonatomic) IBOutlet UILabel *avgLabel;
 @property (weak, nonatomic) IBOutlet UILabel *paimingLabel;
+@property (nonatomic, copy) NSString *classid;
 @end

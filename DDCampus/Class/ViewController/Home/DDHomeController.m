@@ -28,6 +28,8 @@
 #import "DDScoreInfoController.h"
 #import "DDCommentView.h"
 #import "DDMessageController.h"
+#import "DDNewScoreInfoController.h"
+#import "DDNewRoutineController.h"
 
 static NSString * const imageCell = @"imageCell";
 static NSString * const buttonCell = @"buttonCell";
@@ -278,7 +280,7 @@ static NSString * const homeCell = @"homeCell";
             tabController.selectedIndex = 1;
         }
         else if (tag == 1) {
-            DDScoreInfoController *scoreVC = [[DDScoreInfoController alloc]initWithNibName:@"DDScoreInfoController" bundle:nil];
+            DDNewScoreInfoController *scoreVC = [[DDNewScoreInfoController alloc]init];
             [self.navigationController pushViewController:scoreVC animated:YES];
         }
         else if (tag == 2)
@@ -288,9 +290,9 @@ static NSString * const homeCell = @"homeCell";
             if ([NSStringFromClass([tabController.selectedViewController classForCoder]) isEqualToString:@"DDNavigationController"]) {
                 DDNavigationController *navController = (DDNavigationController *)tabController.selectedViewController;
                 UIViewController *rootController = [navController.viewControllers lastObject];
-                if ([rootController isKindOfClass: [DDRoutineController class]]) {
-                    DDRoutineController *routineVC = (DDRoutineController *)rootController;
-                    routineVC.selectIndex = @"0";
+                if ([rootController isKindOfClass: [DDNewRoutineController class]]) {
+                    DDNewRoutineController *routineVC = (DDNewRoutineController *)rootController;
+                    routineVC.selectIndex = 0;
                 }
             }
             
@@ -302,9 +304,9 @@ static NSString * const homeCell = @"homeCell";
             if ([NSStringFromClass([tabController.selectedViewController classForCoder]) isEqualToString:@"DDNavigationController"]) {
                 DDNavigationController *navController = (DDNavigationController *)tabController.selectedViewController;
                 UIViewController *rootController = [navController.viewControllers lastObject];
-                if ([rootController isKindOfClass: [DDRoutineController class]]) {
-                    DDRoutineController *routineVC = (DDRoutineController *)rootController;
-                    routineVC.selectIndex = @"1";
+                if ([rootController isKindOfClass: [DDNewRoutineController class]]) {
+                    DDNewRoutineController *routineVC = (DDNewRoutineController *)rootController;
+                    routineVC.selectIndex = 1;
                 }
             }
         }
@@ -316,7 +318,7 @@ static NSString * const homeCell = @"homeCell";
             tabController.selectedIndex = 1;
         }
         else if (tag == 1) {
-            DDScoreInfoController *scoreVC = [[DDScoreInfoController alloc]initWithNibName:@"DDScoreInfoController" bundle:nil];
+            DDNewScoreInfoController *scoreVC = [[DDNewScoreInfoController alloc]init];
             [self.navigationController pushViewController:scoreVC animated:YES];
         }
         else if (tag == 2)
@@ -326,9 +328,9 @@ static NSString * const homeCell = @"homeCell";
             if ([NSStringFromClass([tabController.selectedViewController classForCoder]) isEqualToString:@"DDNavigationController"]) {
                 DDNavigationController *navController = (DDNavigationController *)tabController.selectedViewController;
                 UIViewController *rootController = [navController.viewControllers lastObject];
-                if ([rootController isKindOfClass: [DDRoutineController class]]) {
-                    DDRoutineController *routineVC = (DDRoutineController *)rootController;
-                    routineVC.selectIndex = @"0";
+                if ([rootController isKindOfClass: [DDNewRoutineController class]]) {
+                    DDNewRoutineController *routineVC = (DDNewRoutineController *)rootController;
+                    routineVC.selectIndex = 0;
                 }
             }
             
@@ -340,9 +342,9 @@ static NSString * const homeCell = @"homeCell";
             if ([NSStringFromClass([tabController.selectedViewController classForCoder]) isEqualToString:@"DDNavigationController"]) {
                 DDNavigationController *navController = (DDNavigationController *)tabController.selectedViewController;
                 UIViewController *rootController = [navController.viewControllers lastObject];
-                if ([rootController isKindOfClass: [DDRoutineController class]]) {
-                    DDRoutineController *routineVC = (DDRoutineController *)rootController;
-                    routineVC.selectIndex = @"1";
+                if ([rootController isKindOfClass: [DDNewRoutineController class]]) {
+                    DDNewRoutineController *routineVC = (DDNewRoutineController *)rootController;
+                    routineVC.selectIndex = 1;
                 }
             }
         }else if (tag == 4)

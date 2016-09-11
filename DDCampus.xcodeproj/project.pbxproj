@@ -436,6 +436,14 @@
 		37FC0FE61D6D7018001177A0 /* DDCommentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37FC0FE41D6D7018001177A0 /* DDCommentCell.xib */; };
 		37FC0FE91D6D9364001177A0 /* like@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 37FC0FE71D6D9364001177A0 /* like@2x.png */; };
 		37FC0FEA1D6D9364001177A0 /* like@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 37FC0FE81D6D9364001177A0 /* like@3x.png */; };
+		37FC3C0F1D84F4B5003E4035 /* WMMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 37FC3C051D84F4B5003E4035 /* WMMenuItem.m */; };
+		37FC3C101D84F4B5003E4035 /* WMMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 37FC3C071D84F4B5003E4035 /* WMMenuView.m */; };
+		37FC3C111D84F4B5003E4035 /* WMProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 37FC3C091D84F4B5003E4035 /* WMProgressView.m */; };
+		37FC3C121D84F4B5003E4035 /* WMScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 37FC3C0B1D84F4B5003E4035 /* WMScrollView.m */; };
+		37FC3C131D84F4B5003E4035 /* WMPageController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37FC3C0E1D84F4B5003E4035 /* WMPageController.m */; };
+		37FC3C161D85240C003E4035 /* DDNewScoreInfoController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37FC3C151D85240C003E4035 /* DDNewScoreInfoController.m */; };
+		37FC3C191D852B54003E4035 /* DDNewRoutineController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37FC3C181D852B54003E4035 /* DDNewRoutineController.m */; };
+		37FC3C1C1D8535E4003E4035 /* DDNewHomeworkController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37FC3C1B1D8535E4003E4035 /* DDNewHomeworkController.m */; };
 		37FE3ED41D6FCAB900BFF358 /* DDHomeInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 37FE3ED31D6FCAB900BFF358 /* DDHomeInfoModel.m */; };
 		37FE3ED71D6FF37400BFF358 /* DDHomeCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 37FE3ED61D6FF37400BFF358 /* DDHomeCellView.m */; };
 		37FE3ED91D6FF38500BFF358 /* DDHomeCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37FE3ED81D6FF38500BFF358 /* DDHomeCellView.xib */; };
@@ -1174,6 +1182,23 @@
 		37FC0FE41D6D7018001177A0 /* DDCommentCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DDCommentCell.xib; sourceTree = "<group>"; };
 		37FC0FE71D6D9364001177A0 /* like@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "like@2x.png"; sourceTree = "<group>"; };
 		37FC0FE81D6D9364001177A0 /* like@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "like@3x.png"; sourceTree = "<group>"; };
+		37FC3C041D84F4B5003E4035 /* WMMenuItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMMenuItem.h; sourceTree = "<group>"; };
+		37FC3C051D84F4B5003E4035 /* WMMenuItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMMenuItem.m; sourceTree = "<group>"; };
+		37FC3C061D84F4B5003E4035 /* WMMenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMMenuView.h; sourceTree = "<group>"; };
+		37FC3C071D84F4B5003E4035 /* WMMenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMMenuView.m; sourceTree = "<group>"; };
+		37FC3C081D84F4B5003E4035 /* WMProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMProgressView.h; sourceTree = "<group>"; };
+		37FC3C091D84F4B5003E4035 /* WMProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMProgressView.m; sourceTree = "<group>"; };
+		37FC3C0A1D84F4B5003E4035 /* WMScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMScrollView.h; sourceTree = "<group>"; };
+		37FC3C0B1D84F4B5003E4035 /* WMScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMScrollView.m; sourceTree = "<group>"; };
+		37FC3C0C1D84F4B5003E4035 /* WMPageConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMPageConst.h; sourceTree = "<group>"; };
+		37FC3C0D1D84F4B5003E4035 /* WMPageController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMPageController.h; sourceTree = "<group>"; };
+		37FC3C0E1D84F4B5003E4035 /* WMPageController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMPageController.m; sourceTree = "<group>"; };
+		37FC3C141D85240C003E4035 /* DDNewScoreInfoController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDNewScoreInfoController.h; sourceTree = "<group>"; };
+		37FC3C151D85240C003E4035 /* DDNewScoreInfoController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDNewScoreInfoController.m; sourceTree = "<group>"; };
+		37FC3C171D852B54003E4035 /* DDNewRoutineController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDNewRoutineController.h; sourceTree = "<group>"; };
+		37FC3C181D852B54003E4035 /* DDNewRoutineController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDNewRoutineController.m; sourceTree = "<group>"; };
+		37FC3C1A1D8535E4003E4035 /* DDNewHomeworkController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDNewHomeworkController.h; sourceTree = "<group>"; };
+		37FC3C1B1D8535E4003E4035 /* DDNewHomeworkController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDNewHomeworkController.m; sourceTree = "<group>"; };
 		37FE3ED21D6FCAB900BFF358 /* DDHomeInfoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDHomeInfoModel.h; sourceTree = "<group>"; };
 		37FE3ED31D6FCAB900BFF358 /* DDHomeInfoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDHomeInfoModel.m; sourceTree = "<group>"; };
 		37FE3ED51D6FF37400BFF358 /* DDHomeCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDHomeCellView.h; sourceTree = "<group>"; };
@@ -1497,6 +1522,8 @@
 				37E5F2621D7C2D39009FDF5F /* DDEntryScoreController.h */,
 				37E5F2631D7C2D39009FDF5F /* DDEntryScoreController.m */,
 				37E5F2641D7C2D39009FDF5F /* DDEntryScoreController.xib */,
+				37FC3C141D85240C003E4035 /* DDNewScoreInfoController.h */,
+				37FC3C151D85240C003E4035 /* DDNewScoreInfoController.m */,
 			);
 			path = Score;
 			sourceTree = "<group>";
@@ -2346,6 +2373,32 @@
 			path = Moments;
 			sourceTree = "<group>";
 		};
+		37FC3C021D84F4B5003E4035 /* WMPageController */ = {
+			isa = PBXGroup;
+			children = (
+				37FC3C031D84F4B5003E4035 /* WMMenuView */,
+				37FC3C0C1D84F4B5003E4035 /* WMPageConst.h */,
+				37FC3C0D1D84F4B5003E4035 /* WMPageController.h */,
+				37FC3C0E1D84F4B5003E4035 /* WMPageController.m */,
+			);
+			path = WMPageController;
+			sourceTree = "<group>";
+		};
+		37FC3C031D84F4B5003E4035 /* WMMenuView */ = {
+			isa = PBXGroup;
+			children = (
+				37FC3C041D84F4B5003E4035 /* WMMenuItem.h */,
+				37FC3C051D84F4B5003E4035 /* WMMenuItem.m */,
+				37FC3C061D84F4B5003E4035 /* WMMenuView.h */,
+				37FC3C071D84F4B5003E4035 /* WMMenuView.m */,
+				37FC3C081D84F4B5003E4035 /* WMProgressView.h */,
+				37FC3C091D84F4B5003E4035 /* WMProgressView.m */,
+				37FC3C0A1D84F4B5003E4035 /* WMScrollView.h */,
+				37FC3C0B1D84F4B5003E4035 /* WMScrollView.m */,
+			);
+			path = WMMenuView;
+			sourceTree = "<group>";
+		};
 		37FE3EDA1D70098F00BFF358 /* SDPhotoBrowser */ = {
 			isa = PBXGroup;
 			children = (
@@ -2457,6 +2510,8 @@
 				37C5E5511D7F0330009ED17E /* DDTeacherHomeworkController.h */,
 				37C5E5521D7F0330009ED17E /* DDTeacherHomeworkController.m */,
 				37C5E5531D7F0330009ED17E /* DDTeacherHomeworkController.xib */,
+				37FC3C1A1D8535E4003E4035 /* DDNewHomeworkController.h */,
+				37FC3C1B1D8535E4003E4035 /* DDNewHomeworkController.m */,
 			);
 			path = Homework;
 			sourceTree = "<group>";
@@ -2520,6 +2575,8 @@
 				37B1E33F1D79921600E8E167 /* DDWeekRankController.h */,
 				37B1E3401D79921600E8E167 /* DDWeekRankController.m */,
 				37B1E3411D79921600E8E167 /* DDWeekRankController.xib */,
+				37FC3C171D852B54003E4035 /* DDNewRoutineController.h */,
+				37FC3C181D852B54003E4035 /* DDNewRoutineController.m */,
 			);
 			path = Routine;
 			sourceTree = "<group>";
@@ -2685,6 +2742,7 @@
 		9389F34C1D50EF1400055E3B /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
+				37FC3C021D84F4B5003E4035 /* WMPageController */,
 				37B1E3341D79711900E8E167 /* SelectDateView */,
 				37CC62A51D7811F9005D5CCA /* CommonView */,
 				37CC629D1D7811A3005D5CCA /* CommentView */,
@@ -3177,6 +3235,7 @@
 				3725BC5C1D754D930034C36C /* DDSelectClassInfoCell.m in Sources */,
 				3796AB161D724FB40066266F /* DDPublishNoticeController.m in Sources */,
 				37E1B1371D73DB9C00D012F0 /* MLLabelLayoutManager.m in Sources */,
+				37FC3C101D84F4B5003E4035 /* WMMenuView.m in Sources */,
 				379E84051D794BF200097402 /* NSString+HTTP.m in Sources */,
 				934BD83A1D5397DF00BB238A /* DDHomeWorkController.m in Sources */,
 				379B97431D75C09900BADBFA /* UIView+DNImagePicker.m in Sources */,
@@ -3209,6 +3268,7 @@
 				9389F37F1D50EF1400055E3B /* DDASLLogger.m in Sources */,
 				37E1B1551D73DD5200D012F0 /* LZMomentsCellCommentViewCell.m in Sources */,
 				37E5F24C1D7BE0A5009FDF5F /* DDScoreDetailsController.m in Sources */,
+				37FC3C111D84F4B5003E4035 /* WMProgressView.m in Sources */,
 				3725BCBD1D758FBE0034C36C /* ChatToolBar.m in Sources */,
 				373EF5A51D6AE42E0031400C /* DDHomeCell.m in Sources */,
 				37C5E5591D7F107A009ED17E /* DDAboutController.m in Sources */,
@@ -3237,12 +3297,14 @@
 				37EC84D01D76D79900AD223C /* DDGroupInfoNormalCell.m in Sources */,
 				3725BCB21D758FBE0034C36C /* FaceThemeModel.m in Sources */,
 				37E1B0FE1D73DA4900D012F0 /* UIImageView+Extension.m in Sources */,
+				37FC3C131D84F4B5003E4035 /* WMPageController.m in Sources */,
 				37CC62671D77A727005D5CCA /* DDTeacherScoreTableViewCell.m in Sources */,
 				3725BCCE1D7598950034C36C /* DDFindGroupController.m in Sources */,
 				37FE3EE31D70098F00BFF358 /* SDPhotoBrowser.m in Sources */,
 				37E1B1011D73DA4900D012F0 /* UIView+gesture.m in Sources */,
 				9389F37E1D50EF1400055E3B /* DDAbstractDatabaseLogger.m in Sources */,
 				37CC62DA1D78517A005D5CCA /* DDRoutinePlanController.m in Sources */,
+				37FC3C121D84F4B5003E4035 /* WMScrollView.m in Sources */,
 				9389F3421D50E93A00055E3B /* YCBThread.m in Sources */,
 				37EC84DF1D76E66200AD223C /* DDGroupMemberUserViewCell.m in Sources */,
 				37ECCD541D71361000B91B3D /* DDNoSubmitInfoView.m in Sources */,
@@ -3335,6 +3397,7 @@
 				9389F3801D50EF1400055E3B /* DDFileLogger.m in Sources */,
 				934BD8591D539A4B00BB238A /* DDNavigationController.m in Sources */,
 				37FE3ED71D6FF37400BFF358 /* DDHomeCellView.m in Sources */,
+				37FC3C0F1D84F4B5003E4035 /* WMMenuItem.m in Sources */,
 				37CC62E91D785BB0005D5CCA /* DDMessageController.m in Sources */,
 				37FE622B1D6606BB004EA944 /* DDView.m in Sources */,
 				9389F3791D50EF1400055E3B /* RIButtonItem.m in Sources */,
@@ -3353,6 +3416,7 @@
 				379B974D1D75C09900BADBFA /* DNUnAuthorizedTipsView.m in Sources */,
 				9389F3351D50E93A00055E3B /* NSDictionary+Custom.m in Sources */,
 				37E1B1331D73DB9C00D012F0 /* MLExpressionManager.m in Sources */,
+				37FC3C191D852B54003E4035 /* DDNewRoutineController.m in Sources */,
 				379B973B1D75C09900BADBFA /* DNAsset.m in Sources */,
 				371050471D5873480079FC85 /* DDMineAvatarViewCell.m in Sources */,
 				9389F3411D50E93A00055E3B /* YCBSystem.m in Sources */,
@@ -3386,6 +3450,7 @@
 				37EC85021D77173D00AD223C /* TransferGroupCell.m in Sources */,
 				3710504E1D5877570079FC85 /* DDAdviseViewController.m in Sources */,
 				37EC84C11D7697C000AD223C /* DDFindGroupReusableView.m in Sources */,
+				37FC3C1C1D8535E4003E4035 /* DDNewHomeworkController.m in Sources */,
 				9389F3391D50E93A00055E3B /* UIColor+Custom.m in Sources */,
 				3710500A1D581DAA0079FC85 /* DDLabel.m in Sources */,
 				379E84031D794BF200097402 /* NSError+HTTP.m in Sources */,
@@ -3394,6 +3459,7 @@
 				37CC62851D77C82B005D5CCA /* DDCurveViewController.m in Sources */,
 				37E1B1531D73DD5200D012F0 /* LZMomentsCellCommentBgView.m in Sources */,
 				37E1B0FD1D73DA4900D012F0 /* UIImage+Extension.m in Sources */,
+				37FC3C161D85240C003E4035 /* DDNewScoreInfoController.m in Sources */,
 				37EC84EE1D77017800AD223C /* DDGroupInfoFooterView.m in Sources */,
 				9389F37D1D50EF1400055E3B /* CustomIOS7AlertView.m in Sources */,
 				9389F3331D50E93A00055E3B /* NSData+Custom.m in Sources */,

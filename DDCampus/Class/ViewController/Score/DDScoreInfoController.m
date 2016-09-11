@@ -56,13 +56,15 @@
     _scrollview.showsHorizontalScrollIndicator = NO;
     _scrollview.alwaysBounceVertical = NO;
     _scrollview.contentSize = CGSizeMake(SCREEN_WIDTH*_scoreView.titleArray.count,0);
-    _scoreVC = [[DDScoreInfoListController alloc]initWithNibName:@"DDScoreInfoListController" bundle:nil];
-    [_scrollview addSubview:_scoreVC.view];
+    _scrollview.backgroundColor = [UIColor blueColor];
+//    _scoreVC = [[DDScoreInfoListController alloc]initWithNibName:@"DDScoreInfoListController" bundle:nil];
+//    [_scrollview addSubview:_scoreVC.view];
     
     _scoreVC.block = ^(NSDictionary *dict,NSInteger state){
         if (selfWeak.index == 1) {
             DDCurveViewController *curveVC = [[DDCurveViewController alloc]initWithNibName:@"DDCurveViewController" bundle:nil];
             curveVC.dic = dict;
+            curveVC.classid = selfWeak.model.class_id;
             [selfWeak.navigationController pushViewController:curveVC animated:YES];
         }
         else
@@ -76,7 +78,9 @@
         }
         
     };
+    NSLog(@"%f",[UIScreen mainScreen].bounds.size.width);
     _scoreVC.view.frame = CGRectMake(self.index*SCREEN_WIDTH, 0, SCREEN_WIDTH, self.scrollview.bounds.size.height);
+    
     if (_model) {
         _scoreVC.classId = _model.class_id;
     }

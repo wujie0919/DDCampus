@@ -11,6 +11,8 @@
 #import "MPPlot.h"
 #import "MPBarsGraphView.h"
 #import "DDSubjeCtureCell.h"
+#import "DDRoutineSelectStudentModel.h"
+#import "DDSelectClassActionView.h"
 
 static NSString * const subcell = @"subcell";
 
@@ -19,6 +21,9 @@ static NSString * const subcell = @"subcell";
 @property (nonatomic, assign) NSInteger type;
 @property (nonatomic, copy) NSString *scorethemeid;
 @property (nonatomic, strong) NSMutableArray *array;
+@property (nonatomic, strong) NSMutableArray *stuArray;
+@property (nonatomic, strong) DDSelectClassActionView *menuWindow;
+@property (nonatomic, copy) NSString *studentId;
 @end
 
 @implementation DDCurveViewController
@@ -85,6 +90,8 @@ static NSString * const subcell = @"subcell";
         make.bottom.equalTo(selfWeak.view).offset(0);
         make.right.equalTo(selfWeak.view).offset(0);
     }];
+    _studentId = @"";
+    _stuArray = [NSMutableArray arrayWithCapacity:0];
     _type = [appDelegate.userModel.type integerValue];
     [_dataTable registerNib:[UINib nibWithNibName:@"DDSubjeCtureCell" bundle:nil] forCellReuseIdentifier:subcell];
     _scorethemeid = @"";
@@ -100,11 +107,12 @@ static NSString * const subcell = @"subcell";
 
 - (void)loadData
 {
+    @WeakObj(self);
+    if ([_scorethemeid isValidString]) {
+        [self showLoadHUD:@"加载中..."];
+    }
     if (_type != 3 ) {
-        @WeakObj(self);
-        if ([_scorethemeid isValidString]) {
-            [self showLoadHUD:@"加载中..."];
-        }
+        
         [self Network_Post:@"getsubjecttrend" tag:Getsubjecttrend_Tag
                      param:@{@"subjectid":_dic[@"subjectid"],
                              @"scorethemeid":_scorethemeid}
@@ -121,9 +129,35 @@ static NSString * const subcell = @"subcell";
     }
     else
     {
-        
+        [self Network_Post:@"getclasssubjecttrend" tag:Getclasssubjecttrend_Tag
+                     param:@{@"subjectid":_dic[@"subjectid"],
+                             @"scorethemeid":_scorethemeid,
+                             @"classid":_classid,
+                             @"studentid":_studentId}
+                   success:^(id result) {
+                       [selfWeak hideHUD];
+                       if ([result[@"code"]integerValue]==200) {
+                           if ([result[DataKey]isKindOfClass:[NSDictionary class]]) {
+                               [selfWeak setData:result[DataKey]];
+                           }
+                           if ([result[DataKey][@"userlist"]isKindOfClass:[NSArray class]]) {
+                               NSMutableArray *darray = [NSMutableArray arrayWithCapacity:0];
+                               for (NSDictionary *dic in result[DataKey][@"userlist"]) {
+                                   DDRoutineSelectStudentModel *sModel = [[DDRoutineSelectStudentModel alloc]init];
+                                   sModel.class_id = dic[@"studentid"];
+                                   sModel.name = dic[@"name"];
+                                   [darray addObject:sModel];
+                               }
+                               selfWeak.stuArray = darray;
+                           }
+                       }
+                   } failure:^(NSError *error) {
+                       [selfWeak hideHUD];
+                   }];
     }
 }
+
+
 
 - (void)setData:(NSDictionary *)data{
     _array = [NSMutableArray new];
@@ -179,6 +213,23 @@ static NSString * const subcell = @"subcell";
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+- (IBAction)selectStudentClick:(id)sender {
+    
+    if (_stuArray.count>0) {
+        if (!_menuWindow) {
+            _menuWindow = [[DDSelectClassActionView alloc]initWithFrame:[[UIScreen mainScreen]bounds]];
+        }
+        @WeakObj(self);
+        [_menuWindow show:self.stuArray handler:^(NSMutableArray *nameList) {
+            if (nameList.count>0) {
+                DDRoutineSelectStudentModel *model = nameList[0];
+                selfWeak.studentId = model.class_id;
+                [selfWeak loadData];
+            }
+            
+        } singleFlg:NO];
+    }
 }
 
 /*

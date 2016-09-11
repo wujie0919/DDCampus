@@ -10,6 +10,7 @@
 #import "DDSelectClassInfoCell.h"
 #import "DDRoutineSelectStudentModel.h"
 #import "DDScoreInfoController.h"
+#import "DDNewScoreInfoController.h"
 
 static NSString * const infoCell = @"infoCell";
 @interface DDSelectClssController ()<UITableViewDelegate,UITableViewDataSource>
@@ -77,9 +78,8 @@ static NSString * const infoCell = @"infoCell";
 
 - (void)next:(NSInteger)row
 {
-    DDScoreInfoController *infoVC = [[DDScoreInfoController alloc]initWithNibName:@"DDScoreInfoController" bundle:nil];
+    DDNewScoreInfoController *infoVC = [[DDNewScoreInfoController alloc]init];
     infoVC.model = appDelegate.classArray[row];
-    
     [self.navigationController pushViewController:infoVC animated:YES];
 }
 

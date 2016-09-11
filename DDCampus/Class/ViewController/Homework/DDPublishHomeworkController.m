@@ -10,6 +10,7 @@
 #import "DDSelectClassActionView.h"
 #import "DDRoutineSelectStudentModel.h"
 
+
 @interface DDPublishHomeworkController ()<UITextViewDelegate>
 {
     BOOL select;
@@ -18,6 +19,7 @@
 @property (nonatomic, strong) DDRoutineSelectStudentModel *studentModel;
 @property (nonatomic, strong) NSMutableArray *idArray;
 @property (weak, nonatomic) IBOutlet UILabel *infoLabel;
+
 @end
 
 @implementation DDPublishHomeworkController
