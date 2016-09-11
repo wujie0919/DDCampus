@@ -10,7 +10,7 @@
 
 @interface DDShowKouFenView : UIView
 
-@property (nonatomic, copy) void (^ClickAction)();
+@property (nonatomic, copy) void (^ClickAction)(NSString *value);
 
 - (void)showWithTitle:(NSString *)title;
 

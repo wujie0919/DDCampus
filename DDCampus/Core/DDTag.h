@@ -41,6 +41,7 @@ static NSInteger const Getstudent_Tag = 5008;
 static NSInteger const Getdutyweekcutset_Tag = 5009;
 static NSInteger const Getgradeweekpoint_Tag = 5010;
 static NSInteger const Do_dutyweek_Tag = 5011;
+static NSInteger const Do_dutyweekcut_Tag = 5012;
 //社区
 static NSInteger const Getforumpost_Tag = 6001;
 static NSInteger const Do_forumpost_Tag = 6002;

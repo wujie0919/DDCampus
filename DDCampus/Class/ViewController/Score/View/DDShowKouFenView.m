@@ -48,7 +48,7 @@
 
 - (IBAction)clickAction:(id)sender {
     if(_ClickAction){
-        _ClickAction();
+        _ClickAction(_contentView.text);
     }
 }
 @end

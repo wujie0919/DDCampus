@@ -73,7 +73,8 @@ static NSString * const plancell = @"plancell";
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     DDCustomScoreController *scoreVC = [[DDCustomScoreController alloc]init];
-    scoreVC.type = 0;
+    NSInteger types = [appDelegate.userModel.type integerValue];
+    scoreVC.type = types ==3?0:1;
     scoreVC.classid =_array[indexPath.row][@"classid"];
     scoreVC.weekplanid = _array[indexPath.row][@"id"];
     [self.navigationController pushViewController:scoreVC animated:YES];

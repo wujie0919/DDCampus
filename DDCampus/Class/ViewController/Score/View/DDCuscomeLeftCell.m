@@ -45,10 +45,10 @@
     self.selectIcon.hidden = YES;
 }
 
-- (void)setItemWithData:(id)data
+- (void)setItemWithData:(id)data type:(NSInteger)type
 {
     if([data isKindOfClass:[NSDictionary class]]){
-        _mainLabel.text = data[@"name"];
+        _mainLabel.text = type==0?data[@"name"]:data[@"class_name"];
     }
 }
 

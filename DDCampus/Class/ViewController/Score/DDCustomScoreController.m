@@ -20,7 +20,6 @@
     DDTableView *_rightTableView;
     NSIndexPath *_leftSelectIndex;
     NSIndexPath *_rightSelectIndex;
-    NSString *weekplanid;
 }
 @property (nonatomic, copy) NSArray *selectArray;
 @property (nonatomic, copy) NSString *studentId;
@@ -71,9 +70,9 @@
     
     _leftSelectIndex = [NSIndexPath indexPathForRow:0 inSection:0];
     _selectArray = self.rightDataSource[0];
-    NSInteger type = [appDelegate.userModel.type integerValue];
+    NSInteger types = [appDelegate.userModel.type integerValue];
 //    [_leftTableView reloadData];
-    if(self.type == 3){
+    if(self.type == 0){
         [_rightTableView setTableFooterView:[self rightFooterView]];
 //        self.rightDataSource = appDelegate.classArray;
 //        [self getStudent];
@@ -164,14 +163,13 @@
 {
     NSLog(@"确认的点击");
     if (_zhizhouArray.count>0) {
-        NSInteger type = [appDelegate.userModel.type integerValue];
         NSMutableString *studentIDs = [NSMutableString new];
         for (DDRoutineSetModel *model in _zhizhouArray) {
             [studentIDs appendFormat:@"%@,",model.classId];
         }
         if (studentIDs.length>0) {
             
-            if (type == 3) {
+            if (_type == 0) {
                 @WeakObj(self);
                 [self showLoadHUD:@"加载中..."];
                 [self Network_Post:@"do_dutyweek" tag:Do_dutyweek_Tag
@@ -241,7 +239,7 @@
             [cell showLine:NO];
         }
         
-        [cell setItemWithData:self.leftDataSource[indexPath.row]];
+        [cell setItemWithData:self.leftDataSource[indexPath.row] type:_type];
         
         return cell;
     }else{
@@ -289,15 +287,19 @@
 #pragma mark type=1
 - (void)showKouFenWithIndexPath:(NSIndexPath *)indexPath
 {
-    NSLog(@"%@",_selectArray[indexPath.row]);
-    
+    DDRoutineSetModel *model = _selectArray[indexPath.row];
     DDShowKouFenView *view = [[[NSBundle mainBundle] loadNibNamed:@"DDShowKouFenView" owner:self options:nil] lastObject];
-    [view showWithTitle:_selectArray[indexPath.row]];
+    [view showWithTitle:model.className];
     CustomIOS7AlertView *alertView = [[CustomIOS7AlertView alloc] init];
     alertView.useMotionEffects = YES;
     [alertView setButtonTitles:nil];
     [alertView setUseMotionEffects:true];
-    [view setClickAction:^{
+    @WeakObj(self);
+    [view setClickAction:^(NSString *value) {
+        if (![value isValidString]) {
+            value= @"";
+        }
+        [selfWeak sendData:value checkid:model.classId];
         [alertView close];
     }];
     
@@ -305,6 +307,30 @@
     [alertView show];
 
     
+}
+
+- (void)sendData:(NSString *)value checkid:(NSString *)checkid
+{
+    @WeakObj(self);
+    [self showLoadHUD:@"加载中..."];
+    [self Network_Post:@"do_dutyweekcut" tag:Do_dutyweekcut_Tag
+                 param:@{@"weekplanid":_weekplanid,
+                         @"classid":_selectDic[@"classid"],
+                         @"checkid":checkid,
+                         @"remark":value}
+               success:^(id result) {
+                   [selfWeak hideHUD];
+                   if ([result[@"code"]integerValue]==200) {
+                       [selfWeak showSuccessHUD:@"扣分成功"];
+                   }
+                   else
+                   {
+                       [selfWeak showSuccessHUD:@"扣分失败"];
+                   }
+               } failure:^(NSError *error) {
+                   [selfWeak hideHUD];
+                   [selfWeak showSuccessHUD:@"网络异常"];
+               }];
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
@@ -448,7 +474,7 @@
                 [array addObjectsFromArray:result[DataKey][@"weekdata"][@"classallitem"]];
                 selfWeak.leftDataSource = array;
                 [_leftTableView  reloadData];
-//                selfWeak.selectDic = array[0];
+                selfWeak.selectDic = array[0];
             }
             _classArray = result[DataKey][@"weekdata"][@"checklist"];
             NSMutableArray *selectList = [NSMutableArray arrayWithCapacity:0];

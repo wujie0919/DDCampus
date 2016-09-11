@@ -10,7 +10,7 @@
 
 @interface DDCuscomeLeftCell : UITableViewCell
 
-- (void)setItemWithData:(id)data;
+- (void)setItemWithData:(id)data type:(NSInteger)type;
 
 - (void)showLine:(BOOL)isShow;
 

@@ -43,10 +43,25 @@
             button.selected = model.select;
             [button setTitle:model.className forState:UIControlStateNormal];
         }
-    }else if([sourData isKindOfClass:[NSString class]]){
+    }else if([sourData isKindOfClass:[DDRoutineSetModel class]]){
+        DDRoutineSetModel *model = sourData;
         UIButton *button = buttons[0];
         button.hidden = NO;
-        [button setTitle:(NSString *)sourData forState:UIControlStateNormal];
+        if (model.select) {
+            button.backgroundColor = RGB(63, 199, 127);
+            
+            [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+            button.layer.borderWidth = 0;
+        }
+        else
+        {
+            button.backgroundColor = [UIColor whiteColor];
+            [button setTitleColor:RGB(104, 104, 104) forState:UIControlStateNormal];
+            button.layer.borderWidth = 0.5f;
+            
+        }
+        button.selected = model.select;
+        [button setTitle:model.className forState:UIControlStateNormal];
     }
 }
 
