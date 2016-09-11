@@ -7,6 +7,7 @@
 //
 
 #import "DDCustomRightCell.h"
+#import "DDRoutineSetModel.h"
 
 @interface DDCustomRightCell ()
 {
@@ -23,12 +24,24 @@
     if([sourData isKindOfClass:[NSArray class]]){
         NSArray * data = (NSArray *)sourData;
         for (NSInteger i = 0; i < data.count; i++) {
-            NSDictionary *dic = data[i];
-            if([dic isKindOfClass:[NSDictionary class]]){
-                UIButton *button = buttons[i];
-                button.hidden = NO;
-                [button setTitle:dic[@"class_name"] forState:UIControlStateNormal];
+            DDRoutineSetModel *model = data[i];
+            UIButton *button = buttons[i];
+            button.hidden = NO;
+            if (model.select) {
+                button.backgroundColor = RGB(63, 199, 127);
+                
+                [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+                button.layer.borderWidth = 0;
             }
+            else
+            {
+                button.backgroundColor = [UIColor whiteColor];
+                [button setTitleColor:RGB(104, 104, 104) forState:UIControlStateNormal];
+                button.layer.borderWidth = 0.5f;
+                
+            }
+            button.selected = model.select;
+            [button setTitle:model.className forState:UIControlStateNormal];
         }
     }else if([sourData isKindOfClass:[NSString class]]){
         UIButton *button = buttons[0];
@@ -85,17 +98,33 @@
 - (void)clickAction:(UIButton *)button
 {
     if(_type == 0){
-        if(button.tag >= 100){
-            button.tag -= 100;
+        if (button.selected) {
+            button.selected = NO;
             button.backgroundColor = [UIColor whiteColor];
             [button setTitleColor:RGB(104, 104, 104) forState:UIControlStateNormal];
             button.layer.borderWidth = 0.5f;
-            
-        }else{
-            button.tag += 100;
+        }
+        else
+        {
+            button.selected = YES;
             button.backgroundColor = RGB(63, 199, 127);
             [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
             button.layer.borderWidth = 0;
+        }
+//        if(button.tag >= 100){
+//            button.tag -= 100;
+//            button.backgroundColor = [UIColor whiteColor];
+//            [button setTitleColor:RGB(104, 104, 104) forState:UIControlStateNormal];
+//            button.layer.borderWidth = 0.5f;
+//            
+//        }else{
+//            button.tag += 100;
+//            button.backgroundColor = RGB(63, 199, 127);
+//            [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+//            button.layer.borderWidth = 0;
+//        }
+        if (_RestButtonColor) {
+            _RestButtonColor(button.tag,button.selected);
         }
     }else{
         if(_ClickButton){

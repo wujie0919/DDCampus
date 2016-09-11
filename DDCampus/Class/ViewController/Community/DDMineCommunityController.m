@@ -280,6 +280,7 @@ static NSString * const homeCell = @"homeCell";
                                  if ([result[DataKey][@"list"]isKindOfClass:[NSArray class]]) {
                                      for (NSDictionary *dic in result[DataKey][@"list"]) {
                                          LZMoments *model = [LZMoments new];
+                                         model.time = [NSDate compareWithOther:dic[@"dateline"] day:NO];
                                          model.pid = [NSString stringWithFormat:@"%@",dic[@"id"]];
                                          model.iconName = [dic[@"pic"] isValidString]?[NSString stringWithFormat:@"%@%@",PicUrl,dic[@"pic"]]:@"";
                                          model.name = dic[@"nickname"];

@@ -172,6 +172,7 @@
 		3797C7BF1D587BB1007C1EBD /* return@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3797C7BD1D587BB1007C1EBD /* return@3x.png */; };
 		3797C7C31D588047007C1EBD /* DDEditPassController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3797C7C11D588047007C1EBD /* DDEditPassController.m */; };
 		3797C7C41D588047007C1EBD /* DDEditPassController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3797C7C21D588047007C1EBD /* DDEditPassController.xib */; };
+		3798BB641D857C050085623E /* DDRoutineSetModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3798BB631D857C050085623E /* DDRoutineSetModel.m */; };
 		379B973A1D75C09900BADBFA /* DNAlbumTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 379B97111D75C09900BADBFA /* DNAlbumTableViewController.m */; };
 		379B973B1D75C09900BADBFA /* DNAsset.m in Sources */ = {isa = PBXBuildFile; fileRef = 379B97131D75C09900BADBFA /* DNAsset.m */; };
 		379B973C1D75C09900BADBFA /* DNImageFlowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 379B97151D75C09900BADBFA /* DNImageFlowViewController.m */; };
@@ -759,6 +760,8 @@
 		3797C7C01D588047007C1EBD /* DDEditPassController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDEditPassController.h; sourceTree = "<group>"; };
 		3797C7C11D588047007C1EBD /* DDEditPassController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDEditPassController.m; sourceTree = "<group>"; };
 		3797C7C21D588047007C1EBD /* DDEditPassController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DDEditPassController.xib; sourceTree = "<group>"; };
+		3798BB621D857C050085623E /* DDRoutineSetModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDRoutineSetModel.h; sourceTree = "<group>"; };
+		3798BB631D857C050085623E /* DDRoutineSetModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDRoutineSetModel.m; sourceTree = "<group>"; };
 		379B97101D75C09900BADBFA /* DNAlbumTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DNAlbumTableViewController.h; sourceTree = "<group>"; };
 		379B97111D75C09900BADBFA /* DNAlbumTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DNAlbumTableViewController.m; sourceTree = "<group>"; };
 		379B97121D75C09900BADBFA /* DNAsset.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DNAsset.h; sourceTree = "<group>"; };
@@ -1502,6 +1505,7 @@
 		3725BC631D7553380034C36C /* Score */ = {
 			isa = PBXGroup;
 			children = (
+				3798BB611D857BEC0085623E /* Model */,
 				37CC62521D773AD9005D5CCA /* DDCustomScoreController.h */,
 				37CC62531D773AD9005D5CCA /* DDCustomScoreController.m */,
 				3725BC691D7553C90034C36C /* View */,
@@ -1972,6 +1976,15 @@
 				3725BCEA1D75A4D00034C36C /* DDSelectImageCell.xib */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		3798BB611D857BEC0085623E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3798BB621D857C050085623E /* DDRoutineSetModel.h */,
+				3798BB631D857C050085623E /* DDRoutineSetModel.m */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		379B970F1D75C09900BADBFA /* DNImagePicker */ = {
@@ -3481,6 +3494,7 @@
 				9389F3331D50E93A00055E3B /* NSData+Custom.m in Sources */,
 				37E1B1131D73DB1D00D012F0 /* LZPictureBrowser.m in Sources */,
 				37AF9A011D662505006302A3 /* DDRankHeaderView.m in Sources */,
+				3798BB641D857C050085623E /* DDRoutineSetModel.m in Sources */,
 				37CC628A1D77DE7D005D5CCA /* DDSubjeCtureCell.m in Sources */,
 				37ECCD641D713A1F00B91B3D /* DDSubmitValueCell.m in Sources */,
 				3725BCBC1D758FBE0034C36C /* MorePanel.m in Sources */,

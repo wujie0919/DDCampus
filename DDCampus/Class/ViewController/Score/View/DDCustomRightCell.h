@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface DDCustomRightCell : UITableViewCell
-
+@property (nonatomic, copy) void(^RestButtonColor)(NSInteger tag,BOOL status);
 @property (nonatomic, copy) void(^ClickButton)();
 - (void)showItemWithData:(id)data andType:(NSInteger)type;
 

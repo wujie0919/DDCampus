@@ -66,7 +66,6 @@
 
 - (void)pageController:(WMPageController *)pageController didEnterViewController:(__kindof UIViewController *)viewController withInfo:(NSDictionary *)info
 {
-    NSLog(@"%@",info);
     NSInteger index = [info[@"index"]integerValue];
     if (index == 1) {
         @WeakObj(self);

@@ -10,10 +10,6 @@
 
 @implementation LZMoments
 
-- (NSString *)time
-{
-    return @"1分钟之前";
-}
 
 - (NSMutableAttributedString *)likesStr
 {

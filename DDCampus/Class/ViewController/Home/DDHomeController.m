@@ -367,6 +367,7 @@ static NSString * const homeCell = @"homeCell";
                 for (NSDictionary *dic in result[DataKey][@"list"]) {
                     LZMoments *model = [LZMoments new];
                     model.pid = [NSString stringWithFormat:@"%@",dic[@"id"]];
+                    model.time = [NSDate compareWithOther:dic[@"dateline"] day:NO];
                     model.iconName = [dic[@"pic"] isValidString]?[NSString stringWithFormat:@"%@%@",PicUrl,dic[@"pic"]]:@"";
                     model.name = dic[@"nickname"];
                     model.msgContent = dic[@"message"];

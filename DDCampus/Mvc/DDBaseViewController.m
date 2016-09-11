@@ -92,7 +92,10 @@
 
 - (void)showLoadHUD:(NSString *)message
 {
-    [MBProgressHUD showMessage:message];
+    [SVProgressHUD setDefaultStyle:SVProgressHUDStyleDark];
+     [SVProgressHUD setDefaultMaskType:SVProgressHUDMaskTypeCustom];
+    [SVProgressHUD showWithStatus:message];
+   
 }
 
 - (void)showSuccessHUD:(NSString *)message
@@ -102,7 +105,7 @@
 
 - (void)hideHUD
 {
-    [MBProgressHUD hideHUD];
+    [SVProgressHUD dismiss];
 }
 
 - (void)didReceiveMemoryWarning {
