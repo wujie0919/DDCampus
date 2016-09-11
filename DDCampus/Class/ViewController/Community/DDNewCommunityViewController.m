@@ -126,6 +126,8 @@ static NSString * const homeCell = @"homeCell";
 - (void)enditCommunity
 {
     DDSendCommunityController *sendVC = [[DDSendCommunityController alloc]initWithNibName:@"DDSendCommunityController" bundle:nil];
+    sendVC.type = self.type;
+    sendVC.groupId = [self.type isEqualToString:@"3"]?self.staticDataKey:@"";
     [self.navigationController pushViewController:sendVC animated:YES];
 }
 

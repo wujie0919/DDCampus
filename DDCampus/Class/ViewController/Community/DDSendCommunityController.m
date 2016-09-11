@@ -209,9 +209,9 @@ static NSString * const imageCell = @"imageCell";
         NSString *key = [NSString stringWithFormat:@"pic%d",i+1];
         [dic setValue:UIImageJPEGRepresentation(img, 0.5) forKey:key];
     }
-    [dic setValue:@"1" forKey:@"type"];
+    [dic setValue:_type forKey:@"type"];
     [dic setValue:_contentTextView.text forKey:@"message"];
-    [dic setValue:@"" forKey:@"groupid"];
+    [dic setValue:_groupId forKey:@"groupid"];
     [self Network_Post:@"do_forumpost"
                    tag:Do_forumpost_Tag
                  param:dic success:^(id result) {
