@@ -71,8 +71,9 @@
     
     _leftSelectIndex = [NSIndexPath indexPathForRow:0 inSection:0];
     _selectArray = self.rightDataSource[0];
+    NSInteger type = [appDelegate.userModel.type integerValue];
 //    [_leftTableView reloadData];
-    if(self.type == 0){
+    if(self.type == 3){
         [_rightTableView setTableFooterView:[self rightFooterView]];
 //        self.rightDataSource = appDelegate.classArray;
 //        [self getStudent];
@@ -390,6 +391,7 @@
 - (void)getdutyweekset
 {
     @WeakObj(self);
+    [self showLoadHUD:@"加载中..."];
     [self Network_Post:@"getdutyweekset" tag:Getdutyweekset_tag param:@{@"weekplanid":_weekplanid} success:^(id result) {
         if ([result[@"code"]integerValue]) {
             selfWeak.weekplanid = result[DataKey][@"weekplanid"];
@@ -429,19 +431,54 @@
                 [_rightTableView reloadData];
             }
         }
+        [selfWeak hideHUD];
     } failure:^(NSError *error) {
-        
+        [selfWeak hideHUD];
     }];
 }
 
 - (void)getdutyweekcutset
 {
+    @WeakObj(self);
+    [self showLoadHUD:@"加载中..."];
     [self Network_Post:@"getdutyweekcutset" tag:Getdutyweekcutset_Tag param:@{@"weekplanid":_weekplanid} success:^(id result) {
         if ([result[@"code"]integerValue]) {
-            
+            if ([result[DataKey][@"weekdata"][@"classallitem"] isKindOfClass:[NSArray class]]) {
+                NSMutableArray *array = [NSMutableArray array];
+                [array addObjectsFromArray:result[DataKey][@"weekdata"][@"classallitem"]];
+                selfWeak.leftDataSource = array;
+                [_leftTableView  reloadData];
+//                selfWeak.selectDic = array[0];
+            }
+            _classArray = result[DataKey][@"weekdata"][@"checklist"];
+            NSMutableArray *selectList = [NSMutableArray arrayWithCapacity:0];
+            for (NSDictionary *dic in _classArray) {
+                DDRoutineSetModel *model = [DDRoutineSetModel new];
+                model.className = dic[@"subject"];
+                model.classId = dic[@"checkid"];
+                model.points = dic[@"points"];
+//                if (selfWeak.selectDic) {
+//                    if ([selfWeak.selectDic[@"weeklist"] isKindOfClass:[NSDictionary class]]) {
+//                        NSString *classallid = selfWeak.selectDic[@"weeklist"][@"classallid"];
+//                        if ([classallid isValidString]) {
+//                            NSArray *subArray = [classallid componentsSeparatedByString:@","];
+//                            for (NSString *class_id in subArray) {
+//                                if ([class_id isEqualToString:model.classId]) {
+//                                    model.select = YES;
+//                                    //                                        continue;
+//                                }
+//                            }
+//                        }
+//                    }
+//                }
+                [selectList addObject:model];
+            }
+            selfWeak.selectArray = selectList;
+            [_rightTableView reloadData];
         }
+        [selfWeak hideHUD];
     } failure:^(NSError *error) {
-        
+        [selfWeak hideHUD];
     }];
 }
 

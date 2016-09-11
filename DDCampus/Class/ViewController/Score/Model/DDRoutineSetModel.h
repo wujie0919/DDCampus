@@ -11,5 +11,6 @@
 @interface DDRoutineSetModel : NSObject
 @property (nonatomic, copy) NSString *className;
 @property (nonatomic, copy) NSString *classId;
+@property (nonatomic, copy) NSString *points;
 @property (nonatomic, assign) BOOL select;
 @end
