@@ -137,14 +137,17 @@
     [_menuWindow show:self.subjectArray handler:^(NSMutableArray *nameList) {
         NSMutableString *string = [[NSMutableString alloc]init];
         NSMutableString *subIds = [[NSMutableString alloc]init];
+        NSMutableString *scoreS = [[NSMutableString alloc]init];
         selfWeak.selectSubArray = nameList;
         for (DDRoutineSelectStudentModel *model in nameList) {
             [string appendFormat:@"%@,",model.name];
             [subIds appendFormat:@"%@,",model.class_id];
+            [scoreS appendFormat:@"%@,",@"100"];
         }
         if (string.length>0) {
             selfWeak.subjectLabel.text = [string substringToIndex:string.length-1];
             selfWeak.subjectListId = [subIds substringToIndex:subIds.length-1];
+            selfWeak.MaxLabel.text = [scoreS substringToIndex:scoreS.length -1];
         }
     } singleFlg:YES];
 }

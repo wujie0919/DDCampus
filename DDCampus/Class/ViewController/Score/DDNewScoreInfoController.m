@@ -8,6 +8,7 @@
 
 #import "DDNewScoreInfoController.h"
 #import "DDScoreInfoListController.h"
+#import "DDCreateScoreController.h"
 
 static CGFloat const kWMHeaderViewHeight = 200;
 static CGFloat const kNavigationBarHeight = 64;
@@ -46,6 +47,27 @@ static CGFloat const kNavigationBarHeight = 64;
     // Do any additional setup after loading the view.
     [self setBackBarButtonItem];
     self.title = @"成绩";
+    NSInteger type = [appDelegate.userModel.type integerValue];
+    if (type==3) {
+        UIButton *rightButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        [rightButton setTitle:@"创建成绩单" forState:UIControlStateNormal];
+        rightButton.titleLabel.font = [UIFont systemFontOfSize:14];
+        rightButton.backgroundColor = RGB(48, 185, 113);
+        rightButton.frame = CGRectMake(0, 5, 80, 30);
+        rightButton.layer.cornerRadius= 5;
+        rightButton.layer.masksToBounds = YES;
+        rightButton.layer.borderColor = [UIColor whiteColor].CGColor;
+        rightButton.layer.borderWidth = 1;
+        [rightButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        [rightButton addTarget:self action:@selector(createScore) forControlEvents:UIControlEventTouchUpInside];
+        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:rightButton];
+    }
+}
+
+- (void)createScore
+{
+    DDCreateScoreController *createVC = [[DDCreateScoreController alloc]initWithNibName:@"DDCreateScoreController" bundle:nil];
+    [self.navigationController pushViewController:createVC animated:YES];
 }
 
 #pragma mark - Datasource & Delegate
