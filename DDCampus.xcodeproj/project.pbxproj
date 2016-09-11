@@ -444,6 +444,8 @@
 		37FC3C161D85240C003E4035 /* DDNewScoreInfoController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37FC3C151D85240C003E4035 /* DDNewScoreInfoController.m */; };
 		37FC3C191D852B54003E4035 /* DDNewRoutineController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37FC3C181D852B54003E4035 /* DDNewRoutineController.m */; };
 		37FC3C1C1D8535E4003E4035 /* DDNewHomeworkController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37FC3C1B1D8535E4003E4035 /* DDNewHomeworkController.m */; };
+		37FC3C201D853F0D003E4035 /* qidong@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 37FC3C1E1D853F0D003E4035 /* qidong@2x.png */; };
+		37FC3C211D853F0D003E4035 /* qidong@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 37FC3C1F1D853F0D003E4035 /* qidong@3x.png */; };
 		37FE3ED41D6FCAB900BFF358 /* DDHomeInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 37FE3ED31D6FCAB900BFF358 /* DDHomeInfoModel.m */; };
 		37FE3ED71D6FF37400BFF358 /* DDHomeCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 37FE3ED61D6FF37400BFF358 /* DDHomeCellView.m */; };
 		37FE3ED91D6FF38500BFF358 /* DDHomeCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37FE3ED81D6FF38500BFF358 /* DDHomeCellView.xib */; };
@@ -1199,6 +1201,8 @@
 		37FC3C181D852B54003E4035 /* DDNewRoutineController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDNewRoutineController.m; sourceTree = "<group>"; };
 		37FC3C1A1D8535E4003E4035 /* DDNewHomeworkController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDNewHomeworkController.h; sourceTree = "<group>"; };
 		37FC3C1B1D8535E4003E4035 /* DDNewHomeworkController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDNewHomeworkController.m; sourceTree = "<group>"; };
+		37FC3C1E1D853F0D003E4035 /* qidong@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "qidong@2x.png"; sourceTree = "<group>"; };
+		37FC3C1F1D853F0D003E4035 /* qidong@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "qidong@3x.png"; sourceTree = "<group>"; };
 		37FE3ED21D6FCAB900BFF358 /* DDHomeInfoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDHomeInfoModel.h; sourceTree = "<group>"; };
 		37FE3ED31D6FCAB900BFF358 /* DDHomeInfoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDHomeInfoModel.m; sourceTree = "<group>"; };
 		37FE3ED51D6FF37400BFF358 /* DDHomeCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDHomeCellView.h; sourceTree = "<group>"; };
@@ -1906,6 +1910,7 @@
 		378CC4C91D58159400356039 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				37FC3C1D1D853F0D003E4035 /* icon */,
 				37CDB4791D71B01000C4EE77 /* Routine */,
 				373EF5A71D6AE6880031400C /* Community */,
 				373EF5891D6AAF1F0031400C /* Home */,
@@ -2397,6 +2402,15 @@
 				37FC3C0B1D84F4B5003E4035 /* WMScrollView.m */,
 			);
 			path = WMMenuView;
+			sourceTree = "<group>";
+		};
+		37FC3C1D1D853F0D003E4035 /* icon */ = {
+			isa = PBXGroup;
+			children = (
+				37FC3C1E1D853F0D003E4035 /* qidong@2x.png */,
+				37FC3C1F1D853F0D003E4035 /* qidong@3x.png */,
+			);
+			path = icon;
 			sourceTree = "<group>";
 		};
 		37FE3EDA1D70098F00BFF358 /* SDPhotoBrowser */ = {
@@ -2973,6 +2987,7 @@
 				37C5E5621D7F1286009ED17E /* oo@3x.png in Resources */,
 				37AF9A031D662514006302A3 /* DDRankHeaderView.xib in Resources */,
 				37ECCD601D7136B200B91B3D /* DDSubmitInfoCell.xib in Resources */,
+				37FC3C211D853F0D003E4035 /* qidong@3x.png in Resources */,
 				3725BCCA1D75961F0034C36C /* DDCreateGroupController.xib in Resources */,
 				37CC62E01D785506005D5CCA /* DDRoutinePlanView.xib in Resources */,
 				3796AB201D72A9490066266F /* DDRoutineWeekView.xib in Resources */,
@@ -3067,6 +3082,7 @@
 				37CC62681D77A727005D5CCA /* DDTeacherScoreTableViewCell.xib in Resources */,
 				37E5F2431D7BC751009FDF5F /* DDEditMaxScoreCell.xib in Resources */,
 				3725BCE61D75A01E0034C36C /* write@2x.png in Resources */,
+				37FC3C201D853F0D003E4035 /* qidong@2x.png in Resources */,
 				373EF5BD1D6B01AC0031400C /* notice@2x.png in Resources */,
 				37EC84E81D76F51400AD223C /* member_normal@2x.png in Resources */,
 				371050391D586DC10079FC85 /* community2@2x.png in Resources */,
