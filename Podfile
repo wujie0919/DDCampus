@@ -14,7 +14,7 @@ pod 'SDWebImage', '~>3.7.3'
 
 pod 'Masonry'
 
-pod 'IQKeyboardManager'
+pod 'TPKeyboardAvoiding'
 
 pod 'SVProgressHUD'
 

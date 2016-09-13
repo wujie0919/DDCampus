@@ -9,7 +9,6 @@
 #import "DDCommunityController.h"
 #import "DDCommunityView.h"
 #import "DDCommunityListController.h"
-#import "IQKeyboardManager.h"
 #import "DDSendCommunityController.h"
 #import "DDGroupInfoController.h"
 #import "DDFindGroupController.h"
@@ -186,6 +185,16 @@
                          } failure:^(NSError *error) {
                              
                          }];
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [self.view endEditing:YES];
+}
+
+- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView
+{
+    [self.view endEditing:YES];
 }
 
 - (void)didReceiveMemoryWarning {

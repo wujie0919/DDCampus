@@ -14,7 +14,6 @@
 #import "UITableView+FDTemplateLayoutCell.h"
 #import "LZMomentsListViewModel.h"
 #import "DDCommentView.h"
-#import "IQKeyboardManager.h"
 #import "DDFindGroupController.h"
 #import "DDGroupInfoController.h"
 
@@ -114,7 +113,6 @@ static NSString * const homeCell = @"homeCell";
 {
     [super viewWillAppear:animated];
     //    [[IQKeyboardManager sharedManager]setKeyboardDistanceFromTextField:0];
-    [IQKeyboardManager sharedManager].enableAutoToolbar = NO;
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(keyboardHide:)
                                                  name:UIKeyboardWillHideNotification
@@ -129,7 +127,6 @@ static NSString * const homeCell = @"homeCell";
 - (void)viewWillDisappear:(BOOL)animated
 {
     [super viewDidDisappear:animated];
-    [IQKeyboardManager sharedManager].enableAutoToolbar = YES;
     [[NSNotificationCenter defaultCenter]removeObserver:self name:UIKeyboardWillHideNotification object:nil];
     [[NSNotificationCenter defaultCenter]removeObserver:self name:LZCommentClickedNotification object:nil];
 }
@@ -466,6 +463,16 @@ static NSString * const homeCell = @"homeCell";
     [self.navigationController pushViewController:infoVc animated:YES];
 }
 
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [self.view endEditing:YES];
+}
+
+- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView
+{
+    [self.view endEditing:YES];
+}
 
 /*
 #pragma mark - Navigation

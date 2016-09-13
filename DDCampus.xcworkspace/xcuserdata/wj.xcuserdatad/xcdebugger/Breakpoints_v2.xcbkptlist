@@ -26,12 +26,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DDCampus/Class/ViewController/Home/DDHomeController.m"
-            timestampString = "495271030.280235"
+            timestampString = "495426622.258272"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "316"
-            endingLineNumber = "316"
-            landmarkName = "-showController:"
+            startingLineNumber = "427"
+            endingLineNumber = "427"
+            landmarkName = "-loadData"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

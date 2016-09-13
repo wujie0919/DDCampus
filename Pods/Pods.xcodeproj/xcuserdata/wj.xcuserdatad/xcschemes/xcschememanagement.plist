@@ -14,11 +14,6 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>IQKeyboardManager.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>MBProgressHUD.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -59,6 +54,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>TPKeyboardAvoiding.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>UITableView+FDTemplateLayoutCell_Bell.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -72,11 +72,6 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>1CE2302B453902851E036B9F6ABF3DB3</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>410B25DF16EA5C5B3E2698F74F9625FB</key>
 		<dict>
 			<key>primary</key>
@@ -87,7 +82,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>55DBDD8B7D446F1D618F303A9FB53209</key>
+		<key>69418FA6D8D05956B3F7C103B673CC31</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -97,7 +92,22 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>823EC4148F8A02F24130F0A6DE11FC6B</key>
+		<key>7AC61477D0DC7728A06C18C1B384A9B9</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>921143C5CBDADACF69BA1CF0363DE317</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>9895F8EC30073F1CDB71E4CB400C6769</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>98F3E715CCD64B55A9539488232E1321</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -112,22 +122,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>A844E2A74DC9E8807A65133E32D8ED5F</key>
+		<key>BE77A279ACC0D3C4F18D02744F9F876E</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>C5C426ED9BF17D31A2342C3A4A5669F6</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>E53642A4CD76C0F8D9BF8EF73B5DF720</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>E8D7CCBD4B071BF78FE62AEF0F09E8D9</key>
+		<key>CDA330D0E7EB588506C0281266CBCBAE</key>
 		<dict>
 			<key>primary</key>
 			<true/>

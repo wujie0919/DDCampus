@@ -21,7 +21,6 @@
 #import "LZMomentsListViewModel.h"
 #import "DDSelectClssController.h"
 #import "DDScoreInfoController.h"
-#import "IQKeyboardManager.h"
 #import "DDTabBarController.h"
 #import "DDNavigationController.h"
 #import "DDRoutineController.h"
@@ -83,23 +82,7 @@ static NSString * const homeCell = @"homeCell";
         make.edges.equalTo(selfWeak.view).insets(UIEdgeInsetsMake(0, 0, 0, 0));
     }];
     
-    NSInteger type = [appDelegate.userModel.type integerValue];
-    switch (type) {
-        case 1:
-            _titleArray = @[@"作业",@"成绩",@"值日安排",@"值周安排"];
-            _buttonImageArray = @[[UIImage imageNamed:@"zuoye"],[UIImage imageNamed:@"cehngji"],[UIImage imageNamed:@"zhiri"],[UIImage imageNamed:@"zhou"]];
-            break;
-        case 2:
-            _titleArray = @[@"作业",@"成绩",@"值日安排",@"值周安排",@"提交作业"];
-            _buttonImageArray = @[[UIImage imageNamed:@"zuoye"],[UIImage imageNamed:@"cehngji"],[UIImage imageNamed:@"zhiri"],[UIImage imageNamed:@"zhou"],[UIImage imageNamed:@"tizuoye"]];
-            break;
-        case 3:
-            _titleArray = @[@"发布作业",@"发布成绩",@"发布通知"];
-            _buttonImageArray = @[[UIImage imageNamed:@"zuoye"],[UIImage imageNamed:@"score"],[UIImage imageNamed:@"notice"]];
-            break;
-        default:
-            break;
-    }
+    
     _homeTable.separatorStyle = UITableViewCellSeparatorStyleNone;
     
     UIButton *rightButton = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -142,8 +125,6 @@ static NSString * const homeCell = @"homeCell";
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-//    [[IQKeyboardManager sharedManager]setKeyboardDistanceFromTextField:0];
-    [IQKeyboardManager sharedManager].enableAutoToolbar = NO;
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(keyboardHide:)
                                                  name:UIKeyboardWillHideNotification
@@ -163,7 +144,6 @@ static NSString * const homeCell = @"homeCell";
 - (void)viewWillDisappear:(BOOL)animated
 {
     [super viewDidDisappear:animated];
-    [IQKeyboardManager sharedManager].enableAutoToolbar = YES;
     [[NSNotificationCenter defaultCenter]removeObserver:self name:UIKeyboardWillHideNotification object:nil];
     [[NSNotificationCenter defaultCenter]removeObserver:self name:LZCommentClickedNotification object:nil];
     [[NSNotificationCenter defaultCenter]removeObserver:self name:NewMessageNotRead object:nil];
@@ -176,6 +156,10 @@ static NSString * const homeCell = @"homeCell";
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
+    if(_dataArray.count==0)
+    {
+        return 0;
+    }
     return _dataArray.count+2;
 }
 
@@ -413,6 +397,23 @@ static NSString * const homeCell = @"homeCell";
                 selfWeak.homeModel.totalpages = result[DataKey][@"totalpages"];
                 selfWeak.homeModel.lunbolist = result[DataKey][@"lunbolist"];
                 if (page==1) {
+                    NSInteger type = [appDelegate.userModel.type integerValue];
+                    switch (type) {
+                        case 1:
+                            selfWeak.titleArray = @[@"作业",@"成绩",@"值日安排",@"值周安排"];
+                            selfWeak.buttonImageArray = @[[UIImage imageNamed:@"zuoye"],[UIImage imageNamed:@"cehngji"],[UIImage imageNamed:@"zhiri"],[UIImage imageNamed:@"zhou"]];
+                            break;
+                        case 2:
+                            selfWeak.titleArray = @[@"作业",@"成绩",@"值日安排",@"值周安排",@"提交作业"];
+                            selfWeak.buttonImageArray = @[[UIImage imageNamed:@"zuoye"],[UIImage imageNamed:@"cehngji"],[UIImage imageNamed:@"zhiri"],[UIImage imageNamed:@"zhou"],[UIImage imageNamed:@"tizuoye"]];
+                            break;
+                        case 3:
+                            selfWeak.titleArray = @[@"发布作业",@"发布成绩",@"发布通知"];
+                            selfWeak.buttonImageArray = @[[UIImage imageNamed:@"zuoye"],[UIImage imageNamed:@"score"],[UIImage imageNamed:@"notice"]];
+                            break;
+                        default:
+                            break;
+                    }
                     selfWeak.dataArray = array;
                 }
                 else

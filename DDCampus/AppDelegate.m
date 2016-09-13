@@ -38,6 +38,7 @@ AppDelegate* appDelegate = nil;
         self.window.rootViewController = navController;
     }
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(LogOut:) name:TOKENOVERDUE object:nil];
+    
     return YES;
 }
 

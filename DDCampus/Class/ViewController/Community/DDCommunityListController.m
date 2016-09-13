@@ -12,7 +12,7 @@
 #import "UITableView+FDTemplateLayoutCell.h"
 #import "LZMomentsListViewModel.h"
 #import "ChatKeyBoard.h"
-#import "IQKeyboardManager.h"
+
 
 static NSString *const homeCell =@"homeCell";
 
@@ -82,8 +82,6 @@ static NSString *const homeCell =@"homeCell";
         [_pageDic setValue:@(page) forKey:_dicKey];
         [self loadData];
     }
-    [[IQKeyboardManager sharedManager]setKeyboardDistanceFromTextField:0];
-    [IQKeyboardManager sharedManager].enableAutoToolbar = NO;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section

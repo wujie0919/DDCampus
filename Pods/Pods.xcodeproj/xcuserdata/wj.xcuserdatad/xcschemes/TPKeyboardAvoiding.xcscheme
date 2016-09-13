@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'BE77A279ACC0D3C4F18D02744F9F876E'
-               BlueprintName = 'YYText'
+               BlueprintIdentifier = '69418FA6D8D05956B3F7C103B673CC31'
+               BlueprintName = 'TPKeyboardAvoiding'
                ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'libYYText.a'>
+               BuildableName = 'libTPKeyboardAvoiding.a'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
